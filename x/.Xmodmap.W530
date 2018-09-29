@@ -1,0 +1,45 @@
+!! CapsLock to Control, Shift+Shift to CapsLock
+! ~ $ xmodmap -pke | grep -P '(Control|Caps)'
+! keycode  37 = Control_L NoSymbol Control_L
+! keycode  66 = Caps_Lock NoSymbol Caps_Lock
+! keycode 105 = Control_R NoSymbol Control_R
+! keycode  50 = Shift_L NoSymbol Shift_L
+! keycode  62 = Shift_R NoSymbol Shift_R
+
+clear lock
+clear control
+add control = Caps_Lock Control_L Control_R
+keycode  66 = Control_L NoSymbol NoSymbol NoSymbol
+keycode  50 = Shift_L Caps_Lock Shift_L
+keycode  62 = Shift_R Caps_Lock Shift_R
+
+!! Return to Control
+! ~ $ xmodmap -pke | grep -P '(Control_R|Return)'
+! keycode  36 = Return NoSymbol Return
+! keycode 105 = Control_R NoSymbol Control_R
+
+remove control = Control_R
+keycode 105 = Return
+keycode 36 = Control_R
+add control = Control_R
+
+!! Symmetric super keys
+! This is to map the menu key on X220
+! ~ $ xmodmap -pke | grep Menu
+! keycode 135 = Menu NoSymbol Menu
+
+!keycode 135 = Super_R NoSymbol Super_R
+
+!! Swapping BackSpace and backslash
+! ~ $ xmodmap -pke | grep -P '(BackSpace|backslash)'
+! keycode  22 = BackSpace BackSpace BackSpace BackSpace
+! keycode  51 = backslash bar backslash bar
+
+keycode 51 = BackSpace BackSpace BackSpace
+keycode 22 = backslash bar backslash bar
+
+!! W530 PrtSc button: super key
+! ~ $ xmodmap -pke | grep Print
+! keycode 107 = Print Sys_Req Print Sys_req
+
+keycode 107 = Super_R NoSymbol Super_R
