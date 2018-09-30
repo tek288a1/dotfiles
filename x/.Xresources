@@ -112,6 +112,7 @@ URxvt.underlineURLs:    true
 URxvt.urlButton:        1
 URxvt.geometry: 		90x30
 
+
 ! tabbed
 URxvt.tabbed.tabbar-fg: 4
 URxvt.tabbed.tabbar-bg: 16
