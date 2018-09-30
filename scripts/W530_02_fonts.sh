@@ -7,10 +7,10 @@ sudo pacman -S --noconfirm --needed adobe-source-sans-pro-fonts
 sudo pacman -S --noconfirm --needed ttf-ubuntu-font-family
 sudo pacman -S --noconfirm --needed noto-fonts
 sudo pacman -S --noconfirm --needed gnome-font-viewer
-sudo pacman -S --noconfirm --noedit ttf-font-awesome
-sudo pacman -S --noconfirm --noedit otf-font-awesome
+sudo pacman -S --noconfirm --needed ttf-font-awesome
+sudo pacman -S --noconfirm --needed otf-font-awesome
+sudo pacman -S --noconfirm --needed powerline-fonts-git
 #sudo pacman -R --noconfirm powerline-fonts
-sudo pacman -S --noconfirm --noedit powerline-fonts-git
 
 ## update cache
 fc-cache -vf
