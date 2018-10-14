@@ -374,7 +374,6 @@ bar {
         urgent_workspace    $i3_color4 $i3_color5     $i3_color7
     }
 }
-
 # hide/unhide i3status bar
 bindsym $mod+m bar mode toggle
 
@@ -445,7 +444,7 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 
-# exec --no-startup-id xmodmap /home/tae/.xmodmap
+
 exec --no-startup-id xcape -t 10000 -e "Control_R=Return"
 exec --no-startup-id xcape -t 10000 -e "Control_L=Escape"
 exec --no-startup-id dropbox start
