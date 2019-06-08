@@ -1,0 +1,14 @@
+#+TITLE: Tae's Configuration Files (=tkconf=)
+
+This repository contains my personal configuration files for various programs and scripts to establish the computing platforms used on my daily drivers running Manjaro or Arch Linux with i3wm.
+
+* Custom keyboard mapping
+* =i3= configuration
+* =emacs= initialization
+* =X= windows
+* Terminal emulators
+* Fonts
+* Computing environment
+ - anaconda
+ - julia
+ - jupyter notebook
