@@ -1,0 +1,46 @@
+#!/bin/sh
+
+## [template] set up printers, OSU Math Wireless printing
+#
+# ROOM = ma224, ma315, mw140, mw430, mw502, mw705
+# PRINTER NAME = HP printer, HP printer, HP printer, Xerox ColorQube, HP printer, HP printer
+# --------------------------------------------------
+# sudo /usr/sbin/lpadmin -p MTH-[ROOM]-PR01 -D [Printer Name] -L [Location] -v https://webprint.asc.ohio-state.edu:30443/printers/mth-[room]-pr01/.printer -m drv:///sample.drv/generic.ppd
+# sudo /usr/sbin/lpadmin -p MTH-[ROOM]-PR01 -o printer-is-shared=false -o printer-op-policy=default -o printer-error-policy=abort-job -o Option1=True -o Duplex=DuplexNoTumble
+# sudo /usr/sbin/lpadmin -p MTH-[ROOM]-PR01 -E
+# --------------------------------------------------
+#
+# Note: depending on OS, lpadmin may be in /usr/bin/lpadmin
+
+# ma224; HP printer
+sudo /usr/bin/lpadmin -p MTH-ma224-PR01 -D "HP Printer" -L "MA24" -v https://webprint.asc.ohio-state.edu:30443/printers/mth-ma224-pr01/.printer -m drv:///sample.drv/generic.ppd
+sudo /usr/bin/lpadmin -p MTH-ma224-PR01 -o printer-is-shared=false -o printer-op-policy=default -o printer-error-policy=abort-job -o Option1=True -o Duplex=DuplexNoTumble
+sudo /usr/bin/lpadmin -p MTH-ma224-PR01 -E
+
+# ma315; HP printer
+sudo /usr/bin/lpadmin -p MTH-ma315-PR01 -D "HP Printer" -L "MA315" -v https://webprint.asc.ohio-state.edu:30443/printers/mth-ma315-pr01/.printer -m drv:///sample.drv/generic.ppd
+sudo /usr/bin/lpadmin -p MTH-ma315-PR01 -o printer-is-shared=false -o printer-op-policy=default -o printer-error-policy=abort-job -o Option1=True -o Duplex=DuplexNoTumble
+sudo /usr/bin/lpadmin -p MTH-ma315-PR01 -E
+
+# mw140; HP printer
+sudo /usr/bin/lpadmin -p MTH-mw140-PR01 -D "HP Printer" -L "MW140" -v https://webprint.asc.ohio-state.edu:30443/printers/mth-mw140-pr01/.printer -m drv:///sample.drv/generic.ppd
+sudo /usr/bin/lpadmin -p MTH-mw140-PR01 -o printer-is-shared=false -o printer-op-policy=default -o printer-error-policy=abort-job -o Option1=True -o Duplex=DuplexNoTumble
+sudo /usr/bin/lpadmin -p MTH-mw140-PR01 -E
+
+# mw430; Xerox ColorQube
+sudo /usr/bin/lpadmin -p MTH-mw430-PR01 -D "Xerox ColorQube" -L "MW430" -v https://webprint.asc.ohio-state.edu:30443/printers/mth-mw430-pr01/.printer -m drv:///sample.drv/generic.ppd
+sudo /usr/bin/lpadmin -p MTH-mw430-PR01 -o printer-is-shared=false -o printer-op-policy=default -o printer-error-policy=abort-job -o Option1=True -o Duplex=DuplexNoTumble
+sudo /usr/bin/lpadmin -p MTH-mw430-PR01 -E
+
+# mw502; HP printer
+sudo /usr/bin/lpadmin -p MTH-mw502-PR01 -D "HP Printer" -L "MW502" -v https://webprint.asc.ohio-state.edu:30443/printers/mth-mw502-pr01/.printer -m drv:///sample.drv/generic.ppd
+sudo /usr/bin/lpadmin -p MTH-mw502-PR01 -o printer-is-shared=false -o printer-op-policy=default -o printer-error-policy=abort-job -o Option1=True -o Duplex=DuplexNoTumble
+sudo /usr/bin/lpadmin -p MTH-mw502-PR01 -E
+
+# mw705; HP printer
+sudo /usr/bin/lpadmin -p MTH-mw705-PR01 -D "HP Printer" -L "MW705" -v https://webprint.asc.ohio-state.edu:30443/printers/mth-mw705-pr01/.printer -m drv:///sample.drv/generic.ppd
+sudo /usr/bin/lpadmin -p MTH-mw705-PR01 -o printer-is-shared=false -o printer-op-policy=default -o printer-error-policy=abort-job -o Option1=True -o Duplex=DuplexNoTumble
+sudo /usr/bin/lpadmin -p MTH-mw705-PR01 -E
+
+
+# TODO: automate the script using loops

@@ -1,0 +1,8 @@
+#!/bin/bash
+set -e
+main_file=$(basename "$1")
+shift
+other_files=$@
+exe_file=${main_file%.*}.exe
+gfortran -O3 -o ${exe_file} ${main_file} ${other_files}
+./${exe_file}

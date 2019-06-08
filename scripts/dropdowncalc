@@ -1,0 +1,2 @@
+#!/bin/sh
+echo "Let's compute!" && julia -i --banner=no

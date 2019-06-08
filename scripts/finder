@@ -1,0 +1,43 @@
+#!/bin/sh
+# A fuzzy file-finder and opener based on dmenu
+# Requires: dmenu, xdg-utils
+# Just a modification of these scripts:
+# https://gist.github.com/dragonauta/6161b40ff0236ed96d7ff56639ac538d
+# https://github.com/Chrysostomus/bspwm-scripts/blob/master/bin/finder
+# The folders variable can be changed to fit your needs an easy one would be ~/
+# The -L argument is only needed if you want to follow symlinks if not you can remove it
+# Some modification:
+# add -type f after the $folders variable if you want to search only for files
+# add -type d after the $folders variable if you want to search only for directories
+# add regular expressions to filter eg.: \( ! -regex '.*/\..*' \) to filter .dotfiles
+# add -r after xargs to avoid opening evince when no file is selected
+
+lines=20
+# font="Noto-10.5"
+# color1="#14171c"
+# color2="#aec3d7"
+folders="$HOME/Dropbox $HOME/Documents"
+
+# find -L $folders -name *.pdf | sed 's/ /\\ /g' | sort -f | dmenu -h 28 -i -fn $font -nb $color1 -nf $color2 -sb $color2 -sf $color1 -l $lines | xargs -r evince
+
+
+## define the font for dmenu to be used
+DMENU_FN="Noto-10.5"
+
+## background colour for unselected menu-items
+DMENU_NB="#222D31"
+
+## textcolour for unselected menu-items
+DMENU_NF="#F9FAF9"
+
+## background colour for selected menu-items
+DMENU_SB="#16A085"
+
+## textcolour for selected menu-items
+DMENU_SF="#F9FAF9"
+
+## export our variables
+DMENU_OPTIONS="-fn $DMENU_FN -nb $DMENU_NB -nf $DMENU_NF -sf $DMENU_SF -sb $DMENU_SB"
+
+
+find -L $folders -name *.pdf | sed 's/ /\\ /g' | sort -f | dmenu -i -l $lines -fn $DMENU_FN -nb $DMENU_NB -nf $DMENU_NF -sf $DMENU_SF -sb $DMENU_SB | xargs -r evince

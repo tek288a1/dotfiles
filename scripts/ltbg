@@ -1,0 +1,2 @@
+#!/bin/bash
+latexmk -pvc -pdf -view=none -synctex=1 $1
