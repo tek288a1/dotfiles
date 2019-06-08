@@ -1,14 +1,30 @@
-#+TITLE: Tae's Configuration Files (=tkconf=)
-
+#+TITLE: Overview of Tae's Configuration (=tkconf=)
+#+STARTUP: overview indent
 This repository contains my personal configuration files for various programs and scripts to establish the computing platforms used on my daily drivers running Manjaro or Arch Linux with i3wm.
 
-* Custom keyboard mapping
 * =i3= configuration
+- Use =Hyper= as modifier.
 * =emacs= initialization
+- Based on =prelude=.
 * =X= windows
-* Terminal emulators
+** Custom keyboard mapping
+Using =xmodmap= and =xcape=:
+- Capslock: Control as a modifier and Escape as standalone
+- Return: Control as a modifier and Return as standalone
+- Shift_L+Shift_R: Capslock
+- Tab: Hyper as a modifier and Tab as standalone
+- backslash: Hyper as a modifier and backslash as standalone
+** =.Xresources=
+* Terminal
+- =oh-my-zsh=
+- =st=
 * Fonts
+- Nerd Fonts
+- Fonts for Korean
+* LaTeX
+- personal style files
+- =latexmk=
 * Computing environment
- - anaconda
- - julia
- - jupyter notebook
+- anaconda
+- julia
+- jupyter notebook
