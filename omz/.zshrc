@@ -5,7 +5,7 @@ export PATH=$HOME/maple2018/bin:$PATH
 
 export TERM="xterm-256color"
 # Path to your oh-my-zsh installation.
-export ZSH=/home/tae/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 #export LANG="en_US.UTF-8"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
