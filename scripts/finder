@@ -12,17 +12,12 @@
 # add regular expressions to filter eg.: \( ! -regex '.*/\..*' \) to filter .dotfiles
 # add -r after xargs to avoid opening evince when no file is selected
 
-lines=20
-# font="Noto-10.5"
-# color1="#14171c"
-# color2="#aec3d7"
-folders="$HOME/Dropbox $HOME/Documents"
-
-# find -L $folders -name *.pdf | sed 's/ /\\ /g' | sort -f | dmenu -h 28 -i -fn $font -nb $color1 -nf $color2 -sb $color2 -sf $color1 -l $lines | xargs -r evince
-
+LINES=20
+FOLDERS="$HOME/Dropbox $HOME/Documents"
+HEIGHT=30
 
 ## define the font for dmenu to be used
-DMENU_FN="Noto-10.5"
+DMENU_FN="Noto-12"
 
 ## background colour for unselected menu-items
 DMENU_NB="#222D31"
@@ -37,7 +32,6 @@ DMENU_SB="#16A085"
 DMENU_SF="#F9FAF9"
 
 ## export our variables
-DMENU_OPTIONS="-fn $DMENU_FN -nb $DMENU_NB -nf $DMENU_NF -sf $DMENU_SF -sb $DMENU_SB"
+DMENU_OPTIONS="-i -h $HEIGHT -l $LINES -fn $DMENU_FN -nb $DMENU_NB -nf $DMENU_NF -sf $DMENU_SF -sb $DMENU_SB"
 
-
-find -L $folders -name *.pdf | sed 's/ /\\ /g' | sort -f | dmenu -i -l $lines -fn $DMENU_FN -nb $DMENU_NB -nf $DMENU_NF -sf $DMENU_SF -sb $DMENU_SB | xargs -r evince
+find -L $FOLDERS -name *.pdf | sed 's/ /\\ /g' | sort -f | dmenu $DMENU_OPTIONS | xargs -r evince

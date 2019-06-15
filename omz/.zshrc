@@ -3,7 +3,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=/opt/anaconda/bin:$PATH
 export PATH=$HOME/maple2018/bin:$PATH
 
-export TERM="xterm-256color"
+# export TERM="xterm-256color"
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 #export LANG="en_US.UTF-8"
