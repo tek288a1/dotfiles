@@ -5,7 +5,7 @@ sudo pacman -S --noconfirm --needed zsh
 sudo pacman -S --noconfirm --needed zsh-syntax-highlighting
 sudo pacman -S --noconfirm --needed neofetch
 yay -S --noconfirm --needed command-not-found
-
+yay -S --noconfirm --needed nerd-fonts-hack
 
 # Install Oh My Zshell
 wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh

@@ -1,4 +1,4 @@
-*.font:	DejaVu Sans Mono for Powerline:regular:size=13
+*.font:	Hack Nerd Font:regular:size=13
 ! :antialias=true:autohint=true;
 ! *.alpha: 200
 Xft.dpi:       96
@@ -66,15 +66,10 @@ URxvt*letterSpace: 	    		0
 
 #define myfs   13
 
-! #define myfont Hack Nerd Font Mono
-! #define myfont DejaVu Sans Mono for Powerline
-#define myfont Source Code Pro for Powerline
-! #define myfont Noto Mono for Powerline
-! #define myfont Inconsolata for Powerline
+#define myfont Hack Nerd Font
 
 ! backup font for glyphs
 #define myfont2 DejaVu Sans Mono for Powerline
-! #define myfont2 DejaVuSansMono Nerd Font
 
 URxvt*font:                 	xft:myfont:regular:size=myfs, xft:myfont2:regular:size=myfs
 URxvt*boldFont:             	xft:myfont:bold:size=myfs, xft:myfont2:bold:size=myfs
