@@ -1,0 +1,27 @@
+#!/bin/sh
+# A general audio interface for LARBS.
+
+[ -z "$2" ] && num="2" || num="$2"
+
+
+showvolume() { currvol=$(amixer get Master | grep % | cut -d " " -f6); notify-send "Volume Icon $currvol"; exit;}
+
+case "$1" in
+    u*) amixer sset Master playback $num%+ && showvolume ;;
+    d*) amixer sset Master playback $num%- && showvolume ;;
+    t*) amixer sset Master playback toggle ;;
+    *) cat << EOF
+lmc: cli music interface for amixer, modified from larbs.
+
+Allowed options:
+  up NUM	Increase volume (2 secs default)
+  down NUM	Decrease volume (2 secs default)
+  mute		Toggle mute
+  all else	Print this message
+
+All of these commands, can be truncated,
+i.e. \`lmc u\` for \`lmc up\`.
+EOF
+esac
+
+# pkill -RTMIN+10 i3blocks
