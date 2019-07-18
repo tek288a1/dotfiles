@@ -1,17 +1,19 @@
 set statusbar-h-padding 0
 set statusbar-v-padding 0
 set page-padding 1
+set window-title-home-tilde 1
+
 map u scroll half-up
 map d scroll half-down
 map D toggle_page_mode
 map r reload
 map R rotate
-map K zoom in
-map J zoom out
+map I zoom in
+map U zoom out
 map i recolor
 map p print
 
-set default-bg "#4C566A"
+set default-bg "#3B4252"
 set recolor true
-set recolor-lightcolor "#2E3440"
-set recolor-darkcolor "#D8DEE9"
+set recolor-lightcolor "#4C566A"
+set recolor-darkcolor "#ECEFF4"
