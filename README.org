@@ -20,7 +20,7 @@ Using =xmodmap= and =xcape=:
 - =st=
 * Fonts
 - Nerd Fonts
-- Fonts for Korean
+- Fonts for Korean: =noto-fonts-cjk=, =adobe-source-han-sans-fonts=, =adobe-source-han-serif-fonts=
 * LaTeX
 - personal style files
 - =latexmk=
