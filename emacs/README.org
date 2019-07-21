@@ -4,15 +4,17 @@
 #+LANGUAGE: en
 #+OPTIONS: num:nil
 
+This is straight from UncleDave's [[https://github.com/daedreth/ihsec][github repo]].
+
 * What?
 ** (/ˈaɪzək/)
  It's an acronym. I hate switching emacs configs. That's it.
 
 ** Dependencies
 #+BEGIN_QUOTE
-All you need is bash, 
-All you need is bash, 
-All you need is bash, bash. 
+All you need is bash,
+All you need is bash,
+All you need is bash, bash.
 Bash is all you need -- John Lennon
 #+END_QUOTE
 And =git= too, almost forgot about that. Unless you won't use =ihsec= to install configs, then sure, skip =git=, it's your life.
