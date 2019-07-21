@@ -6,6 +6,7 @@ emacs/prelude/*
 emacs/scimax/*
 emacs/taemax/*
 !emacs/taemax/config.org
+!emacs/taemax/custom.el
 !emacs/taemax/init.el
 !emacs/taemax/maple/
 !emacs/taemax/sensible-defaults.el
