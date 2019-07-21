@@ -2,7 +2,11 @@ x220/
 t440p/
 w530/
 ws/
-emacs/
+emacs/*
+# except for the following:
+!emacs/ihsec.sh
+!emacs/README.org
+!emacs/Makefile
 tmux/
 latex/
 overview.org
