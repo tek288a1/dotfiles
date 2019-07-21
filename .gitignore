@@ -7,6 +7,9 @@ emacs/*
 !emacs/ihsec.sh
 !emacs/README.org
 !emacs/Makefile
+!emacs/taemax/config.org
+!emacs/taemax/init.el
+!emacs/taemax/sensible-defaults.el
 tmux/
 latex/
 overview.org
