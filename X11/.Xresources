@@ -1,4 +1,5 @@
-*.font:	Hack Nerd Font:regular:size=13
+! *.font:	Hack Nerd Font:regular:size=13
+*.font:	Inconsolata:regular:size=13
 ! :antialias=true:autohint=true;
 ! *.alpha: 200
 Xft.dpi:       96
@@ -66,7 +67,8 @@ URxvt*letterSpace: 	    		0
 
 #define myfs   13
 
-#define myfont Hack Nerd Font
+!#define myfont Hack Nerd Font
+#define myfont Inconsolata
 
 ! backup font for glyphs
 #define myfont2 DejaVu Sans Mono for Powerline
