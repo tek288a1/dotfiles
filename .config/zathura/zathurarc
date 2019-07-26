@@ -15,5 +15,7 @@ map p print
 
 set default-bg "#3B4252"
 set recolor true
-set recolor-lightcolor "#4C566A"
-set recolor-darkcolor "#ECEFF4"
+# set recolor-lightcolor "#4C566A"
+# set recolor-darkcolor "#ECEFF4"
+set recolor-lightcolor "#5D6678"
+set recolor-darkcolor "#f5f7f9"
