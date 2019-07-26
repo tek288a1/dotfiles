@@ -5,6 +5,7 @@ ws/
 emacs/prelude/*
 emacs/scimax/*
 emacs/taemax/*
+emacs/ianpan/*
 !emacs/taemax/config.org
 !emacs/taemax/custom.el
 !emacs/taemax/init.el
