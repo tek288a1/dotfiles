@@ -1,0 +1,6 @@
+#!/bin/sh
+# Reloading sxhkdrc.
+# Reference:
+#  [1] https://wiki.archlinux.org/index.php/Sxhkd
+#  [2] https://bash.cyberciti.biz/guide/Sending_signal_to_Processes
+killall -10 sxhkd
