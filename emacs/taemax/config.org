@@ -66,6 +66,40 @@
 #+RESULTS:
 : doom-themes-org
 
+* Theme toggle
+#+BEGIN_SRC emacs-lisp
+  (setq custom-safe-themes t) ;; stop asking if custom themes are safe
+  ;;(load-theme 'modus-operandi t)
+
+  ;; Source of this theme toggle (adaptations by me):
+  ;; https://emacs.stackexchange.com/questions/24088/make-a-function-to-toggle-themes
+  (defvar nord-theme 'nord)
+  (defvar spacemacs-theme-light 'spacemacs-light)
+  (defvar tk-theme-current nord-theme)
+
+  ;; disable other themes before loading new one
+  (defadvice contrib/load-theme (before theme-dont-propagate activate)
+    "Disable theme before loading new one."
+    (mapcar #'disable-theme custom-enabled-themes))
+
+  (defun contrib/next-theme (theme)
+    (if (eq theme 'default)
+	(disable-theme 'default)
+      (progn
+	(load-theme theme t)))
+    (setq tk-theme-current theme))
+
+  (defun contrib/toggle-theme ()
+    (interactive)
+    (cond ((eq tk-theme-current nord-theme) (contrib/next-theme spacemacs-theme-light))
+	  ((eq tk-theme-current spacemacs-theme-light) (contrib/next-theme nord-theme))))
+
+  (global-set-key (kbd "C-c M-t") 'contrib/toggle-theme)
+#+END_SRC
+
+#+RESULTS:
+: contrib/toggle-theme
+
 * =TREEMACS=
 #+BEGIN_SRC emacs-lisp
 (use-package treemacs
@@ -389,9 +423,9 @@ To have shell environments transferred to emacs. Install =exec-path-from-shell= 
 
 * Org Mode
 ** Org bullets makes things look nice
-*** Original org-bullets-bullet-list: 
+*** Original org-bullets-bullet-list:
 ("◉" "○" "✸" "✿")
-*** Candidate symbol lists: 
+*** Candidate symbol lists:
 Source: [[https://zhangda.wordpress.com/2016/02/15/configurations-for-beautifying-emacs-org-mode/][Da's web notes]]
  - hexagrams
    “✡” “⎈” “✽” “✲” “✱” “✻” “✼” “✽” “✾” “✿” “❀” “❁” “❂” “❃” “❄” “❅” “❆” “❇”
@@ -664,7 +698,7 @@ Possible set-ups:
   (case prelude-latex-fast-math-entry
     (LaTeX-math-mode (LaTeX-math-mode 1))
     (cdlatex (turn-on-cdlatex))))
-  
+
 (setq reftex-plug-into-AUCTeX t)
 
 (setq prelude-latex-mode-hook 'prelude-latex-mode-defaults)
@@ -685,4 +719,3 @@ Possible set-ups:
 
 #+RESULTS:
 | lambda | nil | (setq TeX-command-default latexmk) |
-
