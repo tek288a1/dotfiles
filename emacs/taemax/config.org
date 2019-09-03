@@ -66,16 +66,16 @@
 #+RESULTS:
 : doom-themes-org
 
-* Theme toggle
+* COMMENT Theme toggle
 #+BEGIN_SRC emacs-lisp
   (setq custom-safe-themes t) ;; stop asking if custom themes are safe
-  ;;(load-theme 'modus-operandi t)
+  (load-theme 'doom-one t)
 
   ;; Source of this theme toggle (adaptations by me):
   ;; https://emacs.stackexchange.com/questions/24088/make-a-function-to-toggle-themes
-  (defvar nord-theme 'nord)
-  (defvar spacemacs-theme-light 'spacemacs-light)
-  (defvar tk-theme-current nord-theme)
+  (defvar doom-one-theme 'doom-one)
+  (defvar doom-one-light-theme 'doom-one-light)
+  (defvar tk-theme-current doom-one-theme)
 
   ;; disable other themes before loading new one
   (defadvice contrib/load-theme (before theme-dont-propagate activate)
@@ -91,9 +91,8 @@
 
   (defun contrib/toggle-theme ()
     (interactive)
-    (cond ((eq tk-theme-current nord-theme) (contrib/next-theme spacemacs-theme-light))
-	  ((eq tk-theme-current spacemacs-theme-light) (contrib/next-theme nord-theme))))
-
+    (cond ((eq tk-theme-current doom-one-theme) (contrib/next-theme doom-one-light-theme))
+	  ((eq tk-theme-current doom-one-light-theme) (contrib/next-theme doom-one-theme))))
   (global-set-key (kbd "C-c M-t") 'contrib/toggle-theme)
 #+END_SRC
 
@@ -588,7 +587,7 @@ Possible set-ups:
 : reorganize-frame
 
 ** Org Babel
-*** =org-structure- template-alist=: changed in org 9.2
+*** COMMENT =org-structure- template-alist=: changed in org 9.2
 #+BEGIN_SRC emacs-lisp
   (add-to-list 'org-structure-template-alist
                '("el" "#+BEGIN_SRC emacs-lisp\n?\n#+END_SRC"))
