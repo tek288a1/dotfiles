@@ -24,4 +24,5 @@ dmenu_cmd="dmenu -i -l $LINES $DMENU_OPTIONS"
 
 # find -L $FOLDERS -name *.pdf | sed 's/ /\\ /g' | sort -f | dmenu $DMENU_OPTIONS | xargs -r evince
 
-find -L $FOLDERS -name *.pdf | sed 's/ /\\ /g' | cut -d"/" -f4- | sort -f | $dmenu_cmd | xargs -r zathura
+#find -L $FOLDERS -name *.pdf | sed 's/ /\\ /g' | cut -d"/" -f4- | sort -f | $dmenu_cmd | xargs -r zathura
+find -L $FOLDERS \( -name *.pdf -o -name *.djvu \) | sed 's/ /\\ /g' | sort -f | $dmenu_cmd | xargs -r zathura
