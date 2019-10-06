@@ -66,6 +66,39 @@
 #+RESULTS:
 : doom-themes-org
 
+* COMMENT Theme toggle
+#+BEGIN_SRC emacs-lisp
+  (setq custom-safe-themes t) ;; stop asking if custom themes are safe
+  (load-theme 'doom-one t)
+
+  ;; Source of this theme toggle (adaptations by me):
+  ;; https://emacs.stackexchange.com/questions/24088/make-a-function-to-toggle-themes
+  (defvar doom-one-theme 'doom-one)
+  (defvar doom-one-light-theme 'doom-one-light)
+  (defvar tk-theme-current doom-one-theme)
+
+  ;; disable other themes before loading new one
+  (defadvice contrib/load-theme (before theme-dont-propagate activate)
+    "Disable theme before loading new one."
+    (mapcar #'disable-theme custom-enabled-themes))
+
+  (defun contrib/next-theme (theme)
+    (if (eq theme 'default)
+	(disable-theme 'default)
+      (progn
+	(load-theme theme t)))
+    (setq tk-theme-current theme))
+
+  (defun contrib/toggle-theme ()
+    (interactive)
+    (cond ((eq tk-theme-current doom-one-theme) (contrib/next-theme doom-one-light-theme))
+	  ((eq tk-theme-current doom-one-light-theme) (contrib/next-theme doom-one-theme))))
+  (global-set-key (kbd "C-c M-t") 'contrib/toggle-theme)
+#+END_SRC
+
+#+RESULTS:
+: contrib/toggle-theme
+
 * =TREEMACS=
 #+BEGIN_SRC emacs-lisp
 (use-package treemacs
@@ -389,9 +422,9 @@ To have shell environments transferred to emacs. Install =exec-path-from-shell= 
 
 * Org Mode
 ** Org bullets makes things look nice
-*** Original org-bullets-bullet-list: 
+*** Original org-bullets-bullet-list:
 ("◉" "○" "✸" "✿")
-*** Candidate symbol lists: 
+*** Candidate symbol lists:
 Source: [[https://zhangda.wordpress.com/2016/02/15/configurations-for-beautifying-emacs-org-mode/][Da's web notes]]
  - hexagrams
    “✡” “⎈” “✽” “✲” “✱” “✻” “✼” “✽” “✾” “✿” “❀” “❁” “❂” “❃” “❄” “❅” “❆” “❇”
@@ -554,7 +587,7 @@ Possible set-ups:
 : reorganize-frame
 
 ** Org Babel
-*** =org-structure- template-alist=: changed in org 9.2
+*** COMMENT =org-structure- template-alist=: changed in org 9.2
 #+BEGIN_SRC emacs-lisp
   (add-to-list 'org-structure-template-alist
                '("el" "#+BEGIN_SRC emacs-lisp\n?\n#+END_SRC"))
@@ -664,7 +697,7 @@ Possible set-ups:
   (case prelude-latex-fast-math-entry
     (LaTeX-math-mode (LaTeX-math-mode 1))
     (cdlatex (turn-on-cdlatex))))
-  
+
 (setq reftex-plug-into-AUCTeX t)
 
 (setq prelude-latex-mode-hook 'prelude-latex-mode-defaults)
@@ -685,4 +718,3 @@ Possible set-ups:
 
 #+RESULTS:
 | lambda | nil | (setq TeX-command-default latexmk) |
-
