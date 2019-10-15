@@ -15,6 +15,20 @@ Using =xmodmap= and =xcape=:
 - Tab: Hyper as a modifier and Tab as standalone
 - backslash: Hyper as a modifier and backslash as standalone
 ** =.Xresources=
+** =.xinitrc= for multiple windows manager
+#+BEGIN_EXAMPLE
+# Here i3 is kept as default
+session=${1:-i3}
+
+case $session in
+    i3|i3wm           ) exec i3;;
+    kde               ) exec startkde;;
+    dwm               ) exec dwm;;
+    xfce|xfce4        ) exec startxfce4;;
+    # No known session, try to run it as command
+    *                 ) exec $1;;
+esac
+#+END_EXAMPLE
 * Terminal
 - =oh-my-zsh=
 - =st=
