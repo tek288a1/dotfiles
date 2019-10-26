@@ -16,7 +16,7 @@
  '(objed-cursor-color "#ff6c6b")
  '(package-selected-packages
    (quote
-    (haskell-mode nord-theme smartparens cdlatex auctex beacon switch-window which-key buffer-move org-bullets helm exec-path-from-shell treemacs-magit treemacs-icons-dired treemacs-projectile treemacs-evil treemacs doom-themes use-package-ensure-system-package doom-modeline delight)))
+    (rainbow-mode haskell-mode nord-theme smartparens cdlatex auctex beacon switch-window which-key buffer-move org-bullets helm exec-path-from-shell treemacs-magit treemacs-icons-dired treemacs-projectile treemacs-evil treemacs doom-themes use-package-ensure-system-package doom-modeline delight)))
  '(vc-annotate-background "#282c34")
  '(vc-annotate-color-map
    (list
