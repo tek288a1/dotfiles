@@ -31,14 +31,13 @@
 #+RESULTS:
 
 * =DOOM-MODELINE=
-
 #+BEGIN_SRC emacs-lisp
 (use-package doom-modeline
   :ensure t
   :hook (after-init . doom-modeline-mode))
 #+END_SRC
 
-* =DOOM-THEMES=
+* COMMENT =DOOM-THEMES=
 #+BEGIN_SRC emacs-lisp
 ;;(require 'doom-themes)
 (use-package doom-themes

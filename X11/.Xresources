@@ -1,5 +1,5 @@
-! *.font:	Hack Nerd Font:regular:size=13
-*.font:	Inconsolata:regular:size=13
+*.font:	Hack Nerd Font:regular:size=13
+! *.font:	Inconsolata:regular:size=13
 ! :antialias=true:autohint=true;
 ! *.alpha: 200
 Xft.dpi:       96
