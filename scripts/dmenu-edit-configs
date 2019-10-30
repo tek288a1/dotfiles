@@ -1,0 +1,59 @@
+#!/bin/bash
+#
+# Dmenu script for editing some of my more frequently edited config files. Modified from DT.
+
+declare options=("bash 
+dwm 
+emacs 
+i3 
+polybar 
+st 
+sxhkd 
+zsh 
+quit")
+
+export LINES="10"
+
+if ! [ -f "$HOME/.dmenurc" ]; then
+    cp /usr/share/dmenu/dmenurc $HOME/.dmenurc
+fi
+. $HOME/.dmenurc
+dmenu_cmd="dmenu -i -l $LINES $DMENU_OPTIONS"
+choice=$(echo -e "${options[@]}" | $dmenu_cmd -p 'Edit a config file: ')
+
+if [ $choice == "quit" ]; then
+echo "Program terminated."
+fi
+if [ $choice == "bash" ]; then
+exec emacsclient -c '~/.bashrc'
+fi
+if [ $choice == "dwm" ]; then
+exec emacsclient -c '~/dwm/config.h'
+fi
+if [ $choice == "emacs" ]; then
+exec emacsclient -c '~/.emacs.d/'
+fi
+if [ $choice == "i3" ]; then
+exec emacsclient -c '~/.i3/config'
+fi
+if [ $choice == "polybar" ]; then
+exec emacsclient -c '~/.config/polybar/config'
+fi
+if [ $choice == "st" ]; then
+exec emacsclient -c '~/st/config.h'
+fi
+if [ $choice == "sxhkd" ]; then
+exec emacsclient -c '~/.config/sxhkd/sxhkdrc'
+fi
+if [ $choice == "vim" ]; then
+exec emacsclient -c '~/.vimrc'
+fi
+if [ $choice == "xmobar" ]; then
+exec emacsclient -c '~/.config/xmobar/xmobarrc2'
+fi
+if [ $choice == "xmonad" ]; then
+exec emacsclient -c '~/.xmonad/xmonad.hs'
+fi
+if [ $choice == "zsh" ]; then
+exec emacsclient -c '~/.zshrc'
+fi
