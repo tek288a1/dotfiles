@@ -1,3 +1,10 @@
 #!/bin/sh
 # This is the script that i3 runs to either start a emacsclient session
-emacsclient --alternate-editor='' --no-wait --create-frame --frame-parameters='(quote (name . "dropdown_emacsdd"))' --display $DISPLAY
+
+# emacsclient --alternate-editor='' --no-wait --create-frame --frame-parameters='(quote (name . "dropdown_emacsdd"))' --display $DISPLAY
+
+if pgrep -x emacs >/dev/null; then
+    emacsclient --alternate-editor='' --no-wait --create-frame --frame-parameters='(quote (name . "dropdown_emacsdd"))' --display $DISPLAY
+else
+    emacs &
+fi

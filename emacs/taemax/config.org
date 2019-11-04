@@ -37,6 +37,54 @@
   :hook (after-init . doom-modeline-mode))
 #+END_SRC
 
+* =NORD-THEME=
+#+BEGIN_SRC emacs-lisp
+(use-package nord-theme
+  :ensure t)
+(setq nord-comment-brightness 15)
+(load-theme 'nord t)
+#+END_SRC
+
+#+RESULTS:
+: t
+** Nord-Theme org-block and org-checkbox
+Original values are
+#+BEGIN_EXAMPLE
+(custom-theme-set-faces 'user
+                        `(org-block ((,class (:foreground ,nord4))))
+                        `(org-block-background ((,class (:background ,nord0))))
+                        `(org-block-begin-line ((,class (:foreground ,nord7))))
+                        `(org-block-end-line ((,class (:foreground ,nord7)))))
+#+END_EXAMPLE
+
+#+BEGIN_SRC emacs-lisp
+;;;; Color Constants
+(let ((class '((class color) (min-colors 89)))
+      (nord0 (if (display-graphic-p) "#2E3440" nil))
+      (nord1 (if (display-graphic-p) "#3B4252" "black"))
+      (nord2 (if (display-graphic-p) "#434C5E" "#434C5E"))
+      (nord3 (if (display-graphic-p) "#4C566A" "brightblack"))
+      (nord4 (if (display-graphic-p) "#D8DEE9" "#D8DEE9"))
+      (nord5 (if (display-graphic-p) "#E5E9F0" "white"))
+      (nord6 (if (display-graphic-p) "#ECEFF4" "brightwhite"))
+      (nord7 (if (display-graphic-p) "#8FBCBB" "cyan"))
+      (nord8 (if (display-graphic-p) "#88C0D0" "brightcyan"))
+      (nord9 (if (display-graphic-p) "#81A1C1" "blue"))
+      (nord10 (if (display-graphic-p) "#5E81AC" "brightblue"))
+      (nord11 (if (display-graphic-p) "#BF616A" "red"))
+      (nord12 (if (display-graphic-p) "#D08770" "brightyellow"))
+      (nord13 (if (display-graphic-p) "#EBCB8B" "yellow"))
+      (nord14 (if (display-graphic-p) "#A3BE8C" "green"))
+      (nord15 (if (display-graphic-p) "#B48EAD" "magenta")))
+  (custom-theme-set-faces 'user
+                          `(org-block ((,class (:foreground ,nord4 :background ,nord1))))
+                          `(org-block-begin-line ((,class (:foreground ,nord9 :background ,nord2))))
+                          `(org-block-end-line ((,class (:foreground ,nord9 :background ,nord2))))
+                          `(org-checkbox ((,class (:foreground ,nord9 :background ,nord2))))))
+#+END_SRC
+
+#+RESULTS:
+
 * COMMENT =DOOM-THEMES=
 #+BEGIN_SRC emacs-lisp
 ;;(require 'doom-themes)
@@ -675,7 +723,7 @@ Possible set-ups:
 (setq TeX-PDF-mode t)
 #+END_SRC
 
-** Default LaTeX-mode-hook
+** Default LaTeX-mode-hook (from prelude)
 #+BEGIN_SRC emacs-lisp
 (defcustom prelude-latex-fast-math-entry 'LaTeX-math-mode
   "Method used for fast math symbol entry in LaTeX."
@@ -705,6 +753,20 @@ Possible set-ups:
 			     (run-hooks 'prelude-latex-mode-hook)))
 #+END_SRC
 
+** More hooks
+ #+BEGIN_SRC emacs-lisp
+;; More hooks
+(setq TeX-source-correlate-mode t)
+(setq TeX-source-correlate-start-server t)
+(setq TeX-source-correlate-method 'synctex)
+(remove-hook 'LaTeX-mode-hook 'turn-on-auto-fill)
+(add-hook 'LaTeX-mode-hook 'TeX-PDF-mode)
+(add-hook 'LaTeX-mode-hook 'TeX-source-correlate-mode)
+ #+END_SRC
+
+ #+RESULTS:
+ | TeX-source-correlate-mode | TeX-PDF-mode | (lambda nil (setq TeX-command-list (cons (quote (latexmk latexmk -pdf %s TeX-run-TeX nil t :help Run latexmk on file)) TeX-command-list))) | (lambda nil (run-hooks (quote prelude-latex-mode-hook))) |
+
 ** latexmk
 #+BEGIN_SRC emacs-lisp
 (add-hook 'LaTeX-mode-hook (lambda ()
@@ -717,3 +779,58 @@ Possible set-ups:
 
 #+RESULTS:
 | lambda | nil | (setq TeX-command-default latexmk) |
+
+** AucTeX and Zathura
+#+BEGIN_SRC emacs-lisp
+;;(TeX-source-correlate-mode)        ; activate forward/reverse search
+;;(TeX-PDF-mode)
+;(add-to-list 'TeX-view-program-list '("zathura" zathura-forward-search))
+(setq TeX-view-program-list '("zathura" zathura-forward-search))
+(setq TeX-view-program-selection (quote ((output-pdf "zathura") (output-dvi "xdvi"))))
+
+(setq zathura-procs ())
+(defun zathura-forward-search ()
+  ;; Open the compiled pdf in Zathura with synctex. This is complicated since
+  ;; 1) Zathura refuses to acknowledge Synctex directive if the pdf is not
+  ;; already opened
+  ;; 2) This means we have to bookkeep open Zathura processes ourselves: first
+  ;; open a new pdf from the beginning, if it is not already open. Then call
+  ;; Zathura again with the synctex directive.
+  (interactive)
+  (let* ((zathura-launch-buf (get-buffer-create "*Zathura Output*"))
+         (pdfname (TeX-master-file "pdf"))
+         (zatentry (assoc pdfname zathura-procs))
+         (zatproc (if (and zatentry (process-live-p (cdr zatentry)))
+                      (cdr zatentry)
+                    (progn
+                      (let ((proc (progn (message "Launching Zathura")
+                                         (start-process "zathura-launch"
+                                                        zathura-launch-buf "zathura"
+                                                        "-x" "emacsclient +%{line} %{input}" pdfname))))
+                        (when zatentry
+                          (setq zathura-procs (delq zatentry zathura-procs)))
+                        (add-to-list 'zathura-procs (cons pdfname proc))
+                        (set-process-query-on-exit-flag proc nil)
+                        proc))))
+         (pid (process-id zatproc))
+         (synctex (format "%s:0:%s"
+                          (TeX-current-line)
+                          (TeX-current-file-name-master-relative)))
+         )
+    (start-process "zathura-synctex" zathura-launch-buf "zathura" "--synctex-forward" synctex pdfname)
+    (start-process "raise-zathura-wmctrl" zathura-launch-buf "wmctrl" "-a" pdfname)
+    ))
+#+END_SRC
+
+#+RESULTS:
+: zathura-forward-search
+
+* Emacsclient
+ #+BEGIN_SRC emacs-lisp
+   (use-package server
+    :config
+    (server-start))
+ #+END_SRC
+
+ #+RESULTS:
+ : t
