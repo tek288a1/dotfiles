@@ -1,6 +1,7 @@
 #!/bin/bash
 
-CONFIGS_DIR=$HOME'/tkconf/emacs'
+CONFIGS_DIR=$HOME'Dropbox/tkconf/emacs'
+#CONFIGS_DIR=$HOME'tkconf/emacs'
 # Uncomment to use this script from the same folder as emacs configs
 #CONFIGS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
