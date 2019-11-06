@@ -529,14 +529,17 @@ mode "$mode_gaps_outer" {
 
 # TK customization
 #bindsym $mod+c move absolute position center
-bindsym $mod+c floating toggle; resize set 1800 940; move position center
+bindsym $mod+c move position center
+# bindsym $mod+c floating toggle; resize set 1800 940; move position center
 
 bindsym $mod+Shift+y	exec --no-startup-id i3resize left
 bindsym $mod+Shift+u	exec --no-startup-id i3resize down
 bindsym $mod+Shift+i	exec --no-startup-id i3resize up
 bindsym $mod+Shift+o	exec --no-startup-id i3resize right
 
+# view documents orpixture
 bindsym $mod+p		exec --no-startup-id finder
+bindsym $mod+Shift+p	exec --no-startup-id viewpix
 
 # General dropdown window traits. The order can matter.
 for_window [instance="dropdown_*"] floating enable
@@ -546,6 +549,7 @@ for_window [instance="dropdown_*"] scratchpad show
 for_window [instance="dropdown_tmuxdd"] resize set 1400 900
 for_window [instance="dropdown_dropdowncalc"] resize set 1000 500 
 for_window [instance="dropdown_emacsdd"] resize set 1200 600 
+for_window [instance="dropdown_sxiv"] resize set 1600 900
 for_window [instance="dropdown_tmuxdd"] border pixel 3
 for_window [instance="dropdown_dropdowncalc"] border pixel 3
 for_window [instance="dropdown_emacsdd"] border pixel 3
@@ -561,7 +565,7 @@ bindsym Mod1+Shift+F1 	exec --no-startup-id resetkeys
 
 exec --no-startup-id dropbox start
 exec --no-startup-id redshift &
-exec --no-startup-id emacs &
+#exec --no-startup-id emacs &
 exec --no-startup-id unclutter
 exec --no-startup-id ibus-daemon -drx
 
@@ -569,3 +573,5 @@ exec --no-startup-id ibus-daemon -drx
 bindsym $mod+Ctrl+k	exec --no-startup-id lmc up 5
 bindsym $mod+Ctrl+j	exec --no-startup-id lmc down 5
 bindsym $mod+Mod1+m	exec --no-startup-id lmc toggle
+
+exec --no-startup-id emacs &
