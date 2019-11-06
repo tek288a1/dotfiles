@@ -4,7 +4,14 @@
 [ -z "$2" ] && num="2" || num="$2"
 
 
-showvolume() { currvol=$(amixer get Master | grep % | cut -d " " -f6); notify-send "Volume Icon $currvol"; exit;}
+# showvolume() { currvol=$(amixer get Master | grep % | cut -d " " -f6); notify-send -t 750 "Volume Icon $currvol"; exit;}
+
+# Below is my modification. I am using notify-send.sh which has a replacement functionality.
+showvolume() {
+    currvol=$(amixer get Master | awk '/[0-9]+%/ {print $4}');
+    notify-send.sh --replace-file=/tmp/volumenotification "Volume Icon $currvol";
+    exit;
+}
 
 case "$1" in
     u*) amixer sset Master playback $num%+ && showvolume ;;
@@ -14,8 +21,8 @@ case "$1" in
 lmc: cli music interface for amixer, modified from larbs.
 
 Allowed options:
-  up NUM	Increase volume (2 secs default)
-  down NUM	Decrease volume (2 secs default)
+  up NUM	Increase volume (default: by 2%)
+  down NUM	Decrease volume (default: by 2%)
   mute		Toggle mute
   all else	Print this message
 
