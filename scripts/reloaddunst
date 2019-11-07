@@ -1,11 +1,11 @@
-#!/bin/sh
-# Reloading sxhkdrc.
+#!/bin/bash
+# Reloading dunst.
 # Reference:
 #  [1] https://wiki.archlinux.org/index.php/Sxhkd
 #  [2] https://bash.cyberciti.biz/guide/Sending_signal_to_Processes
 
-if pgrep -x sxhdk >/dev/null; then
-    killall -10 sxhkd
+if pgrep -x dunst >/dev/null; then
+    killall dunst && dunst &
 else
-    sxhkd &
+    dunst &
 fi
