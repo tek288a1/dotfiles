@@ -8,7 +8,7 @@
 
 # Below is my modification. I am using notify-send.sh which has a replacement functionality.
 showvolume() {
-    currvol=$(amixer get Master | awk '/[0-9]+%/ {print $4}');
+    currvol=$(amixer get Master | awk '/[0-9]+%/ {print $5}' | head -1);
     notify-send.sh --replace-file=/tmp/volumenotification "Volume Icon $currvol";
     exit;
 }
