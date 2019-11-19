@@ -16,17 +16,26 @@ general {
 
 order += "cpu_usage"
 # order += "load"
+order += "memory"
 order += "disk /"
 # order += "disk /home"
-order += "wireless _first_"
-order += "ethernet _first_"
-# order += "battery all"
+# order += "wireless wlan0"
+# order += "ethernet _first_"
+order += "battery all"
 # order += "load"
+order += "volume master"
 order += "tztime local"
 # order += "ipv6"
 
 cpu_usage {
-        format = "  cpu  %usage "
+        format = "   %usage "
+}
+
+memory {
+	format = " 🧠 %used "
+        format = "  %used "
+	threshold_degraded = "10%"
+	format_degraded = " MEMORY: %free "
 }
 
 load {
@@ -37,6 +46,12 @@ load {
 disk "/" {
         # format = " hdd %avail "
         format = "  %avail "
+        format = "  %avail "
+}
+
+wireless wlan0 {
+	format_up = "W: (%quality at %essid, %bitrate) %ip"
+	format_down = "W: down"
 }
 
 ethernet _first_ {
@@ -47,8 +62,8 @@ ethernet _first_ {
 
 battery all {
         # format = "%status %percentage %remaining %emptytime"
-        format = " %status %percentage"
-        format_down = "No battery"
+        format = " %status %percentage "
+        format_down = " No battery "
         last_full_capacity = true
         integer_battery_capacity = true
         # status_chr = ""
@@ -59,12 +74,21 @@ battery all {
         # status_unk = "?"
         status_unk = ""
         # status_full = ""
-        status_full = "☻"
+        status_full = ""
         low_threshold = 15
         threshold_type = time
 }
 
+volume master {
+	format = " ♪: %volume "
+	# format_muted = " ♪: muted (%volume) "
+	format_muted = " ♪: muted "
+	device = "default"
+	mixer = "Master"
+	mixer_idx = 0
+}
+
 tztime local {
-        format = "%Y-%m-%d %H:%M:%S"
-        #format = " %d.%m. %H:%M "
+        # format = "%Y-%m-%d %H:%M:%S"
+        format = " %m/%d/%Y (%a) %H:%M "
 }

@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 # Originally based on code by Dieter Plaetinck.
@@ -33,6 +32,7 @@ if [ -z "$TERMINAL_CMD" ]; then
 fi
 
 dmenu_cmd="dmenu $DMENU_OPTIONS"
+echo $dmenu_cmd
 max_recent=199 # Number of recent commands to track
 
 cache_dir="${XDG_CACHE_HOME:-$HOME/.cache}/dmenu-recent"
@@ -87,7 +87,7 @@ get_type () {
 
 if ! type=$(grep -lx "$match" -R "$config_dir"); then
     type=$(get_type)
-else 
+else
     type=${type##*/}
     if ! [[ $known_types =~ " $type " ]]; then
         rm "$config_dir/$type"

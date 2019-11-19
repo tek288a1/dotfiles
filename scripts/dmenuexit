@@ -1,0 +1,42 @@
+#!/bin/sh
+# My dmenu exit menu adopted from i3exit from manjaro
+
+# dmenu interface
+if ! [ -f "$HOME/.dmenurc" ]; then
+    cp /usr/share/dmenu/dmenurc $HOME/.dmenurc
+fi
+. $HOME/.dmenurc
+LINES="7"
+dmenu_cmd="dmenu $DMENU_OPTIONS"
+
+# with openrc use loginctl
+[[ $(cat /proc/1/comm) == "systemd" ]] && logind=systemctl || logind=loginctl
+
+choice=$(echo "lock
+exit
+suspend
+hibernate
+reboot
+shutdown" | $dmenu_cmd -l $LINES -p 'System control: ')
+
+# if [ $choice == "exit" ]; then
+#     choice="logout"
+# fi
+
+case $choice in
+    lock) blurlock ;;
+    exit)
+        if pgrep -x i3 >/dev/null; then
+            i3-msg exit
+        else
+            killall Xorg
+        fi ;;
+    suspend) blurlock && $logind suspend ;;
+    hibernate) blurlock && $logind hibernate ;;
+    reboot) $logind reboot ;;
+    shutdown) $logind poweroff ;;
+    *)
+        echo "== ! dmenu_exit: missing or invalid argument ! =="
+        echo "Try again with: lock | exit | suspend | hibernate | reboot | shutdown"
+        exit 2 ;;
+esac

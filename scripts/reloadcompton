@@ -1,0 +1,13 @@
+#!/bin/bash
+# Reloading compton.
+# Reference:
+#  [1] https://wiki.archlinux.org/index.php/Sxhkd
+#  [2] https://bash.cyberciti.biz/guide/Sending_signal_to_Processes
+
+cmd="compton -b --config $HOME/.config/compton/compton.conf"
+
+if pgrep -x compton >/dev/null; then
+    killall compton && $cmd &
+else
+    $cmd &
+fi

@@ -1,0 +1,20 @@
+#!/bin/bash
+# Dmenu to change zathura themes
+
+if ! [ -f "$HOME/.dmenurc" ]; then
+    cp /usr/share/dmenu/dmenurc $HOME/.dmenurc
+fi
+. $HOME/.dmenurc
+LINES=25
+dmenu_cmd="dmenu -i ${DMENU_OPTIONS} -l ${LINES}"
+
+themeDir="$HOME/.config/base16/zathura"
+rcFile="$HOME/.config/zathura/zathurarc"
+options=$(find $themeDir -name "*.config" | sed 's/^.*base16-//g; s/.config//g' | sort)
+choice=$(echo -e "${options[@]}" | $dmenu_cmd -p 'Select theme: ')
+[ "$choice" = "" ] && exit 1
+loadmsg="include $themeDir/base16-$choice.config"
+sed -i "s|^include.*$|$loadmsg|g" $rcFile
+# Note: Since the $loadmsg variable contains /, use | within sed
+# command rather than /. Also note that double quotes are used so that
+# variables are interpreted within sed command.

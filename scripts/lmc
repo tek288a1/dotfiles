@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # A general audio interface for LARBS.
 
 [ -z "$2" ] && num="2" || num="$2"
@@ -9,14 +9,14 @@
 # Below is my modification. I am using notify-send.sh which has a replacement functionality.
 showvolume() {
     currvol=$(amixer get Master | awk '/[0-9]+%/ {print $5}' | head -1);
-    notify-send.sh --replace-file=/tmp/volumenotification "Volume Icon $currvol";
+    notify-send.sh --replace-file=/tmp/volumenotification "Volume $currvol";
     exit;
 }
 
 case "$1" in
-    u*) amixer sset Master playback $num%+ && showvolume ;;
-    d*) amixer sset Master playback $num%- && showvolume ;;
-    t*) amixer sset Master playback toggle ;;
+    u*) amixer sset Master playback $num%+ && showvolume && refbar ;;
+    d*) amixer sset Master playback $num%- && showvolume && refbar ;;
+    t*) amixer sset Master playback toggle && refbar ;;
     *) cat << EOF
 lmc: cli music interface for amixer, modified from larbs.
 

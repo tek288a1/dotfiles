@@ -1,0 +1,6 @@
+#!/bin/bash
+# Test notification.
+
+notify-send "Testing notification.
+Hello, world!
+Welcome to TK's Arch i3wm!"

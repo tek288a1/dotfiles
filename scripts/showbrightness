@@ -1,0 +1,6 @@
+#!/bin/bash
+# Show brightness level via notification
+
+currbrightness=$(light -G | cut -d '.' -f 1);
+notify-send.sh --replace-file=/tmp/brightnessnotification "Brightness [$currbrightness%]";
+exit;

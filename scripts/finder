@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # A fuzzy file-finder and opener based on dmenu
 # Requires: dmenu, xdg-utils
 # Just a modification of these scripts:
@@ -12,17 +12,14 @@
 # add regular expressions to filter eg.: \( ! -regex '.*/\..*' \) to filter .dotfiles
 # add -r after xargs to avoid opening evince when no file is selected
 
-LINES=20
-FOLDERS="$HOME/Dropbox $HOME/Documents"
-
+# Update: use the user dmenurc for consistency
 if ! [ -f "$HOME/.dmenurc" ]; then
     cp /usr/share/dmenu/dmenurc $HOME/.dmenurc
 fi
 . $HOME/.dmenurc
+LINES=20
+FOLDERS="$HOME/Dropbox $HOME/Documents $HOME/Downloads $HOME/tmp"
+dmenu_cmd="dmenu -i -l $LINES $DMENU_OPTIONS "
 
-dmenu_cmd="dmenu -i -l $LINES $DMENU_OPTIONS"
-
-# find -L $FOLDERS -name *.pdf | sed 's/ /\\ /g' | sort -f | dmenu $DMENU_OPTIONS | xargs -r evince
-
-#find -L $FOLDERS -name *.pdf | sed 's/ /\\ /g' | cut -d"/" -f4- | sort -f | $dmenu_cmd | xargs -r zathura
-find -L $FOLDERS \( -name *.pdf -o -name *.djvu \) | sed 's/ /\\ /g' | sort -f | $dmenu_cmd | xargs -r zathura
+#find -L $FOLDERS -name *.pdf | sed 's/ /\\ /g' | sort -f | $dmenu_cmd | xargs -r zathura
+find -L $FOLDERS \( -name *.pdf -o -name *.djvu \) | sed 's/ /\\ /g' | sort -f | $dmenu_cmd -p 'Select document: ' | xargs -r zathura
