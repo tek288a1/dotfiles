@@ -114,6 +114,8 @@ Original values are
 : doom-themes-org
 
 * COMMENT Theme toggle
+Read the folloing thread:
+https://emacs.stackexchange.com/questions/24088/make-a-function-to-toggle-themes
 #+BEGIN_SRC emacs-lisp
   (setq custom-safe-themes t) ;; stop asking if custom themes are safe
   (load-theme 'doom-one t)
@@ -125,7 +127,7 @@ Original values are
   (defvar tk-theme-current doom-one-theme)
 
   ;; disable other themes before loading new one
-  (defadvice contrib/load-theme (before theme-dont-propagate activate)
+  (defadvice load-theme (before theme-dont-propagate activate)
     "Disable theme before loading new one."
     (mapcar #'disable-theme custom-enabled-themes))
 
