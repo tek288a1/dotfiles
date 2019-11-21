@@ -18,6 +18,7 @@ emacs/ianpan/*
 !emacs/taemax/config.org
 !emacs/taemax/init.el
 !emacs/taemax/sensible-defaults.el
+emacs/bare/elpa/*
 tmux/
 latex/
 overview.org

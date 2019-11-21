@@ -1,8 +1,12 @@
+# basic settings
+set adjust-open "width"
+set font "inconsolata 15"
 set statusbar-h-padding 0
 set statusbar-v-padding 0
-set page-padding 1
+set page-padding 2
 set window-title-home-tilde 1
 
+# key maps
 map u scroll half-up
 map d scroll half-down
 map D toggle_page_mode
@@ -13,14 +17,6 @@ map U zoom out
 map i recolor
 map p print
 
-set default-bg "#3B4252"
-set recolor true
-# set recolor-lightcolor "#4C566A"
-# set recolor-darkcolor "#ECEFF4"
-set recolor-lightcolor "#5D6678"
-set recolor-darkcolor "#f5f7f9"
+# Include theme config file below
 
-# Open document in fit-width mode by default
-set adjust-open "best-fit"
-
-set font "Monospace 15"
+include /home/larbs/.config/base16/zathura/base16-nord.config

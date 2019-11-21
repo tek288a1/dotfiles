@@ -4,7 +4,7 @@
 # $1 is	the script run in the terminal.
 # All other args are terminal settings.
 # Terminal names are in dropdown_* to allow easily setting i3 settings.
-export TERMINAL="urxvt"
+# export TERMINAL="urxvt"
 [ -z "$1" ] && exit
 
 if xwininfo -tree -root | grep "(\"dropdown_$1\" ";

@@ -4,7 +4,7 @@
 #  [1] https://wiki.archlinux.org/index.php/Sxhkd
 #  [2] https://bash.cyberciti.biz/guide/Sending_signal_to_Processes
 
-if pgrep -x sxhdk >/dev/null; then
+if pgrep -x sxhkd >/dev/null; then
     killall -10 sxhkd
 else
     sxhkd &

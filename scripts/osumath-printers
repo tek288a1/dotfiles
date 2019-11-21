@@ -13,7 +13,7 @@
 # Note: depending on OS, lpadmin may be in /usr/bin/lpadmin
 
 # ma224; HP printer
-sudo /usr/bin/lpadmin -p MTH-ma224-PR01 -D "HP Printer" -L "MA24" -v https://webprint.asc.ohio-state.edu:30443/printers/mth-ma224-pr01/.printer -m drv:///sample.drv/generic.ppd
+sudo /usr/bin/lpadmin -p MTH-ma224-PR01 -D "HP Printer" -L "MA224" -v https://webprint.asc.ohio-state.edu:30443/printers/mth-ma224-pr01/.printer -m drv:///sample.drv/generic.ppd
 sudo /usr/bin/lpadmin -p MTH-ma224-PR01 -o printer-is-shared=false -o printer-op-policy=default -o printer-error-policy=abort-job -o Option1=True -o Duplex=DuplexNoTumble
 sudo /usr/bin/lpadmin -p MTH-ma224-PR01 -E
 

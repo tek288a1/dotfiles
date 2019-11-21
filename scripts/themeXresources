@@ -1,0 +1,25 @@
+#!/bin/bash
+# Dmenu to change zathura themes
+
+if ! [ -f "$HOME/.dmenurc" ]; then
+    cp /usr/share/dmenu/dmenurc $HOME/.dmenurc
+fi
+. $HOME/.dmenurc
+LINES=25
+dmenu_cmd="dmenu -i ${DMENU_OPTIONS} -l ${LINES}"
+
+themeDir="$HOME/.config/base16/xresources"
+rcFile="$HOME/.Xresources"
+options=$(find $themeDir -name "*.Xresources" | sed 's/^.*base16-//g; s/.Xresources//g' | sort)
+choice=$(echo -e "${options[@]}" | $dmenu_cmd -p 'Select an X theme: ')
+[ "$choice" = "" ] && exit 1
+chosenFile=$themeDir/base16-$choice.Xresources
+sed -i "/!.* Base16/,/!!END/{/!!END/!d};/!!INSERTBELOW!!/r $chosenFile" $rcFile
+# Note: The above command deletes all contents between lines
+#  ! Base 16 [theme name]
+# and
+#  *color21 [...]
+# and then reads the contents of the chosen theme configuration file
+# below `!!INSERBELOW!!` tag.
+
+xrdb $rcFile
