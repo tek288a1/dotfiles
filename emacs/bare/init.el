@@ -4,8 +4,6 @@
 
 (require 'package)
 
-(package-initialize)
-
 ;; (if (file-exists-p (expand-file-name "config.el" user-emacs-directory))
 ;;     (load-file (expand-file-name "config.el" user-emacs-directory))
 ;;   (org-babel-load-file (expand-file-name "config.org" user-emacs-directory)))
@@ -15,17 +13,47 @@
 (load custom-file)
 
 
-(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                         ("melpa" . "http://melpa.org/packages/")
-                         ("org" . "http://orgmode.org/elpa/")))
+(setq package-archives '(("melpa"     . "https://melpa.org/packages/")
+			 ("org"       . "http://orgmode.org/elpa/")
+			 ("gnu"       . "http://elpa.gnu.org/packages/")
+			 ("marmalade" .  "http://marmalade-repo.org/packages/")))
+(package-initialize)
+;; (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+;;                          ("melpa" . "http://melpa.org/packages/")
+;;                          ("org" . "http://orgmode.org/elpa/")))
 
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
 
-(use-package delight :ensure t)
+(defun packages-require (&rest packs)
+  "Install and load packages in `packs`. If the package is not available, install it automatically."
+  (mapc (lambda (package) (unless (package-installed-p package) (package-install package))) packs))
+	  
+(packages-require
+ 'paredit
+ 'rainbow-delimiters
+ 'company
+ )
 
-(use-package use-package-ensure-system-package :ensure t)
+(add-hook 'after-init-hook 'global-company-mode)
+
+(add-hook 'emacs-lisp-mode-hook
+	  (lambda ()
+	    (paredit-mode t)
+	    (rainbow-delimiters-mode t)
+	    (show-paren-mode 1)
+	    ))
+
+
+
+
+
+(use-package delight
+  :ensure t)
+
+(use-package use-package-ensure-system-package
+  :ensure t)
 
 ;; Themes ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; 
