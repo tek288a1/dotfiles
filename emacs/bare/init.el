@@ -226,3 +226,9 @@
 
 ;;Line wrapping
 (global-visual-line-mode 1) ; 1 for on, 0 for off.
+
+
+;;; MapleV
+(add-to-list 'load-path (concat user-emacs-directory "src/maple"))
+(autoload 'maplev-mode "maplev" "Maple editing mode" 'interactive)
+(setq auto-mode-alist (cons `("\\.mpl\\'" . maplev-mode) auto-mode-alist))
