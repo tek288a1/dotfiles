@@ -232,3 +232,16 @@
 (add-to-list 'load-path (concat user-emacs-directory "src/maple"))
 (autoload 'maplev-mode "maplev" "Maple editing mode" 'interactive)
 (setq auto-mode-alist (cons `("\\.mpl\\'" . maplev-mode) auto-mode-alist))
+
+;;; Org mode
+(use-package org-bullets
+  :ensure t
+  :config
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+  (setq org-bullets-bullet-list '("◉" "⊙" "⊚" "○" "●" "◦" "⚬")))
+
+(font-lock-add-keywords
+ 'org-mode
+ '(("^ +\\([-*]\\) "
+    (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
+

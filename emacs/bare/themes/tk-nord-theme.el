@@ -68,7 +68,9 @@
   :group 'nord)
 
 ;; new color scheme for comments
-(setq nord-theme--brightened-comments '("#a27f9b" "#b48ead" "#b48ead" "#bb99b5" "#c3a4bd" "#caafc5" "#d2bbcd" "#d9c6d6" "#e1d1de" "#e8dde6" "#f0e8ee" "#ffffff"))
+;;(setq nord-theme--brightened-comments '("#a27f9b" "#b48ead" "#b48ead" "#bb99b5" "#c3a4bd" "#caafc5" "#d2bbcd" "#d9c6d6" "#e1d1de" "#e8dde6" "#f0e8ee" "#ffffff"))
+
+(setq nord-theme--brightened-comments '("#a27f9b" "#4e586d" "#505b70" "#525d73" "#556076" "#576279" "#59647c" "#5b677f" "#5d6982" "#5f6c85" "#616e88" "#63718b" "#66738e" "#687591" "#6a7894" "#6d7a96" "#6f7d98" "#72809a" "#75829c" "#78859e" "#7b88a1"))
 
 ;; (setq nord-theme--brightened-comments '("#4c566a" "#4e586d" "#505b70" "#525d73" "#556076" "#576279" "#59647c" "#5b677f" "#5d6982" "#5f6c85" "#616e88" "#63718b" "#66738e" "#687591" "#6a7894" "#6d7a96" "#6f7d98" "#72809a" "#75829c" "#78859e" "#7b88a1"))
 
@@ -615,14 +617,21 @@
     `(neo-vc-user-face ((,class (:foreground ,nord4))))
 
     ;; > Org
-    `(org-level-1 ((,class (:foreground ,nord8 :weight bold))))
-    `(org-level-2 ((,class (:inherit org-level-1))))
-    `(org-level-3 ((,class (:inherit org-level-1))))
-    `(org-level-4 ((,class (:inherit org-level-1))))
-    `(org-level-5 ((,class (:inherit org-level-1))))
-    `(org-level-6 ((,class (:inherit org-level-1))))
-    `(org-level-7 ((,class (:inherit org-level-1))))
-    `(org-level-8 ((,class (:inherit org-level-1))))
+    `(org-level-1 ((,class (:foreground ,nord5 :weight bold :height 1.5))))
+    `(org-level-2 ((,class (:foreground ,nord5 :weight bold :height 1.25))))
+    `(org-level-3 ((,class (:foreground ,nord5 :weight bold :height 1.15))))
+    `(org-level-4 ((,class (:foreground ,nord5 :weight bold :height 1.05))))
+    `(org-level-5 ((,class (:foreground ,nord5 :weight bold))))
+    `(org-level-6 ((,class (:foreground ,nord5 :weight bold))))
+    `(org-level-7 ((,class (:foreground ,nord5 :weight bold))))
+    `(org-level-8 ((,class (:foreground ,nord5 :weight bold))))
+    ;; `(org-level-2 ((,class (:inherit org-level-1))))
+    ;; `(org-level-3 ((,class (:inherit org-level-1))))
+    ;; `(org-level-4 ((,class (:inherit org-level-1))))
+    ;; `(org-level-5 ((,class (:inherit org-level-1))))
+    ;; `(org-level-6 ((,class (:inherit org-level-1))))
+    ;; `(org-level-7 ((,class (:inherit org-level-1))))
+    ;; `(org-level-8 ((,class (:inherit org-level-1))))
     `(org-agenda-structure ((,class (:foreground ,nord9))))
     `(org-agenda-date ((,class (:foreground ,nord8 :underline nil))))
     `(org-agenda-done ((,class (:foreground ,nord14))))
@@ -641,7 +650,7 @@
     `(org-date ((,class (:foreground ,nord8))))
     `(org-document-info ((,class (:foreground ,nord4))))
     `(org-document-info-keyword ((,class (:foreground ,nord3 :weight bold))))
-    `(org-document-title ((,class (:foreground ,nord8 :weight bold))))
+    `(org-document-title ((,class (:foreground ,nord5 :weight bold :height 1.5))))
     `(org-done ((,class (:foreground ,nord14 :weight bold))))
     `(org-ellipsis ((,class (:foreground ,nord3))))
     `(org-footnote ((,class (:foreground ,nord8))))
