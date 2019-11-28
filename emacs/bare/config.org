@@ -1,0 +1,61 @@
+#+TITLE: Emacs Configuration TODO list
+
+* desktop-save mode
+Enable desktop-save mode, which saves the current buffer configuration on exit and reloads it on restart.
+
+#+begin_src emacs-lisp
+  (use-package desktop
+    :defer nil
+    :custom
+    (desktop-restore-eager   1   "Restore only the first buffer right away")
+    (desktop-lazy-idle-delay 1   "Restore the rest of the buffers 1 seconds later")
+    (desktop-lazy-verbose    nil "Be silent about lazily opening buffers")
+    :bind
+    ("C-M-s-k" . desktop-clear)
+    :config
+    (desktop-save-mode))
+#+end_src
+
+* Uniquify
+The =uniquify= package makes it much easier to identify different open files with the same name by prepending/appending their directory or some other information to them. I configure it to add the directory name after the filename. =uniquify= is included with Emacs, so I specify =:ensure nil= so that =use-package= doesn't try to install it, and just loads and configures it.
+
+#+begin_src emacs-lisp
+  (use-package uniquify
+    :defer 1
+    :ensure nil
+    :custom
+    (uniquify-after-kill-buffer-p t)
+    (uniquify-buffer-name-style 'post-forward)
+    (uniquify-strip-common-suffix t))
+#+end_src
+
+* Better scrolling
+Emacs 26 (which I am trying now) introduces pixel-level scrolling.
+
+#+begin_src emacs-lisp
+  (when (>= emacs-major-version 26)
+    (pixel-scroll-mode))
+#+end_src
+* writeroom mode and midnight
+[[https://www.emacswiki.org/emacs/MidnightMode][midnight-mode]] purges buffers which haven't been displayed in 3 days. We configure the period so that the cleanup happens every 2 hours (7200 seconds).
+
+#+begin_src emacs-lisp
+  (use-package midnight
+    :defer 3
+    :config
+    (setq midnight-period 7200)
+    (midnight-mode 1))
+#+end_src
+
+For distraction-free writing, I'm testing out =writeroom-mode=.
+
+#+begin_src emacs-lisp
+  (use-package writeroom-mode)
+#+end_src
+
+* Emacs startup profiler
+[[https://github.com/jschaf/esup][Emacs Startup Profiler]], to get detailed stats of what's taking time during initialization.
+
+  #+begin_src emacs-lisp
+    (use-package esup)
+  #+end_src
