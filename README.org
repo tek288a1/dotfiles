@@ -4,8 +4,10 @@ This repository contains my personal configuration files for various programs an
 
 * =i3= configuration
 - Use =Hyper= as modifier.
+
 * =emacs= initialization
 - Based on =prelude=.
+
 * =X= windows
 ** Custom keyboard mapping
 Using =xmodmap= and =xcape=:
@@ -14,7 +16,10 @@ Using =xmodmap= and =xcape=:
 - Shift_L+Shift_R: Capslock
 - Tab: Hyper as a modifier and Tab as standalone
 - backslash: Hyper as a modifier and backslash as standalone
+
 ** =.Xresources=
+Base 16 themes
+
 ** =.xinitrc= for multiple windows manager
 #+BEGIN_EXAMPLE
 # Here i3 is kept as default
@@ -29,15 +34,32 @@ case $session in
     *                 ) exec $1;;
 esac
 #+END_EXAMPLE
+
+* Colors in =man= page
+#+BEGIN_SRC sh
+# less/man colors
+export LESS=-R
+export LESS_TERMCAP_mb="$(printf '%b' '[1;31m')"; a="${a%_}"
+export LESS_TERMCAP_md="$(printf '%b' '[1;36m')"; a="${a%_}"
+export LESS_TERMCAP_me="$(printf '%b' '[0m')"; a="${a%_}"
+export LESS_TERMCAP_so="$(printf '%b' '[01;44;33m')"; a="${a%_}"
+export LESS_TERMCAP_se="$(printf '%b' '[0m')"; a="${a%_}"
+export LESS_TERMCAP_us="$(printf '%b' '[1;32m')"; a="${a%_}"
+export LESS_TERMCAP_ue="$(printf '%b' '[0m')"; a="${a%_}"
+#+END_SRC
+
 * Terminal
 - =oh-my-zsh=
 - =st=
+
 * Fonts
 - Nerd Fonts
-- Fonts for Korean: =noto-fonts-cjk=, =adobe-source-han-sans-fonts=, =adobe-source-han-serif-fonts=
+- Fonts for Korean: =noto-fonts-cjk=, =adobe-source-han-sans-otc-fonts=, =adobe-source-han-otc-serif-fonts=
+
 * LaTeX
 - personal style files
 - =latexmk=
+
 * Computing environment
 - anaconda
 - julia
