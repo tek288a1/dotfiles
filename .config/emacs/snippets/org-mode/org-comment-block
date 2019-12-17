@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: org-comment-block
+# key: <C
+# --
+#+BEGIN_COMMENT
+$1
+#+END_COMMENT
+$0

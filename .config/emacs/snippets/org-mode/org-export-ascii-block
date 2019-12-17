@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: org-export-block
+# key: <E
+# --
+#+BEGIN_EXPORT
+$1
+#+END_EXPORT
+$0

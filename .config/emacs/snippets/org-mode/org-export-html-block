@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: org-export-html-block
+# key: <h
+# --
+#+BEGIN_EXPORT html
+$1
+#+END_EXPORT
+$0

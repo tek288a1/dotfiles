@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: org-verse-block
+# key: <v
+# --
+#+BEGIN_VERSE
+$1
+#+END_VERSE
+$0

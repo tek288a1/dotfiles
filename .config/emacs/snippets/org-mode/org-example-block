@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: org-example-block
+# key: <e
+# --
+#+BEGIN_EXAMPLE
+$1
+#+END_EXAMPLE
+$0

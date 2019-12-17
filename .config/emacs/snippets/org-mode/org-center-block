@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: org-center-block
+# key: <c
+# --
+#+BEGIN_CENTER
+$1
+#+END_CENTER
+$0

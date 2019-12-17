@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: conj
+# key: conj
+# --
+\conj{$1}$0

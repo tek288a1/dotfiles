@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: org-export-latex-block
+# key: <l
+# --
+#+BEGIN_EXPORT latex
+$1
+#+END_EXPORT
+$0
