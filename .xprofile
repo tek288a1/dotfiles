@@ -1,0 +1,23 @@
+#!/bin/sh
+
+setbg &		# Set the background
+tkmaps &	# Custom keybindings
+sxhkd & 	# Bind keys
+if [ $(DESKTOP_SESSION) = "dwm" ]; then
+   dwmbar &
+fi
+unclutter &     # Remove mouse when idle
+compton -b --config $HOME/.config/compton/compton.conf & # for transparency
+dunst &                         # dunst for notifications
+mpdupdate &
+nm-applet &
+conky -d &
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+xautolock -time 30 -locker blurlock &
+ibus-daemon -drx &
+dropbox start &
+solaar &
+redshift &
+
+# xfce4-power-manager &
