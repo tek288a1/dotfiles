@@ -9,7 +9,7 @@ set $mod Mod3
 # workspace_layout tabbed <stacking|tabbed>
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-new_window pixel 4
+new_window pixel 2
 new_float normal
 
 # Hide borders
@@ -17,7 +17,7 @@ hide_edge_borders none
 
 # change borders
 bindsym $mod+u border none
-bindsym $mod+y border pixel 4
+bindsym $mod+y border pixel 2
 bindsym $mod+n border normal
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -342,7 +342,7 @@ exec_always --no-startup-id fix_xcursor
 # Change the variable name at the place you want to match the color
 # of your terminal like this:
 # [example]
-# If you want your bar to have the same background color as your 
+# If you want your bar to have the same background color as your
 # terminal background change the line 362 from:
 # background #14191D
 # to:
@@ -446,25 +446,17 @@ bar {
         inactive_workspace 	$nord2	$nord0	$nord5
         binding_mode       	$nord9	$nord0	$nord6
         urgent_workspace	$nord9	$nord6	$nord11
-    }    
+    }
 }
 
 # hide/unhide i3status bar
 bindsym $mod+m bar mode toggle
 
 # Theme colors
-# # class                   border  backgr. text    indic.   child_border
-#   client.focused          #556064 #556064 #80FFF9 #FDF6E3
-#   client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948
-#   client.unfocused        #2F3D44 #2F3D44 #1ABC9C #454948
-#   client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
-#   client.placeholder      #000000 #0c0c0c #ffffff #000000 
-
-#   client.background       #2B2C2B
-
-client.focused          $nord3	$nord3	$nord8	$nord5
-client.focused_inactive $nord1	$nord1	$nord10	$nord2
-client.unfocused        $nord1	$nord1	$nord10	$nord2
+# class                 border  backgr. text    indic.   child_border
+client.focused          $nord13	$nord3	$nord6	$nord13	$nord13
+client.focused_inactive $nord13	$nord2	$nord10	$nord2
+client.unfocused        $nord9	$nord0	$nord9	$nord2
 client.urgent           $nord12	$nord4	$nord10	$nord14
 client.placeholder      #000000 #0C0C0C #FFFFFF #000000
 client.background       $nord2
@@ -485,7 +477,7 @@ gaps outer 14
 # Smart gaps (gaps used if only more than one container on the workspace)
 #smart_gaps on
 
-# Smart borders (draw borders around container only if it is not the only container on this workspace) 
+# Smart borders (draw borders around container only if it is not the only container on this workspace)
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
 smart_borders on
 
@@ -547,8 +539,8 @@ for_window [instance="dropdown_*"] move scratchpad
 for_window [instance="dropdown_*"] sticky enable
 for_window [instance="dropdown_*"] scratchpad show
 for_window [instance="dropdown_tmuxdd"] resize set 1400 900
-for_window [instance="dropdown_dropdowncalc"] resize set 1000 500 
-for_window [instance="dropdown_emacsdd"] resize set 1200 600 
+for_window [instance="dropdown_dropdowncalc"] resize set 1000 500
+for_window [instance="dropdown_emacsdd"] resize set 1200 600
 for_window [instance="dropdown_sxiv"] resize set 1600 900
 for_window [instance="dropdown_tmuxdd"] border pixel 3
 for_window [instance="dropdown_dropdowncalc"] border pixel 3
@@ -558,6 +550,7 @@ for_window [instance="dropdown_*"] move position center
 bindsym $mod+semicolon	exec --no-startup-id ddspawn tmuxdd
 bindsym Mod1+h		exec --no-startup-id ddspawn emacsdd
 bindsym $mod+g		exec --no-startup-id ddspawn dropdowncalc
+bindsym $mod+Shift+p 	exec --no-startup-id ddspawn sxivdd
 
 # Set mod key (Mod1=<Alt>, Mod3=<Hyper>, Mod4=<Super>)
 bindsym Mod1+F1 	exec --no-startup-id tkmaps
@@ -574,4 +567,4 @@ bindsym $mod+Ctrl+k	exec --no-startup-id lmc up 5
 bindsym $mod+Ctrl+j	exec --no-startup-id lmc down 5
 bindsym $mod+Mod1+m	exec --no-startup-id lmc toggle
 
-exec --no-startup-id emacs &
+#exec --no-startup-id emacs &

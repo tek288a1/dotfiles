@@ -1,3 +1,6 @@
+# copy and pasting
+set selection-clipboard clipboard
+
 # basic settings
 set adjust-open "width"
 set font "inconsolata 15"
@@ -19,4 +22,4 @@ map p print
 
 # Include theme config file below
 
-include /home/larbs/.config/base16/zathura/base16-nord.config
+include /home/larbs/.config/base16/zathura/base16-tk-nord.config
