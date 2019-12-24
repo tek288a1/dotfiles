@@ -1,0 +1,83 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Define the column widths and overall poster size
+%
+% [original]
+% To set effective sepwid, onecolwid and twocolwid values, first
+% choose how many columns you want and how much separation you want
+% between columns In this template, the separation width chosen is
+% 0.024 of the paper width and a 4-column layout onecolwid should
+% therefore be (1-(# of columns+1)*sepwid)/# of columns
+% e.g. (1-(4+1)*0.024)/4 = 0.22 Set twocolwid to be
+% (2*onecolwid)+sepwid = 0.464 Set threecolwid to be
+% (3*onecolwid)+2*sepwid = 0.708
+%
+% [tk mod]
+% sepwid = same as before
+% tithewidth = (1-(# of col+1)*sepwid)/10 (# of col = 3)
+%
+% e.g. if three columns with width ratio 3:4:3 are desired use
+% 3\tithewid, 4\tithewid, 3\tithewid.
+
+\newlength{\sepwid}
+\newlength{\onecolwid}
+\newlength{\twocolwid}
+\newlength{\threecolwid}
+\newlength{\tithewid}
+
+%%%%%%%%%%%%%%
+%% Paper size
+%%%%%%%%%%%%%%
+
+%% Arch E
+\setlength{\paperwidth}{48in}
+\setlength{\paperheight}{36in}
+
+%% Arch E1
+% \setlength{\paperwidth}{42in}
+% \setlength{\paperheight}{30in}
+% \setlength{\textwidth}{41.5in}
+% \setlength{\textheight}{29.5in}
+
+%% A0
+% \setlength{\paperwidth}{46.8in}
+% \setlength{\paperheight}{33.1in}
+% \setlength{\sepwid}{0.024\paperwidth} % Separation width (white
+% space) between columns
+
+\setlength{\sepwid}{0.024\paperwidth} % Separation width (white space) between columns
+\setlength{\tithewid}{0.0904\paperwidth}
+% \setlength{\onecolwid}{0.22\paperwidth} % Width of one column
+% \setlength{\twocolwid}{0.464\paperwidth} % Width of two columns
+% \setlength{\threecolwid}{0.708\paperwidth} % Width of three columns
+\setlength{\topmargin}{-0.5in} % Reduce the top margin size
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% original
+\usetheme{confposter}
+% \setbeamercolor{block title}{fg=ngreen,bg=white}
+% \setbeamercolor{block body}{fg=black,bg=white}
+% \setbeamercolor{block alerted title}{fg=white,bg=dblue!70}
+% \setbeamercolor{block alerted body}{fg=black,bg=dblue!10}
+% Many more colors are available for use in beamerthemeconfposter.sty
+
+
+\definecolor{osured}{cmyk}{0.82,0.11,1,0.25}
+\setbeamercolor{structure}{fg=darkred, bg=white}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\addtobeamertemplate{block begin}{\pgfsetfillopacity{0.8}}{\pgfsetfillopacity{1}}
+\setbeamercolor*{palette primary}{use=structure,fg=osured,bg=white}
+\setbeamercolor*{block title example}{fg=osured!50,bg=osured!10}
+\setbeamercolor*{block body example}{fg=osured,bg=osured!5}
+\setbeamercolor*{block title example}{fg=blue!50,bg= blue!10}
+\setbeamercolor*{block body example}{fg= blue,bg= blue!5}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\addtobeamertemplate{block end}{}{\vspace*{2ex}} % White space under blocks
+\addtobeamertemplate{block alerted end}{}{\vspace*{2ex}} % White space under highlighted (alert) blocks
+\setlength{\belowcaptionskip}{2ex} % White space under figures
+\setlength{\belowdisplayshortskip}{2ex} % White space under equations
+
+
+% \usetheme{Madrid}
+\usecolortheme{beaver}

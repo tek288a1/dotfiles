@@ -1,0 +1,54 @@
+%% This style file contains the packages I use frequently and my own macros for various symbols
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{tk_review}[2017/09/20 customization of exam package
+for review handouts]
+
+%% Spacing and page set-up
+\RequirePackage{setspace}
+\singlespacing
+% \onehalfspacing
+% \doublespacing
+\parindent 0ex
+
+
+%% Header & footer
+% \pagestyle{empty}
+\pagestyle{foot}
+% \firstpagefooter{}{- \thepage\ -}{}
+\firstpagefooter{}{}{}
+\runningfooter{}{- \thepage\ -}{}
+
+
+%% Question formats
+\qformat{\noindent
+  \begin{tabular*}{.99\textwidth}{l}
+    \textsf{\textbf{\normalsize Problem \thequestion.}}
+    \hfill
+    (\thequestiontitle)\\
+    \rule[1ex]{.99\textwidth}{1pt}
+  \end{tabular*}
+}
+
+
+%% Solution
+\unframedsolutions
+\newenvironment{soln}{
+  \ifprintanswers
+  \begin{tcolorbox}
+    \fi
+    \begin{solution}
+    }{
+    \end{solution}
+    \ifprintanswers
+  \end{tcolorbox}
+  \fi
+}
+
+
+%% Equation over pages
+\RequirePackage{amsmath}
+\allowdisplaybreaks
+
+
+%% Editorial convenience
+\overfullrule=2cm

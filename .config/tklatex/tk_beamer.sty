@@ -1,0 +1,40 @@
+%% This style file contains the packages I use frequently and the my own macros for various symbols
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{tk-beamer}[2017/05/09 my beamer customizations]
+
+\mode<presentation> {
+  \usetheme{Madrid}
+  \usecolortheme{beaver}
+  \usefonttheme[]{professionalfonts}
+  \definecolor{osured}{cmyk}{0.82,0.11,1,0.25}
+  \setbeamercolor{structure}{fg=darkred, bg=white}
+  % \setbeamertemplate{blocks}[rounded][shadow=false]
+  % \addtobeamertemplate{block begin}{\pgfsetfillopacity{0.8}}{\pgfsetfillopacity{1}}
+  % \setbeamercolor*{palette primary}{use=structure,fg=osured,bg=white}
+  % \setbeamercolor*{block title example}{fg=osured!50,bg=osured!10}
+  % \setbeamercolor*{block body example}{fg=osured,bg=osured!5}
+  % \setbeamercolor*{block title example}{fg=blue!50,bg= blue!10}
+  % \setbeamercolor*{block body example}{fg= blue,bg= blue!5}
+
+  \setbeamercolor{frametitle}{fg=darkred, bg=gray!20}
+
+  % \setbeamertemplate{footline} % To remove the footer line
+  % \setbeamertemplate{footline}[page number]
+  \setbeamertemplate{navigation symbols}{} % To remove the navigation symbols
+  \setbeamertemplate{caption}[numbered]
+
+  % \setbeamercovered{transparent}
+  \setbeamercovered{invisible}
+}
+
+\AtBeginSection[]{
+  \begin{frame}
+    \vfill \centering
+    \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+      \usebeamerfont{title}\insertsectionhead\par%
+    \end{beamercolorbox}
+    \vfill
+  \end{frame}
+}
+
+\setbeamersize{text margin left=20pt,text margin right=20pt}
