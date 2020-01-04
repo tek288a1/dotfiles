@@ -14,14 +14,14 @@ mod3 + @Return
 
 mod3 + d
 	dmenu_recency
-mod3 + r
-	$TERMINAL -e $FILE
+# mod3 + r
+# 	$TERMINAL -e $FILE
 
 # mod3 + e
 # 	$TERMINAL -e neomutt
 
-mod3 + m
-	$TERMINAL -e ncmpcpp
+# mod3 + m
+# 	$TERMINAL -e ncmpcpp
 
 # mod3 + n
 # 	$TERMINAL -e newsboat
@@ -36,9 +36,10 @@ mod3 + shift + a
 mod3 + shift + c
 	camtoggle
 mod3 + shift + e
-	tutorialvids
+	emacsclient -c
 #mod3 + w
 #	webby | xargs -r $BROWSER
+
 mod3 + shift + w
 	$BROWSER
 mod3 + shift + g
@@ -101,37 +102,51 @@ mod3 + shift + m
 	lmc toggle
 
 # Function keys
+
 # Show readme
+# mod3 + F1
+# 	groff -mom $HOME/.local/share/larbs/readme.mom -Tpdf | zathura -
+
 mod3 + F1
-	groff -mom $HOME/.local/share/larbs/readme.mom -Tpdf | zathura -
+	emacs
+        
 # F2 is restart in i3 right now.
-# Change display
-mod3 + F3
-	displayselect
-# Hibernate
-mod3 + F4
-	prompt 'Hibernate computer?' 'sudo systemctl suspend'
+# # Change display
+# mod3 + F3
+# 	displayselect
+
+# # Hibernate
+# mod3 + F4
+# 	prompt 'Hibernate computer?' 'sudo systemctl suspend'
+
 # Restart/rescan wifi/eth networks
 mod3 + F5
 	sudo -A systemctl restart NetworkManager
+
 # Start torrent daemon/open interface
 mod3 + F6
 	torwrap
+
 # toggle torrent daemon
 mod3 + F7
 	td-togggle
+
 # sync email
 mod3 + F8
 	mailsync
+
 # Mount a USB drive or Android device
-	mod3 + F9
+mod3 + F9
 	dmenumount
+
 # Unmount a USB drive or Android device
 mod3 + F10
 	dmenuumount
+
 # Search with Duckduckgo
 mod3 + F11
 	ducksearch
+
 # Network Manager interface
 mod3 + F12
 	$TERMINAL -e sudo -A nmtui
@@ -149,23 +164,60 @@ mod3 + F12
 XF86AudioMute
 	lmc mute
 
+# XF86MonBrightnessUp
+# 	sudo light -A 5; showbrightness
+
+# XF86MonBrightnessDown
+# 	sudo light -U 5; showbrightness
+
+# mod3 + control + equal
+# 	sudo light -A 1; showbrightness
+
+# mod3 + control + minus
+# 	sudo light -U 1; showbrightness
+
+
+
 XF86MonBrightnessUp
-	sudo light -A 5; showbrightness
+	xbacklight -inc 5; showbrightness
 
 XF86MonBrightnessDown
-	sudo light -U 5; showbrightness
+	xbacklight -dec 5; showbrightness
 
 mod3 + control + equal
-	sudo light -A 5; showbrightness
+	xbacklight -inc 1; showbrightness
 
 mod3 + control + minus
-	sudo light -U 5; showbrightness
+	xbacklight -dec 1; showbrightness
+
+
+
+
 
 mod3 + p
 	finder
 
+mod3 + semicolon
+	ddspawn tmuxdd
+        
 mod3 + shift + p
-	viewpix
+	ddspawn sxivdd
 
+mod3 + g
+	ddspawn dropdowncalc
+
+mod1 + h
+	ddspawn emacsdd
+        
 mod3 + 0
 	dmenuexit
+
+mod3 + control + m
+	pavucontrol
+
+mod3 + t
+	pkill compton
+
+mod3 + control + t
+	reloadcompton
+
