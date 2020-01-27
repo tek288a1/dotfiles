@@ -1,0 +1,19 @@
+export ZSH=$HOME/.oh-my-zsh
+# [ -f $HOME/.zprofile ] && source .zprofile
+
+ZSH_THEME="powerlevel9k/powerlevel9k"
+POWERLEVEL9K_MODE="nerdfont-complete"
+
+if [ `tput colors` != "256" ]; then
+    ZSH_THEME="norm"
+fi
+
+plugins=(
+    git
+    fzf
+    archlinux
+)
+
+source $ZSH/oh-my-zsh.sh
+alias ls="ls -hN --color=auto --group-directories-first"
+
