@@ -13,6 +13,9 @@ wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - 
 # Download powerlevel9k theme
 git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 
+# Download powerlevel10k theme
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+
 # mv $HOME/.zshrc $HOME/.zshrc.bak
 # cp ./.zshrc $HOME/.zshrc
 
