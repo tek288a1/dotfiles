@@ -3,7 +3,7 @@
 setbg &		# Set the background
 tkmaps &	# Custom keybindings
 sxhkd & 	# Bind keys
-if [ $(DESKTOP_SESSION) = "dwm" ]; then
+if [ $DESKTOP_SESSION = "dwm" ]; then
    dwmbar &
 fi
 unclutter &     # Remove mouse when idle
