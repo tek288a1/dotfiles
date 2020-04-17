@@ -201,7 +201,7 @@ mod3 + semicolon
 	ddspawn tmuxdd
         
 mod3 + shift + p
-	ddspawn sxivdd
+	viewpix
 
 mod3 + g
 	ddspawn dropdowncalc

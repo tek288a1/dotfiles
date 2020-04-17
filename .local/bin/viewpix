@@ -5,10 +5,19 @@ if ! [ -f "$HOME/.dmenurc" ]; then
     cp /usr/share/dmenu/dmenurc $HOME/.dmenurc
 fi
 . $HOME/.dmenurc
+
 LINES=50
 dmenu_cmd="dmenu -i ${DMENU_OPTIONS} -l ${LINES}"
 myDir="$HOME/Dropbox/pix"
 options=$(find $myDir -type d | grep -v ".git" | grep -v "^.$" | grep -v "$myDir$")
 # arr=($options)
-choice=$(echo -e "${options[@]}" | $dmenu_cmd -p 'Select gallery: ')
-sxiv -t -r -N dropdown_sxiv ${choice}
+
+if xwininfo -tree -root | grep "(\"dropdown_sxivdd\" ";
+then
+    echo "Window detected."
+    i3 "[instance=\"dropdown_sxivdd\"] scratchpad show; [instance=\"dropdown_sxivdd\"] move position center"
+else
+    echo "Window not detected... spawning."
+    choice=$(echo -e "${options[@]}" | $dmenu_cmd -p 'Select gallery: ')
+    sxiv -t -r -N dropdown_sxivdd ${choice}
+fi
