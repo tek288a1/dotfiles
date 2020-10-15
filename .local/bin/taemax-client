@@ -1,0 +1,4 @@
+#!/bin/sh
+# This is the script that i3 runs to start an emacsclient session
+
+emacsclient --alternate-editor='' --no-wait --create-frame --frame-parameters='(quote (name . "taemax-client"))' --display $DISPLAY

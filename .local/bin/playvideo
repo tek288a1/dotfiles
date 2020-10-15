@@ -1,0 +1,12 @@
+#!/bin/sh
+# Play youtube video on (dropdown) mpv
+
+if xwininfo -tree -root | grep "(\"dropdown_mpv\" ";
+then
+    echo "Window detected."
+    i3 "[instance=\"dropdown_mpv\"] scratchpad show; [instance=\"dropdown_mpv\"] move position center"
+else
+    echo "Window not detected... spawning."
+    notify-send.sh -t 3000 "Playing video" "$(xclip -o)";
+    mpv --x11-name=dropdown_mpv "$(xclip -o)"
+fi

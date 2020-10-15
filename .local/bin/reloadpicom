@@ -1,0 +1,13 @@
+#!/bin/bash
+# Reloading picom.
+# Reference:
+#  [1] https://wiki.archlinux.org/index.php/Sxhkd
+#  [2] https://bash.cyberciti.biz/guide/Sending_signal_to_Processes
+
+cmd="picom -b --config $HOME/.config/picom/picom.conf"
+
+if pgrep -x picom >/dev/null; then
+    killall picom && $cmd &
+else
+    $cmd &
+fi

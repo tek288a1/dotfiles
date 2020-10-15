@@ -1,0 +1,11 @@
+#!/bin/bash
+# Reloading dropbox.
+
+# if dropbox-cli status > /dev/null;
+# then
+# 	dropbox-cli start
+# else
+# 	dropbox-cli stop && dropbox-cli start
+# fi
+
+dropbox-cli stop && dropbox-cli start

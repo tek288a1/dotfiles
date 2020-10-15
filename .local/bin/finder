@@ -22,4 +22,4 @@ FOLDERS="$HOME/Dropbox $HOME/Documents $HOME/Downloads $HOME/tmp"
 dmenu_cmd="dmenu -i -l $LINES $DMENU_OPTIONS "
 
 #find -L $FOLDERS -name *.pdf | sed 's/ /\\ /g' | sort -f | $dmenu_cmd | xargs -r zathura
-find -L $FOLDERS \( -name *.pdf -o -name *.djvu \) | sed 's/ /\\ /g' | sort -f | $dmenu_cmd -p 'Select document: ' | xargs -r zathura
+find -L $FOLDERS \( -name "*.pdf" -o -name "*.djvu" \) | sed 's/ /\\ /g' | sort -f | $dmenu_cmd -p 'Select document: ' | xargs -r zathura

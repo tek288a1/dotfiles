@@ -9,9 +9,13 @@
 
 if xwininfo -tree -root | grep "(\"dropdown_$1\" ";
 then
-	echo "Window detected."
-	i3 "[instance=\"dropdown_$1\"] scratchpad show; [instance=\"dropdown_$1\"] move position center"
+    echo "Window detected."
+    i3 "[instance=\"dropdown_$1\"] scratchpad show; [instance=\"dropdown_$1\"] move position center"
+elif xwininfo -tree -root | grep dropdown_$1;
+then
+    echo "Window detected."
+    i3 "[title=\"dropdown_$1\"] scratchpad show; [title=\"dropdown_$1\"] move position center"
 else
-	echo "Window not detected... spawning."
-	i3 "exec --no-startup-id $TERMINAL -n dropdown_$1 $(echo "$@" | cut -d ' ' -f2-) -e $1"
+    echo "Window not detected... spawning."
+    i3 "exec --no-startup-id $TERMINAL -n dropdown_$1 $(echo "$@" | cut -d ' ' -f2-) -e $1"
 fi

@@ -6,7 +6,7 @@ if ! [ -f "$HOME/.dmenurc" ]; then
 fi
 . $HOME/.dmenurc
 
-LINES=50
+LINES=8
 dmenu_cmd="dmenu -i ${DMENU_OPTIONS} -l ${LINES}"
 myDir="$HOME/Dropbox/pix"
 options=$(find $myDir -type d | grep -v ".git" | grep -v "^.$" | grep -v "$myDir$")

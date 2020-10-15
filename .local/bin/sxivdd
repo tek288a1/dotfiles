@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # This is the script that i3 runs to start a dropdown photo viewer
 
 viewpix
