@@ -11,13 +11,16 @@ xrdb $HOME/.Xresources
 # To use startx
 #  > startx ~/.xinitrc dwm
 #
+if [ $# -eq 0 ]
+then
+	export DESKTOP_SESSION='i3'
+fi
 
-case $1 in
+case $DESKTOP_SESSION in
 	i3)
 	    exec i3 ;;
 	dwm)
 	    exec dwm ;;
-
 	xmonad)
 	    exec xmonad ;;
         bspwm)

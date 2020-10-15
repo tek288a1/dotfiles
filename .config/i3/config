@@ -103,20 +103,21 @@ bindsym $mod+Ctrl+Left workspace prev
 # Dual monitor set-up (from arcolinux i3 config)
 
 # my current setup (hometv)
-#xrandr --output eDP1 --primary --mode 1920x1080 --pos 0x1080 --rotate normal --output DP1 --mode 1920x1080i --pos 0x0 --rotate normal
+#xrandr --output eDP1 --primary --mode 1920x1080 --pos 0x1080 --rotate normal --output DP1 --mode 1920x1080 --pos 0x0 --rotate normal
 
-set $firstMonitor eDP1
-set $secondMonitor DP1
+set $firstMonitor eDP-1
+set $secondMonitor DP-1
+set $thirdMonitor DP-2
 
-workspace 1 output $firstMonitor
-workspace 2 output $firstMonitor
-workspace 3 output $firstMonitor
-workspace 4 output $firstMonitor
-workspace 5 output $firstMonitor
-workspace 6 output $secondMonitor
-workspace 7 output $secondMonitor
-workspace 8 output $secondMonitor
-workspace 9 output $secondMonitor
+workspace 1 output $secondMonitor
+workspace 2 output $secondMonitor
+workspace 3 output $secondMonitor
+workspace 4 output $secondMonitor
+workspace 5 output $thirdMonitor
+workspace 6 output $thirdMonitor
+workspace 7 output $thirdMonitor
+workspace 8 output $thirdMonitor
+workspace 9 output $firstMonitor
 
 
 
@@ -199,7 +200,13 @@ for_window [class="Skype"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="Xfburn"] floating enable
 for_window [title="Preferences"] floating enable
+for_window [title="SimpleScreenRecorder"] floating enable
 #for_window [class="(?i)virtualbox"] floating enable border normal
+for_window [title="Settings"] floating enable border normal
+
+
+
+
 
 
 # switch to workspace with urgent window automatically
@@ -328,43 +335,43 @@ set $nord14 #A3BE8C
 set $nord15 #B48EAD
 
 
-# Start i3bar to display a workspace bar (plus the system information i3status if available)
-bar {
-	i3bar_command i3bar
-	status_command i3status
-	position top
+# ## Start i3bar to display a workspace bar (plus the system information i3status if available)
+# bar {
+# 	i3bar_command i3bar
+# 	status_command i3status
+# 	position top
 
-## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
-#	tray_output primary
-#	tray_output eDP1
+# ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
+# #	tray_output primary
+# #	tray_output eDP1
 
-	bindsym button4 nop
-	bindsym button5 nop
-	strip_workspace_numbers yes
+# 	bindsym button4 nop
+# 	bindsym button5 nop
+# 	strip_workspace_numbers yes
 
-        colors {
-        background $nord1
-        statusline $nord6
-        separator  $nord3
+#         colors {
+#         background $nord1
+#         statusline $nord6
+#         separator  $nord3
 
-	# type			border	backgr.	text
-        focused_workspace 	$nord5	$nord9	$nord0
-        active_workspace   	$nord2	$nord1	$nord6
-        inactive_workspace 	$nord2	$nord0	$nord5
-        binding_mode       	$nord9	$nord0	$nord6
-        urgent_workspace	$nord9	$nord6	$nord11
-    }
-}
+# 	# type			border	backgr.	text
+#         focused_workspace 	$nord5	$nord9	$nord0
+#         active_workspace   	$nord2	$nord1	$nord6
+#         inactive_workspace 	$nord2	$nord0	$nord5
+#         binding_mode       	$nord9	$nord0	$nord6
+#         urgent_workspace	$nord9	$nord6	$nord11
+#     }
+# }
 
 # hide/unhide i3status bar
 bindsym $mod+m bar mode toggle
 
-# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Theme colors
 # class                 border  backgr. text    indic.   child_border
 client.focused          $nord13	$nord3	$nord6	$nord13	$nord13
-client.focused_inactive $nord13	$nord2	$nord10	$nord2
+client.focused_inactive $nord9	$nord2	$nord10	$nord2
 client.unfocused        $nord9	$nord0	$nord9	$nord2
 client.urgent           $nord12	$nord4	$nord10	$nord14
 client.placeholder      #000000 #0C0C0C #FFFFFF #000000
@@ -438,17 +445,45 @@ bindsym $mod+Shift+i	exec --no-startup-id i3resize up
 bindsym $mod+Shift+o	exec --no-startup-id i3resize right
 
 # General dropdown window traits. The order can matter.
-for_window [instance="dropdown_*"] floating enable
+
+for_window [instance="dropdown_*"] floating enable, sticky enable, border pixel 2
 for_window [instance="dropdown_*"] move scratchpad
-for_window [instance="dropdown_*"] sticky enable
 for_window [instance="dropdown_*"] scratchpad show
+
 for_window [instance="dropdown_tmuxdd"] resize set 1400 900
 for_window [instance="dropdown_dropdowncalc"] resize set 1000 500
-for_window [instance="dropdown_emacsdd"] resize set 1200 600
 for_window [instance="dropdown_sxivdd"] resize set 1600 900
-for_window [instance="dropdown_*"] border pixel 2
+for_window [instance="dropdown_mpv"] resize set 1680 945
+
 for_window [instance="dropdown_*"] move position center
+
+
+# emacs dropdown window requires a separate treatment after version 27.
+# WM_CLASS is not modified as before. 
+for_window [title="dropdown_emacsdd"] floating enable, sticky enable, border pixel 2
+for_window [title="dropdown_emacsdd"] move scratchpad
+for_window [title="dropdown_emacsdd"] scratchpad show
+
+for_window [title="dropdown_emacsdd"] resize set 1200 900
+
+for_window [title="dropdown_emacsdd"] move position center
+
+
+# Daemonization of the first emacs instance
+# for_window [title="TaEmaX"] floating enable move scratchpad
+
+
+
+# trick to prevent all present dropdown windows emerging upon i3 restart
+exec_always --no-startup-id i3-msg '[instance="dropdown_*"] scratchpad show, move position center'
+exec_always --no-startup-id i3-msg '[title="dropdown_emacs"] scratchpad show, move position center'
+
+# trick to fix ugly dropbox tray icon
+# exec_always --no-startup-id reloaddropbox
 
 # Set mod key (Mod1=<Alt>, Mod3=<Hyper>, Mod4=<Super>)
 bindsym Mod1+F1 	exec --no-startup-id tkmaps
 bindsym Mod1+Shift+F1 	exec --no-startup-id resetkeys
+
+# webcam video
+for_window [title="video. - mpv"] floating enable, sticky enable, border pixel 0

@@ -7,17 +7,21 @@ if [ $DESKTOP_SESSION = "dwm" ]; then
    dwmbar &
 fi
 unclutter &     # Remove mouse when idle
-compton -b --config $HOME/.config/compton/compton.conf & # for transparency
+#compton -b --config $HOME/.config/compton/compton.conf & # for transparency
+picom -b --config $HOME/.config/picom/picom.conf & # for transparency
 dunst &                         # dunst for notifications
 mpdupdate &
 nm-applet &
-conky -d &
+#conky -d &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+emacs --daemon &
+
+xrandr --output eDP-1 --primary --mode 1920x1080 --pos 0x0 &
 
 xautolock -time 30 -locker blurlock &
 ibus-daemon -drx &
 dropbox start &
-solaar &
-redshift &
-
-# xfce4-power-manager &
+#solaar &
+#redshift &
+volumeicon &
+xfce4-power-manager &

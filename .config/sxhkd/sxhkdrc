@@ -63,8 +63,8 @@ XF86Launch1
 
 # Recording
 # Take screenshot
-# Print
-# 	maim pic-full-$(date '+%y%m%d-%H%M-%S').png
+mod3 + shift + s
+	maim ~/pic-full-$(date '+%y%m%d-%H%M-%S').png
 # Pick screenshot type
 # shift + Print
 # 	maimpick
@@ -164,31 +164,31 @@ mod3 + F12
 XF86AudioMute
 	lmc mute
 
-# XF86MonBrightnessUp
-# 	sudo light -A 5; showbrightness
-
-# XF86MonBrightnessDown
-# 	sudo light -U 5; showbrightness
-
-# mod3 + control + equal
-# 	sudo light -A 1; showbrightness
-
-# mod3 + control + minus
-# 	sudo light -U 1; showbrightness
-
-
-
 XF86MonBrightnessUp
-	xbacklight -inc 5; showbrightness
+	sudo light -A 5; showbrightness
 
 XF86MonBrightnessDown
-	xbacklight -dec 5; showbrightness
+	sudo light -U 5; showbrightness
 
 mod3 + control + equal
-	xbacklight -inc 1; showbrightness
+	sudo light -A 1; showbrightness
 
 mod3 + control + minus
-	xbacklight -dec 1; showbrightness
+	sudo light -U 1; showbrightness
+
+
+
+# XF86MonBrightnessUp
+# 	xbacklight -inc 5; showbrightness
+
+# XF86MonBrightnessDown
+# 	xbacklight -dec 5; showbrightness
+
+# mod3 + control + equal
+# 	xbacklight -inc 1; showbrightness
+
+# mod3 + control + minus
+# 	xbacklight -dec 1; showbrightness
 
 
 
@@ -208,6 +208,9 @@ mod3 + g
 
 mod1 + h
 	ddspawn emacsdd
+
+mod3 + control + e
+	taemax-client
         
 mod3 + 0
 	dmenuexit
@@ -216,8 +219,10 @@ mod3 + control + m
 	pavucontrol
 
 mod3 + t
-	pkill compton
+	pkill picom
 
 mod3 + control + t
-	reloadcompton
+	reloadpicom
 
+mod3 + control + y
+	playvideo
