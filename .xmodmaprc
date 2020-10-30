@@ -47,18 +47,18 @@ keycode  51 = Hyper_R NoSymbol Hyper_R NoSymbol
 !! Apostrophe as Mode_switch
 ! keycode  48 = apostrophe quotedbl apostrophe quotedbl
 
-keycode  48 = Mode_switch Mode_switch Mode_switch
-keycode  24 = q Q quotedbl
-keycode  25 = w W Home
-keycode  26 = e E Up
-keycode  27 = r R End
+! keycode  48 = Mode_switch Mode_switch Mode_switch
+! keycode  24 = q Q quotedbl
+! keycode  25 = w W Home
+! keycode  26 = e E Up
+! keycode  27 = r R End
 
-keycode  38 = a A apostrophe
-keycode  39 = s S Left 
-keycode  40 = d D Down 
-keycode  41 = f F Right
-keycode  42 = g G BackSpace
-keycode  43 = h H Delete
+! keycode  38 = a A apostrophe
+! keycode  39 = s S Left 
+! keycode  40 = d D Down 
+! keycode  41 = f F Right
+! keycode  42 = g G BackSpace
+! keycode  43 = h H Delete
 
 !! Add back modifiers
 add control = Control_L Control_R
