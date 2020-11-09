@@ -60,13 +60,14 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 ;; stop asking if custom themes are safe
 (setq custom-safe-themes t)
-;;(load-theme 'modus-vivendi t)
+(load-theme 'tk-nord t)
 
 ;; Source of this theme toggle (adaptations by me):
 ;; https://emacs.stackexchange.com/questions/24088/make-a-function-to-toggle-themes
 (defvar tk/light-theme 'modus-operandi)
 (defvar tk/dark-theme 'modus-vivendi)
-(defvar tk/current-theme 'modus-vivendi)
+(defvar tk/nord-theme 'tk-nord)
+(defvar tk/current-theme 'tk-nord)
 
 ;; disable other themes before loading new one
 (defadvice load-theme (before theme-dont-propagate activate)
@@ -82,9 +83,16 @@
 
 (defun tk/toggle-theme ()
   (interactive)
-  (cond ((eq tk/current-theme tk/light-theme) (tk/next-theme tk/dark-theme))
+  (cond ((eq tk/current-theme tk/light-theme) (tk/next-theme tk/nord-theme))
+	((eq tk/current-theme tk/nord-theme) (tk/next-theme tk/dark-theme))
 	((eq tk/current-theme tk/dark-theme) (tk/next-theme tk/light-theme))))
-(global-set-key (kbd "C-c M-t") 'tk/toggle-theme)
+
+(defun tk/reload-theme ()
+  (interactive)
+  (load-theme tk/current-theme t))
+
+(global-set-key (kbd "s-T") 'tk/toggle-theme)
+(global-set-key (kbd "s-t") 'tk/reload-theme)
 
 
 (setq inhibit-startup-message t)
@@ -222,7 +230,7 @@
 
 (use-package helm-themes
   :ensure t)
-(global-set-key (kbd "s-t") 'helm-themes)
+;; (global-set-key (kbd "s-t") 'helm-themes)
 
 ;;Line wrapping
 (global-visual-line-mode 1) ; 1 for on, 0 for off.
@@ -245,3 +253,9 @@
  '(("^ +\\([-*]\\) "
     (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
 
+(setq org-startup-indented t)
+
+;;; font size
+(global-set-key (kbd "s-=") 'text-scale-increase)
+(global-set-key (kbd "s--") 'text-scale-decrease)
+(global-set-key (kbd "s-0") 'text-scale-adjust)
