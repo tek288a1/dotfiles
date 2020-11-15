@@ -6,6 +6,8 @@
 
 if pgrep -x sxhkd >/dev/null; then
     killall -10 sxhkd
+    notify-send.sh "SXHKD Reloaded"
 else
     sxhkd &
+    notify-send.sh "SXHKD Started"
 fi

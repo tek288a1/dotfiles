@@ -127,9 +127,12 @@ mod3 + F5
 mod3 + F6
 	torwrap
 
-# toggle torrent daemon
-mod3 + F7
-	td-togggle
+# Display select (TK)
+{_, mod3} + F7
+	{mobile.sh, displayselect}
+
+XF86Display
+	displayselect
 
 # sync email
 mod3 + F8
