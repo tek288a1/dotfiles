@@ -29,7 +29,7 @@
 (defun packages-require (&rest packs)
   "Install and load packages in `packs`. If the package is not available, install it automatically."
   (mapc (lambda (package) (unless (package-installed-p package) (package-install package))) packs))
-	  
+
 (packages-require
  'paredit
  'rainbow-delimiters
@@ -56,7 +56,7 @@
   :ensure t)
 
 ;; Themes ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 
+;;
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 ;; stop asking if custom themes are safe
 (setq custom-safe-themes t)
