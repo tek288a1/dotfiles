@@ -41,12 +41,10 @@ ntfs-3g
 gnome-keyring
 neovim
 emacs
-kvantum-theme-nordic-git
 kvantum-qt5
 lxappearance-gtk3
 qt5ct
 youtube-dl
-youtube-dlc
 zathura
 zathura-pdf-mupdf
 poppler
@@ -55,5 +53,3 @@ nvidia-lts
 nvidia-utils
 nvidia-settings
 nvidia-prime
-optimus-manager
-optimus-manager-qt
