@@ -1,0 +1,21 @@
+| A | ttf-symbola               | "provides unicode and emoji symbols."                                                                 |
+| A | python-ueberzug           | "generates image previews in ranger and other terminal programs."                                     |
+| A | gtk-theme-arc-gruvbox-git | "gives the dark GTK theme used in LARBS."                                                             |
+| A | nordic-theme-git          | "gives the nice nord GTK theme."                                                                      |
+| A | brave-bin                 | "is an elegant browser with built-in adblocking, tor and other features."                             |
+| A | chromium                  | "is an open source version of Google Chrome web browser."                                             |
+| I | libXft-devel              | "is required for the compilation of some programs."                                                   |
+| I | gcr-devel                 | "is required for the compilation of some programs."                                                   |
+| I | fontconfig-devel          | "is required for the compilation of some programs."                                                   |
+| V | xorg-minimal              | "is the graphical server."                                                                            |
+| V | xorg-fonts                | "is a font package."                                                                                  |
+| V | xdpyinfo                  | "aids with resolution determination and screen recording."                                            |
+| V | libX11-devel              | "is required for the compilation of some programs."                                                   |
+| V | font-symbola              | "provides unicode and emoji symbols."                                                                 |
+| V | setxkbmap                 | "allows LARBS's unique keyboard bindings."                                                            |
+| V | xmodmap                   | "allows LARBS's unique keyboard bindings."                                                            |
+| V | xsetroot                  | "sets status bar and other X properies."                                                              |
+| V | xset                      | "allows speeding up the X rate."                                                                      |
+| V | xprop                     | "is a tool for detecting window properties."                                                          |
+| V | dbus                      | "facilitates inter-process communication."                                                            |
+| V | unclutter-xfixes          | "hides an inactive mouse."                                                                            |
