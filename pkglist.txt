@@ -1,5 +1,6 @@
 i3-gaps
 i3blocks
+i3status
 xorg-server
 xorg-xwininfo
 xorg-xinit

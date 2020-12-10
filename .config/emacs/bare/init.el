@@ -16,7 +16,8 @@
 (setq package-archives '(("melpa"     . "https://melpa.org/packages/")
 			 ("org"       . "http://orgmode.org/elpa/")
 			 ("gnu"       . "http://elpa.gnu.org/packages/")
-			 ("marmalade" .  "http://marmalade-repo.org/packages/")))
+			 ;; ("marmalade" .  "http://marmalade-repo.org/packages/")
+			 ))
 (package-initialize)
 ;; (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
 ;;                          ("melpa" . "http://melpa.org/packages/")
@@ -45,9 +46,7 @@
 	    (show-paren-mode 1)
 	    ))
 
-
-
-
+;;; Note: In paredit mode, <backspace> is bound to `paredit-backward-delete'. So if I want to delete a selection by pressing <backspace>, it does not work as expected. 
 
 (use-package delight
   :ensure t)
@@ -133,9 +132,10 @@
 
 ;; show the cursor when moving after big movements in the window
 (use-package beacon
-  :ensure t)
+  :ensure t
+  :config (beacon-mode +1))
 
-(beacon-mode +1)
+;; (beacon-mode +1)
 
 ;; show available keybindings after you start typing
 (use-package which-key
@@ -259,3 +259,47 @@
 (global-set-key (kbd "s-=") 'text-scale-increase)
 (global-set-key (kbd "s--") 'text-scale-decrease)
 (global-set-key (kbd "s-0") 'text-scale-adjust)
+
+
+
+
+;;; Useful Editor Functionalities
+;; delete the selection with a keypress
+(delete-selection-mode t)
+
+
+;; revert buffers automatically when underlying files are changed externally
+(global-auto-revert-mode t)
+
+;; highlight the current line
+(global-hl-line-mode +1)
+
+;; ;; sensible undo
+;; (global-undo-tree-mode)
+;; (diminish 'undo-tree-mode)
+
+;; Start eshell or switch to it if it's active.
+(global-set-key (kbd "C-x m") 'eshell)
+
+;; Start a new eshell even if one is active.
+(global-set-key (kbd "C-x M") (lambda () (interactive) (eshell t)))
+
+;; Start a regular shell if you prefer that.
+(global-set-key (kbd "C-x M-m") 'shell)
+
+;; kill lines backward
+(global-set-key (kbd "C-<backspace>") (lambda ()
+                                        (interactive)
+                                        (kill-line 0)
+                                        (indent-according-to-mode)))
+
+
+;; toggle menu-bar visibility
+(global-set-key (kbd "<f12>") 'menu-bar-mode)
+
+;;; crux
+(use-package crux
+  :ensure t)
+
+
+
