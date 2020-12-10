@@ -1,0 +1,718 @@
+04:47:54 PM.756: CPU Name: Intel(R) Core(TM) i7-9850H CPU @ 2.60GHz
+04:47:54 PM.756: CPU Speed: 2600.346MHz
+04:47:54 PM.757: Physical Cores: 6, Logical Cores: 12
+04:47:54 PM.757: Physical Memory: 15618MB Total, 9424MB Free
+04:47:54 PM.757: Kernel Version: Linux 5.9.8-arch1-1
+04:47:54 PM.757: Distribution: ArcoLinux Unknown
+04:47:54 PM.757: Window System: X11.0, Vendor: The X.Org Foundation, Version: 1.20.9
+04:47:54 PM.758: Portable mode: false
+04:47:54 PM.812: OBS 26.0.2-2 (linux)
+04:47:54 PM.812: ---------------------------------
+04:47:54 PM.812: ---------------------------------
+04:47:54 PM.812: audio settings reset:
+04:47:54 PM.812: 	samples per sec: 48000
+04:47:54 PM.812: 	speakers:        2
+04:47:54 PM.814: ---------------------------------
+04:47:54 PM.814: Initializing OpenGL...
+04:47:54 PM.925: Loading up OpenGL on adapter Intel Mesa Intel(R) UHD Graphics 630 (CFL GT2)
+04:47:54 PM.925: OpenGL loaded successfully, version 4.6 (Core Profile) Mesa 20.2.2, shading language 4.60
+04:47:54 PM.942: ---------------------------------
+04:47:54 PM.942: video settings reset:
+04:47:54 PM.942: 	base resolution:   1920x1080
+04:47:54 PM.942: 	output resolution: 1920x1080
+04:47:54 PM.942: 	downscale filter:  Bicubic
+04:47:54 PM.942: 	fps:               30/1
+04:47:54 PM.942: 	format:            NV12
+04:47:54 PM.942: 	YUV mode:          709/Partial
+04:47:54 PM.942: NV12 texture support not available
+04:47:54 PM.947: Audio monitoring device:
+04:47:54 PM.947: 	name: Monitor of USB PnP Audio Device Analog Stereo
+04:47:54 PM.947: 	id: alsa_output.usb-0c76_USB_PnP_Audio_Device-00.analog-stereo.monitor
+04:47:54 PM.947: ---------------------------------
+04:47:54 PM.948: Failed to load 'en-US' text for module: 'decklink-ouput-ui.so'
+04:47:55 PM.026: A DeckLink iterator could not be created.  The DeckLink drivers may not be installed
+04:47:55 PM.026: No blackmagic support
+04:47:55 PM.033: os_dlopen(libnvidia-encode.so.1->libnvidia-encode.so.1): libnvidia-encode.so.1: cannot open shared object file: No such file or directory
+04:47:55 PM.033: 
+04:47:55 PM.033: FFMPEG VAAPI supported
+04:47:55 PM.043: VLC found, VLC video source enabled
+04:47:55 PM.043: ---------------------------------
+04:47:55 PM.043:   Loaded Modules:
+04:47:55 PM.043:     vlc-video.so
+04:47:55 PM.043:     v4l2sink.so
+04:47:55 PM.043:     text-freetype2.so
+04:47:55 PM.043:     rtmp-services.so
+04:47:55 PM.043:     obs-x264.so
+04:47:55 PM.043:     obs-transitions.so
+04:47:55 PM.043:     obs-outputs.so
+04:47:55 PM.043:     obs-libfdk.so
+04:47:55 PM.043:     obs-filters.so
+04:47:55 PM.043:     obs-ffmpeg.so
+04:47:55 PM.043:     linux-v4l2.so
+04:47:55 PM.043:     linux-pulseaudio.so
+04:47:55 PM.043:     linux-jack.so
+04:47:55 PM.043:     linux-decklink.so
+04:47:55 PM.043:     linux-capture.so
+04:47:55 PM.043:     linux-alsa.so
+04:47:55 PM.043:     image-source.so
+04:47:55 PM.043:     frontend-tools.so
+04:47:55 PM.043:     decklink-ouput-ui.so
+04:47:55 PM.043: ---------------------------------
+04:47:55 PM.043: ==== Startup complete ===============================================
+04:47:55 PM.048: All scene data cleared
+04:47:55 PM.048: ------------------------------------------------
+04:47:55 PM.062: pulse-input: Server name: 'pulseaudio 13.99.3'
+04:47:55 PM.063: pulse-input: Audio format: s16le, 48000 Hz, 2 channels
+04:47:55 PM.063: pulse-input: Started recording from 'alsa_input.pci-0000_00_1f.3.analog-stereo'
+04:47:55 PM.065: [Loaded global audio device]: 'built-in'
+04:47:55 PM.065:     - filter: 'Gain' (gain_filter)
+04:47:55 PM.065:     - filter: 'Noise Suppression' (noise_suppress_filter_v2)
+04:47:55 PM.065:     - filter: 'Compressor' (compressor_filter)
+04:47:55 PM.065:     - filter: 'Compressor 2' (compressor_filter)
+04:47:55 PM.065:     - filter: 'Limiter' (limiter_filter)
+04:47:55 PM.065:     - filter: 'Noise Gate' (noise_gate_filter)
+04:47:55 PM.065: pulse-input: Server name: 'pulseaudio 13.99.3'
+04:47:55 PM.065: pulse-input: An error occurred while getting the source info!
+04:47:55 PM.067: [Loaded global audio device]: 'usb-mic'
+04:47:55 PM.067:     - filter: 'Noise Suppression 2' (noise_suppress_filter_v2)
+04:47:55 PM.067:     - filter: 'Gain' (gain_filter)
+04:47:55 PM.067:     - filter: 'Noise Suppression' (noise_suppress_filter_v2)
+04:47:55 PM.067:     - filter: 'Compressor' (compressor_filter)
+04:47:55 PM.067:     - filter: 'Compressor 2' (compressor_filter)
+04:47:55 PM.067:     - filter: 'Limiter' (limiter_filter)
+04:47:55 PM.067: v4l2-input: Start capture from /dev/video1
+04:47:55 PM.067: v4l2-input: Input: 0
+04:47:55 PM.068: v4l2-input: Resolution: 1920x1080
+04:47:55 PM.068: v4l2-input: Pixelformat: BGR3
+04:47:55 PM.068: v4l2-input: Linesize: 5760 Bytes
+04:47:55 PM.068: v4l2-input: Framerate: 60.00 fps
+04:47:55 PM.072: pulse-input: Server name: 'pulseaudio 13.99.3'
+04:47:55 PM.072: pulse-input: Audio format: s16le, 48000 Hz, 2 channels
+04:47:55 PM.072: pulse-input: Started recording from 'alsa_output.usb-0c76_USB_PnP_Audio_Device-00.analog-stereo.monitor'
+04:47:55 PM.163: xshm-input: Geometry 1920x1080 @ 0,0
+04:47:55 PM.166: v4l2-input: Start capture from /dev/video2
+04:47:55 PM.276: v4l2-input: Input: 0
+04:47:55 PM.279: v4l2-input: Resolution: 1280x720
+04:47:55 PM.279: v4l2-input: Pixelformat: BGR3
+04:47:55 PM.279: v4l2-input: Linesize: 3840 Bytes
+04:47:55 PM.279: v4l2-input: Framerate: 30.00 fps
+04:47:55 PM.588: v4l2-input: Start capture from /dev/video6
+04:47:55 PM.615: adding 42 milliseconds of audio buffering, total audio buffering is now 42 milliseconds (source: built-in)
+04:47:55 PM.615: 
+04:47:55 PM.670: v4l2-input: Input: 0
+04:47:55 PM.690: v4l2-input: Resolution: 1920x1080
+04:47:55 PM.690: v4l2-input: Pixelformat: BGR3
+04:47:55 PM.690: v4l2-input: Linesize: 5760 Bytes
+04:47:55 PM.710: v4l2-input: Framerate: 30.00 fps
+04:47:55 PM.713: xshm-input: Geometry 1920x1080 @ 0,0
+04:47:55 PM.721: Switched to scene '3-ipad'
+04:47:55 PM.722: ------------------------------------------------
+04:47:55 PM.722: Loaded scenes:
+04:47:55 PM.722: - scene '1-main':
+04:47:55 PM.722:     - source: 'white background' (color_source_v2)
+04:47:55 PM.722:     - source: 'background' (image_source)
+04:47:55 PM.722:     - source: 'nametag' (text_ft2_source_v2)
+04:47:55 PM.722:         - filter: 'Scroll' (scroll_filter)
+04:47:55 PM.722:     - source: 'background 2' (image_source)
+04:47:55 PM.722:     - source: 'screen capture' (xshm_input)
+04:47:55 PM.722:     - source: 'external cam' (v4l2_input)
+04:47:55 PM.722:         - filter: 'Chroma Key' (chroma_key_filter)
+04:47:55 PM.722:     - source: 'laptop cam' (v4l2_input)
+04:47:55 PM.722:         - filter: 'Chroma Key' (chroma_key_filter)
+04:47:55 PM.722:         - filter: 'Sharpen' (sharpness_filter)
+04:47:55 PM.722:     - source: 'hdmi capture' (v4l2_input)
+04:47:55 PM.722:         - filter: 'Chroma Key' (chroma_key_filter)
+04:47:55 PM.722: - scene '3-ipad':
+04:47:55 PM.722:     - source: 'backgrounds' (group)
+04:47:55 PM.722:         - source: 'white background' (color_source_v2)
+04:47:55 PM.722:         - source: 'background' (image_source)
+04:47:55 PM.722:     - source: 'hdmi capture' (v4l2_input)
+04:47:55 PM.722:         - filter: 'Chroma Key' (chroma_key_filter)
+04:47:55 PM.722:     - source: 'background 2' (image_source)
+04:47:55 PM.722:     - source: 'laptop cam' (v4l2_input)
+04:47:55 PM.722:         - filter: 'Chroma Key' (chroma_key_filter)
+04:47:55 PM.722:         - filter: 'Sharpen' (sharpness_filter)
+04:47:55 PM.722:     - source: 'Group 3' (group)
+04:47:55 PM.722:         - source: 'background3' (image_source)
+04:47:55 PM.722:         - source: 'external cam' (v4l2_input)
+04:47:55 PM.722:             - filter: 'Chroma Key' (chroma_key_filter)
+04:47:55 PM.722: - scene '4-screen':
+04:47:55 PM.722:     - source: 'backgrounds' (group)
+04:47:55 PM.722:         - source: 'white background' (color_source_v2)
+04:47:55 PM.722:         - source: 'background' (image_source)
+04:47:55 PM.722:     - source: 'Screen Capture (XSHM)' (xshm_input)
+04:47:55 PM.722:     - source: 'Group 4' (group)
+04:47:55 PM.722:         - source: 'background3' (image_source)
+04:47:55 PM.722:         - source: 'laptop cam' (v4l2_input)
+04:47:55 PM.722:             - filter: 'Chroma Key' (chroma_key_filter)
+04:47:55 PM.722:             - filter: 'Sharpen' (sharpness_filter)
+04:47:55 PM.722: - scene '5-test':
+04:47:55 PM.722:     - source: 'background' (image_source)
+04:47:55 PM.722:     - source: 'hdmi capture' (v4l2_input)
+04:47:55 PM.722:         - filter: 'Chroma Key' (chroma_key_filter)
+04:47:55 PM.722:     - source: 'Group 2' (group)
+04:47:55 PM.722:         - source: 'background 2' (image_source)
+04:47:55 PM.722:         - source: 'laptop cam' (v4l2_input)
+04:47:55 PM.722:             - filter: 'Chroma Key' (chroma_key_filter)
+04:47:55 PM.722:             - filter: 'Sharpen' (sharpness_filter)
+04:47:55 PM.722:     - source: 'Audio Output Capture (PulseAudio)' (pulse_output_capture)
+04:47:55 PM.722:     - source: 'Group' (group)
+04:47:55 PM.722:         - source: 'background3' (image_source)
+04:47:55 PM.722:         - source: 'external cam' (v4l2_input)
+04:47:55 PM.722:             - filter: 'Chroma Key' (chroma_key_filter)
+04:47:55 PM.722: ------------------------------------------------
+04:47:55 PM.751: A sprite cannot be drawn without a width/height
+04:47:58 PM.384: User switched to scene '5-test'
+04:47:58 PM.420: A sprite cannot be drawn without a width/height
+04:48:07 PM.680: v4l2-input: Stopped capture after 375 frames
+04:48:07 PM.774: v4l2-input: Stopped capture after 124 frames
+04:48:07 PM.899: pulse-input: Stopped recording from 'alsa_output.usb-0c76_USB_PnP_Audio_Device-00.analog-stereo.monitor'
+04:48:07 PM.899: pulse-input: Got 2179 packets with 613821 frames
+04:48:07 PM.967: v4l2-input: Stopped capture after 173 frames
+04:48:07 PM.991: pulse-input: Stopped recording from 'alsa_input.pci-0000_00_1f.3.analog-stereo'
+04:48:07 PM.991: pulse-input: Got 1322 packets with 620320 frames
+04:48:07 PM.992: All scene data cleared
+04:48:07 PM.992: ------------------------------------------------
+04:48:07 PM.998: pulse-input: Server name: 'pulseaudio 13.99.3'
+04:48:07 PM.998: pulse-input: Audio format: s16le, 48000 Hz, 2 channels
+04:48:07 PM.999: pulse-input: Started recording from 'alsa_input.pci-0000_00_1f.3.analog-stereo'
+04:48:08 PM.000: pulse-am: Server name: 'pulseaudio 13.99.3'
+04:48:08 PM.000: pulse-am: Audio format: s16le, 48000 Hz, 2 channels
+04:48:08 PM.000: pulse-am: Started Monitoring in 'alsa_output.usb-0c76_USB_PnP_Audio_Device-00.analog-stereo.monitor'
+04:48:08 PM.002: [Loaded global audio device]: 'built-in'
+04:48:08 PM.002:     - filter: 'Gain' (gain_filter)
+04:48:08 PM.002:     - filter: 'Noise Suppression' (noise_suppress_filter_v2)
+04:48:08 PM.002:     - filter: 'Compressor' (compressor_filter)
+04:48:08 PM.002:     - filter: 'Compressor 2' (compressor_filter)
+04:48:08 PM.002:     - filter: 'Limiter' (limiter_filter)
+04:48:08 PM.002:     - monitoring: monitor and output
+04:48:08 PM.002: pulse-input: Server name: 'pulseaudio 13.99.3'
+04:48:08 PM.002: pulse-input: An error occurred while getting the source info!
+04:48:08 PM.002: pulse-am: Server name: 'pulseaudio 13.99.3'
+04:48:08 PM.003: pulse-am: Audio format: s16le, 48000 Hz, 2 channels
+04:48:08 PM.003: pulse-am: Started Monitoring in 'alsa_output.usb-0c76_USB_PnP_Audio_Device-00.analog-stereo.monitor'
+04:48:08 PM.004: [Loaded global audio device]: 'usb-mic'
+04:48:08 PM.004:     - filter: 'Noise Suppression 2' (noise_suppress_filter_v2)
+04:48:08 PM.004:     - filter: 'Gain' (gain_filter)
+04:48:08 PM.004:     - filter: 'Noise Suppression' (noise_suppress_filter_v2)
+04:48:08 PM.004:     - filter: 'Compressor' (compressor_filter)
+04:48:08 PM.004:     - filter: 'Compressor 2' (compressor_filter)
+04:48:08 PM.004:     - filter: 'Limiter' (limiter_filter)
+04:48:08 PM.004:     - monitoring: monitor and output
+04:48:08 PM.004: xshm-input: Geometry 1920x1080 @ 0,0
+04:48:08 PM.005: v4l2-input: Start capture from /dev/video0
+04:48:08 PM.005: v4l2-input: Unable to open device
+04:48:08 PM.005: v4l2-input: Initialization failed
+04:48:08 PM.302: v4l2-input: Start capture from /dev/video4
+04:48:08 PM.303: v4l2-input: Input: 0
+04:48:08 PM.306: v4l2-input: Resolution: 640x360
+04:48:08 PM.306: v4l2-input: Pixelformat: BGR3
+04:48:08 PM.306: v4l2-input: Linesize: 1920 Bytes
+04:48:08 PM.306: v4l2-input: Framerate: 15.00 fps
+04:48:08 PM.311: xshm-input: Geometry 1920x1080 @ 0,0
+04:48:08 PM.375: pulse-input: Server name: 'pulseaudio 13.99.3'
+04:48:08 PM.375: pulse-input: Audio format: s16le, 48000 Hz, 2 channels
+04:48:08 PM.375: pulse-input: Started recording from 'alsa_output.usb-0c76_USB_PnP_Audio_Device-00.analog-stereo.monitor'
+04:48:08 PM.376: v4l2-input: Start capture from /dev/video9
+04:48:08 PM.376: v4l2-input: Input: 0
+04:48:08 PM.396: v4l2-input: Selected video format not supported
+04:48:08 PM.396: v4l2-input: Initialization failed
+04:48:08 PM.404: Switched to scene '5-test'
+04:48:08 PM.404: ------------------------------------------------
+04:48:08 PM.404: Loaded scenes:
+04:48:08 PM.404: - scene '1-main':
+04:48:08 PM.404:     - source: 'white background' (color_source_v2)
+04:48:08 PM.404:     - source: 'background' (image_source)
+04:48:08 PM.404:     - source: 'nametag' (text_ft2_source_v2)
+04:48:08 PM.404:         - filter: 'Scroll' (scroll_filter)
+04:48:08 PM.405:     - source: 'background 2' (image_source)
+04:48:08 PM.405:     - source: 'screen capture' (xshm_input)
+04:48:08 PM.405:     - source: 'external cam' (v4l2_input)
+04:48:08 PM.405:         - filter: 'Chroma Key' (chroma_key_filter)
+04:48:08 PM.405:     - source: 'laptop cam' (v4l2_input)
+04:48:08 PM.405:         - filter: 'Chroma Key' (chroma_key_filter)
+04:48:08 PM.405:         - filter: 'Sharpen' (sharpness_filter)
+04:48:08 PM.405:     - source: 'hdmi capture' (v4l2_input)
+04:48:08 PM.405:         - filter: 'Chroma Key' (chroma_key_filter)
+04:48:08 PM.405: - scene '3-ipad':
+04:48:08 PM.405:     - source: 'backgrounds' (group)
+04:48:08 PM.405:         - source: 'white background' (color_source_v2)
+04:48:08 PM.405:         - source: 'background' (image_source)
+04:48:08 PM.405:     - source: 'hdmi capture' (v4l2_input)
+04:48:08 PM.405:         - filter: 'Chroma Key' (chroma_key_filter)
+04:48:08 PM.405:     - source: 'background 2' (image_source)
+04:48:08 PM.405:     - source: 'laptop cam' (v4l2_input)
+04:48:08 PM.405:         - filter: 'Chroma Key' (chroma_key_filter)
+04:48:08 PM.405:         - filter: 'Sharpen' (sharpness_filter)
+04:48:08 PM.405:     - source: 'external cam' (v4l2_input)
+04:48:08 PM.405:         - filter: 'Chroma Key' (chroma_key_filter)
+04:48:08 PM.405: - scene '4-screen':
+04:48:08 PM.405:     - source: 'Audio Output Capture (PulseAudio)' (pulse_output_capture)
+04:48:08 PM.405:     - source: 'backgrounds' (group)
+04:48:08 PM.405:         - source: 'white background' (color_source_v2)
+04:48:08 PM.405:         - source: 'background' (image_source)
+04:48:08 PM.405:     - source: 'Screen Capture (XSHM)' (xshm_input)
+04:48:08 PM.405:     - source: 'background3' (image_source)
+04:48:08 PM.405:     - source: 'laptop cam' (v4l2_input)
+04:48:08 PM.405:         - filter: 'Chroma Key' (chroma_key_filter)
+04:48:08 PM.405:         - filter: 'Sharpen' (sharpness_filter)
+04:48:08 PM.405: - scene '5-test':
+04:48:08 PM.405:     - source: 'background' (image_source)
+04:48:08 PM.405:     - source: 'background 2' (image_source)
+04:48:08 PM.405:     - source: 'background3' (image_source)
+04:48:08 PM.405:     - source: 'laptop cam' (v4l2_input)
+04:48:08 PM.405:         - filter: 'Chroma Key' (chroma_key_filter)
+04:48:08 PM.405:         - filter: 'Sharpen' (sharpness_filter)
+04:48:08 PM.405:     - source: 'Audio Output Capture (PulseAudio)' (pulse_output_capture)
+04:48:08 PM.405:     - source: 'external cam' (v4l2_input)
+04:48:08 PM.405:         - filter: 'Chroma Key' (chroma_key_filter)
+04:48:08 PM.405:     - source: 'hdmi capture' (v4l2_input)
+04:48:08 PM.405:         - filter: 'Chroma Key' (chroma_key_filter)
+04:48:08 PM.405: ------------------------------------------------
+04:48:08 PM.429: Switched to scene collection 'sceneTest' (sceneTest.json)
+04:48:08 PM.429: ------------------------------------------------
+04:49:08 PM.044: v4l2-input: /dev/video7 seems to not support video capture
+04:49:08 PM.044: v4l2-input: /dev/video5 seems to not support video capture
+04:49:08 PM.045: v4l2-input: /dev/video3 seems to not support video capture
+04:49:08 PM.045: v4l2-input: Found device 'USB Video: USB Video' at /dev/video1
+04:49:08 PM.045: v4l2-input: /dev/video11 seems to not support video capture
+04:49:08 PM.045: v4l2-input: /dev/video8 seems to not support video capture
+04:49:08 PM.130: v4l2-input: Found device ' REDRAGON Live Camera:  REDRAGO' at /dev/video6
+04:49:08 PM.131: v4l2-input: Found device 'Integrated Camera: Integrated I' at /dev/video4
+04:49:08 PM.131: v4l2-input: Found device 'Integrated Camera: Integrated C' at /dev/video2
+04:49:08 PM.131: v4l2-input: /dev/video10 seems to not support video capture
+04:49:08 PM.131: v4l2-input: Found device ' REDRAGON Live Camera:  REDRAGO' at /dev/video9
+04:49:08 PM.132: v4l2-input: Found input 'Camera 8' (Index 0)
+04:49:08 PM.132: v4l2-input: Pixelformat: 8-bit Greyscale (unavailable)
+04:49:08 PM.132: v4l2-input: Pixelformat: RGB3 (Emulated) (unavailable)
+04:49:08 PM.132: v4l2-input: Pixelformat: BGR3 (Emulated) (available)
+04:49:08 PM.132: v4l2-input: Pixelformat: YU12 (Emulated) (available)
+04:49:08 PM.132: v4l2-input: Pixelformat: YV12 (Emulated) (available)
+04:49:08 PM.133: v4l2-input: Stepwise and Continuous framerates are currently hardcoded
+04:49:08 PM.133: v4l2-input: Pixelformat: 8-bit Greyscale (unavailable)
+04:49:08 PM.133: v4l2-input: Pixelformat: RGB3 (Emulated) (unavailable)
+04:49:08 PM.133: v4l2-input: Pixelformat: BGR3 (Emulated) (available)
+04:49:08 PM.133: v4l2-input: Pixelformat: YU12 (Emulated) (available)
+04:49:08 PM.133: v4l2-input: Pixelformat: YV12 (Emulated) (available)
+04:49:08 PM.133: v4l2-input: Stepwise and Continuous framerates are currently hardcoded
+04:49:08 PM.134: v4l2-input: Stepwise and Continuous framerates are currently hardcoded
+04:49:08 PM.134: v4l2-input: Stepwise and Continuous framerates are currently hardcoded
+04:49:11 PM.657: v4l2-input: Found input 'Camera 1' (Index 0)
+04:49:11 PM.657: v4l2-controls: setting default for Power Line Frequency to 1
+04:49:11 PM.657: v4l2-controls: setting default for Exposure, Auto to 3
+04:49:11 PM.658: v4l2-input: Pixelformat: Motion-JPEG (unavailable)
+04:49:11 PM.658: v4l2-input: Pixelformat: YUYV 4:2:2 (available)
+04:49:11 PM.658: v4l2-input: Pixelformat: RGB3 (Emulated) (unavailable)
+04:49:11 PM.658: v4l2-input: Pixelformat: BGR3 (Emulated) (available)
+04:49:11 PM.658: v4l2-input: Pixelformat: YU12 (Emulated) (available)
+04:49:11 PM.658: v4l2-input: Pixelformat: YV12 (Emulated) (available)
+04:49:11 PM.658: v4l2-input: Stepwise and Continuous framerates are currently hardcoded
+04:49:11 PM.730: v4l2-input: Stopped capture after 942 frames
+04:49:12 PM.990: v4l2-input: Start capture from /dev/video2
+04:49:12 PM.990: v4l2-input: Input: 0
+04:49:12 PM.993: v4l2-input: Resolution: 1280x720
+04:49:12 PM.993: v4l2-input: Pixelformat: BGR3
+04:49:12 PM.993: v4l2-input: Linesize: 3840 Bytes
+04:49:12 PM.993: v4l2-input: Framerate: 30.00 fps
+04:49:27 PM.007: v4l2-input: /dev/video7 seems to not support video capture
+04:49:27 PM.007: v4l2-input: /dev/video5 seems to not support video capture
+04:49:27 PM.007: v4l2-input: /dev/video3 seems to not support video capture
+04:49:27 PM.008: v4l2-input: Found device 'USB Video: USB Video' at /dev/video1
+04:49:27 PM.008: v4l2-input: /dev/video11 seems to not support video capture
+04:49:27 PM.008: v4l2-input: /dev/video8 seems to not support video capture
+04:49:27 PM.091: v4l2-input: Found device ' REDRAGON Live Camera:  REDRAGO' at /dev/video6
+04:49:27 PM.092: v4l2-input: Found device 'Integrated Camera: Integrated I' at /dev/video4
+04:49:27 PM.092: v4l2-input: Found device 'Integrated Camera: Integrated C' at /dev/video2
+04:49:27 PM.092: v4l2-input: /dev/video10 seems to not support video capture
+04:49:27 PM.093: v4l2-input: Found device ' REDRAGON Live Camera:  REDRAGO' at /dev/video9
+04:49:29 PM.814: v4l2-input: Start capture from /dev/video9
+04:49:29 PM.873: v4l2-input: Found input 'Camera 1' (Index 0)
+04:49:29 PM.873: v4l2-controls: setting default for Power Line Frequency to 2
+04:49:29 PM.874: v4l2-controls: setting default for Exposure, Auto to 3
+04:49:29 PM.874: v4l2-input: Input: 0
+04:49:29 PM.894: v4l2-input: Selected video format not supported
+04:49:29 PM.894: v4l2-input: Initialization failed
+04:49:29 PM.894: v4l2-input: Pixelformat: H.264 (unavailable)
+04:49:29 PM.894: v4l2-input: Pixelformat: RGB3 (Emulated) (unavailable)
+04:49:29 PM.894: v4l2-input: Pixelformat: BGR3 (Emulated) (available)
+04:49:29 PM.894: v4l2-input: Pixelformat: YU12 (Emulated) (available)
+04:49:29 PM.894: v4l2-input: Pixelformat: YV12 (Emulated) (available)
+04:49:29 PM.895: v4l2-input: Stepwise and Continuous framesizes are currently hardcoded
+04:49:29 PM.895: v4l2-input: Stepwise and Continuous framerates are currently hardcoded
+04:49:34 PM.747: v4l2-input: Start capture from /dev/video6
+04:49:34 PM.807: v4l2-input: Input: 0
+04:49:34 PM.807: v4l2-input: Found input 'Camera 1' (Index 0)
+04:49:34 PM.807: v4l2-controls: setting default for Power Line Frequency to 2
+04:49:34 PM.807: v4l2-controls: setting default for Exposure, Auto to 3
+04:49:34 PM.827: v4l2-input: Resolution: 1920x1080
+04:49:34 PM.827: v4l2-input: Pixelformat: BGR3
+04:49:34 PM.827: v4l2-input: Linesize: 5760 Bytes
+04:49:34 PM.827: v4l2-input: Pixelformat: Motion-JPEG (unavailable)
+04:49:34 PM.827: v4l2-input: Pixelformat: YUYV 4:2:2 (available)
+04:49:34 PM.827: v4l2-input: Pixelformat: RGB3 (Emulated) (unavailable)
+04:49:34 PM.827: v4l2-input: Pixelformat: BGR3 (Emulated) (available)
+04:49:34 PM.827: v4l2-input: Pixelformat: YU12 (Emulated) (available)
+04:49:34 PM.827: v4l2-input: Pixelformat: YV12 (Emulated) (available)
+04:49:34 PM.847: v4l2-input: Framerate: 30.00 fps
+04:49:47 PM.001: ---------------------------------
+04:49:47 PM.001: [x264 encoder: 'simple_h264_recording'] preset: veryfast
+04:49:47 PM.002: [x264 encoder: 'simple_h264_recording'] profile: high
+04:49:47 PM.002: [x264 encoder: 'simple_h264_recording'] settings:
+04:49:47 PM.002: 	rate_control: CRF
+04:49:47 PM.002: 	bitrate:      0
+04:49:47 PM.002: 	buffer size:  0
+04:49:47 PM.002: 	crf:          23
+04:49:47 PM.002: 	fps_num:      30
+04:49:47 PM.002: 	fps_den:      1
+04:49:47 PM.002: 	width:        1920
+04:49:47 PM.002: 	height:       1080
+04:49:47 PM.002: 	keyint:       250
+04:49:47 PM.002: 
+04:49:47 PM.009: libfdk_aac encoder created
+04:49:47 PM.009: libfdk_aac bitrate: 192, channels: 2
+04:49:47 PM.013: ==== Recording Start ===============================================
+04:49:47 PM.013: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/tae/Videos/2020-12-03_16-49-46.mp4'...
+04:49:59 PM.607: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/tae/Videos/2020-12-03_16-49-46.mp4' stopped
+04:49:59 PM.607: Output 'simple_file_output': stopping
+04:49:59 PM.607: Output 'simple_file_output': Total frames output: 345
+04:49:59 PM.607: Output 'simple_file_output': Total drawn frames: 378
+04:49:59 PM.607: ==== Recording Stop ================================================
+04:49:59 PM.622: libfdk_aac encoder destroyed
+04:50:33 PM.231: v4l2-input: Stopped capture after 797 frames
+04:50:33 PM.360: pulse-input: Stopped recording from 'alsa_output.usb-0c76_USB_PnP_Audio_Device-00.analog-stereo.monitor'
+04:50:33 PM.360: pulse-input: Got 54088 packets with 6958626 frames
+04:50:33 PM.398: v4l2-input: Stopped capture after 863 frames
+04:50:33 PM.422: pulse-input: Stopped recording from 'alsa_input.pci-0000_00_1f.3.analog-stereo'
+04:50:33 PM.422: pulse-input: Got 14900 packets with 6980672 frames
+04:50:33 PM.422: pulse-am: Stopped Monitoring in 'alsa_output.usb-0c76_USB_PnP_Audio_Device-00.analog-stereo.monitor'
+04:50:33 PM.422: pulse-am: Got 14844 packets with 6955048 frames
+04:50:33 PM.423: pulse-am: Stopped Monitoring in 'alsa_output.usb-0c76_USB_PnP_Audio_Device-00.analog-stereo.monitor'
+04:50:33 PM.423: pulse-am: Got 0 packets with 0 frames
+04:50:33 PM.424: All scene data cleared
+04:50:33 PM.424: ------------------------------------------------
+04:50:33 PM.427: pulse-input: Server name: 'pulseaudio 13.99.3'
+04:50:33 PM.427: pulse-input: Audio format: s16le, 48000 Hz, 2 channels
+04:50:33 PM.428: pulse-input: Started recording from 'alsa_input.pci-0000_00_1f.3.analog-stereo'
+04:50:33 PM.429: [Loaded global audio device]: 'built-in'
+04:50:33 PM.429:     - filter: 'Gain' (gain_filter)
+04:50:33 PM.429:     - filter: 'Noise Suppression' (noise_suppress_filter_v2)
+04:50:33 PM.429:     - filter: 'Compressor' (compressor_filter)
+04:50:33 PM.429:     - filter: 'Compressor 2' (compressor_filter)
+04:50:33 PM.429:     - filter: 'Limiter' (limiter_filter)
+04:50:33 PM.429:     - filter: 'Noise Gate' (noise_gate_filter)
+04:50:33 PM.429: pulse-input: Server name: 'pulseaudio 13.99.3'
+04:50:33 PM.429: pulse-input: An error occurred while getting the source info!
+04:50:33 PM.430: [Loaded global audio device]: 'usb-mic'
+04:50:33 PM.430:     - filter: 'Noise Suppression 2' (noise_suppress_filter_v2)
+04:50:33 PM.430:     - filter: 'Gain' (gain_filter)
+04:50:33 PM.430:     - filter: 'Noise Suppression' (noise_suppress_filter_v2)
+04:50:33 PM.430:     - filter: 'Compressor' (compressor_filter)
+04:50:33 PM.430:     - filter: 'Compressor 2' (compressor_filter)
+04:50:33 PM.430:     - filter: 'Limiter' (limiter_filter)
+04:50:33 PM.431: xshm-input: Geometry 1920x1080 @ 0,0
+04:50:33 PM.431: v4l2-input: Start capture from /dev/video6
+04:50:33 PM.431: v4l2-input: Input: 0
+04:50:33 PM.543: v4l2-input: Resolution: 1920x1080
+04:50:33 PM.543: v4l2-input: Pixelformat: BGR3
+04:50:33 PM.543: v4l2-input: Linesize: 5760 Bytes
+04:50:33 PM.563: v4l2-input: Framerate: 30.00 fps
+04:50:33 PM.755: v4l2-input: Start capture from /dev/video2
+04:50:33 PM.756: v4l2-input: Input: 0
+04:50:33 PM.759: v4l2-input: Resolution: 1280x720
+04:50:33 PM.759: v4l2-input: Pixelformat: BGR3
+04:50:33 PM.759: v4l2-input: Linesize: 3840 Bytes
+04:50:33 PM.759: v4l2-input: Framerate: 30.00 fps
+04:50:33 PM.768: xshm-input: Geometry 1920x1080 @ 0,0
+04:50:33 PM.810: pulse-input: Server name: 'pulseaudio 13.99.3'
+04:50:33 PM.811: pulse-input: Audio format: s16le, 48000 Hz, 2 channels
+04:50:33 PM.811: pulse-input: Started recording from 'alsa_output.usb-0c76_USB_PnP_Audio_Device-00.analog-stereo.monitor'
+04:50:33 PM.811: v4l2-input: Start capture from /dev/video1
+04:50:33 PM.812: v4l2-input: Input: 0
+04:50:33 PM.813: v4l2-input: Resolution: 1920x1080
+04:50:33 PM.813: v4l2-input: Pixelformat: BGR3
+04:50:33 PM.813: v4l2-input: Linesize: 5760 Bytes
+04:50:33 PM.813: v4l2-input: Framerate: 60.00 fps
+04:50:33 PM.822: Switched to scene '5-test'
+04:50:33 PM.822: ------------------------------------------------
+04:50:33 PM.822: Loaded scenes:
+04:50:33 PM.822: - scene '1-main':
+04:50:33 PM.822:     - source: 'white background' (color_source_v2)
+04:50:33 PM.822:     - source: 'background' (image_source)
+04:50:33 PM.822:     - source: 'nametag' (text_ft2_source_v2)
+04:50:33 PM.822:         - filter: 'Scroll' (scroll_filter)
+04:50:33 PM.822:     - source: 'background 2' (image_source)
+04:50:33 PM.822:     - source: 'screen capture' (xshm_input)
+04:50:33 PM.822:     - source: 'external cam' (v4l2_input)
+04:50:33 PM.822:         - filter: 'Chroma Key' (chroma_key_filter)
+04:50:33 PM.822:     - source: 'laptop cam' (v4l2_input)
+04:50:33 PM.822:         - filter: 'Chroma Key' (chroma_key_filter)
+04:50:33 PM.822:         - filter: 'Sharpen' (sharpness_filter)
+04:50:33 PM.822:     - source: 'hdmi capture' (v4l2_input)
+04:50:33 PM.822:         - filter: 'Chroma Key' (chroma_key_filter)
+04:50:33 PM.822: - scene '3-ipad':
+04:50:33 PM.822:     - source: 'backgrounds' (group)
+04:50:33 PM.822:         - source: 'white background' (color_source_v2)
+04:50:33 PM.822:         - source: 'background' (image_source)
+04:50:33 PM.822:     - source: 'hdmi capture' (v4l2_input)
+04:50:33 PM.822:         - filter: 'Chroma Key' (chroma_key_filter)
+04:50:33 PM.822:     - source: 'background 2' (image_source)
+04:50:33 PM.822:     - source: 'laptop cam' (v4l2_input)
+04:50:33 PM.822:         - filter: 'Chroma Key' (chroma_key_filter)
+04:50:33 PM.822:         - filter: 'Sharpen' (sharpness_filter)
+04:50:33 PM.822:     - source: 'Group 3' (group)
+04:50:33 PM.822:         - source: 'background3' (image_source)
+04:50:33 PM.822:         - source: 'external cam' (v4l2_input)
+04:50:33 PM.822:             - filter: 'Chroma Key' (chroma_key_filter)
+04:50:33 PM.822: - scene '4-screen':
+04:50:33 PM.822:     - source: 'backgrounds' (group)
+04:50:33 PM.822:         - source: 'white background' (color_source_v2)
+04:50:33 PM.822:         - source: 'background' (image_source)
+04:50:33 PM.822:     - source: 'Screen Capture (XSHM)' (xshm_input)
+04:50:33 PM.822:     - source: 'Group 4' (group)
+04:50:33 PM.822:         - source: 'background3' (image_source)
+04:50:33 PM.822:         - source: 'laptop cam' (v4l2_input)
+04:50:33 PM.822:             - filter: 'Chroma Key' (chroma_key_filter)
+04:50:33 PM.822:             - filter: 'Sharpen' (sharpness_filter)
+04:50:33 PM.822: - scene '5-test':
+04:50:33 PM.822:     - source: 'background' (image_source)
+04:50:33 PM.822:     - source: 'hdmi capture' (v4l2_input)
+04:50:33 PM.822:         - filter: 'Chroma Key' (chroma_key_filter)
+04:50:33 PM.822:     - source: 'Group 2' (group)
+04:50:33 PM.822:         - source: 'background 2' (image_source)
+04:50:33 PM.822:         - source: 'laptop cam' (v4l2_input)
+04:50:33 PM.822:             - filter: 'Chroma Key' (chroma_key_filter)
+04:50:33 PM.822:             - filter: 'Sharpen' (sharpness_filter)
+04:50:33 PM.822:     - source: 'Audio Output Capture (PulseAudio)' (pulse_output_capture)
+04:50:33 PM.822:     - source: 'Group' (group)
+04:50:33 PM.822:         - source: 'background3' (image_source)
+04:50:33 PM.822:         - source: 'external cam' (v4l2_input)
+04:50:33 PM.822:             - filter: 'Chroma Key' (chroma_key_filter)
+04:50:33 PM.822: ------------------------------------------------
+04:50:33 PM.842: Switched to scene collection 'online-lectures' (online-lectures.json)
+04:50:33 PM.842: ------------------------------------------------
+04:50:44 PM.497: v4l2-input: Stopped capture after 296 frames
+04:50:44 PM.589: v4l2-input: Stopped capture after 99 frames
+04:50:44 PM.717: pulse-input: Stopped recording from 'alsa_output.usb-0c76_USB_PnP_Audio_Device-00.analog-stereo.monitor'
+04:50:44 PM.717: pulse-input: Got 1166 packets with 522181 frames
+04:50:44 PM.718: v4l2-input: Stopped capture after 152 frames
+04:50:44 PM.743: pulse-input: Stopped recording from 'alsa_input.pci-0000_00_1f.3.analog-stereo'
+04:50:44 PM.743: pulse-input: Got 1157 packets with 543096 frames
+04:50:44 PM.744: All scene data cleared
+04:50:44 PM.744: ------------------------------------------------
+04:50:44 PM.750: pulse-input: Server name: 'pulseaudio 13.99.3'
+04:50:44 PM.751: pulse-input: Audio format: s16le, 48000 Hz, 2 channels
+04:50:44 PM.751: pulse-input: Started recording from 'alsa_input.pci-0000_00_1f.3.analog-stereo'
+04:50:44 PM.752: pulse-am: Server name: 'pulseaudio 13.99.3'
+04:50:44 PM.752: pulse-am: Audio format: s16le, 48000 Hz, 2 channels
+04:50:44 PM.752: pulse-am: Started Monitoring in 'alsa_output.usb-0c76_USB_PnP_Audio_Device-00.analog-stereo.monitor'
+04:50:44 PM.753: [Loaded global audio device]: 'built-in'
+04:50:44 PM.753:     - filter: 'Gain' (gain_filter)
+04:50:44 PM.753:     - filter: 'Noise Suppression' (noise_suppress_filter_v2)
+04:50:44 PM.753:     - filter: 'Compressor' (compressor_filter)
+04:50:44 PM.753:     - filter: 'Compressor 2' (compressor_filter)
+04:50:44 PM.753:     - filter: 'Limiter' (limiter_filter)
+04:50:44 PM.753:     - monitoring: monitor and output
+04:50:44 PM.753: pulse-input: Server name: 'pulseaudio 13.99.3'
+04:50:44 PM.754: pulse-input: An error occurred while getting the source info!
+04:50:44 PM.754: pulse-am: Server name: 'pulseaudio 13.99.3'
+04:50:44 PM.754: pulse-am: Audio format: s16le, 48000 Hz, 2 channels
+04:50:44 PM.754: pulse-am: Started Monitoring in 'alsa_output.usb-0c76_USB_PnP_Audio_Device-00.analog-stereo.monitor'
+04:50:44 PM.755: [Loaded global audio device]: 'usb-mic'
+04:50:44 PM.755:     - filter: 'Noise Suppression 2' (noise_suppress_filter_v2)
+04:50:44 PM.755:     - filter: 'Gain' (gain_filter)
+04:50:44 PM.755:     - filter: 'Noise Suppression' (noise_suppress_filter_v2)
+04:50:44 PM.755:     - filter: 'Compressor' (compressor_filter)
+04:50:44 PM.755:     - filter: 'Compressor 2' (compressor_filter)
+04:50:44 PM.755:     - filter: 'Limiter' (limiter_filter)
+04:50:44 PM.755:     - monitoring: monitor and output
+04:50:44 PM.756: v4l2-input: Start capture from /dev/video9
+04:50:44 PM.756: v4l2-input: Input: 0
+04:50:44 PM.859: v4l2-input: Selected video format not supported
+04:50:44 PM.859: v4l2-input: Initialization failed
+04:50:44 PM.860: pulse-input: Server name: 'pulseaudio 13.99.3'
+04:50:44 PM.860: pulse-input: Audio format: s16le, 48000 Hz, 2 channels
+04:50:44 PM.860: pulse-input: Started recording from 'alsa_output.usb-0c76_USB_PnP_Audio_Device-00.analog-stereo.monitor'
+04:50:44 PM.932: xshm-input: Geometry 1920x1080 @ 0,0
+04:50:44 PM.932: v4l2-input: Start capture from /dev/video2
+04:50:44 PM.933: v4l2-input: Input: 0
+04:50:44 PM.935: v4l2-input: Resolution: 1280x720
+04:50:44 PM.935: v4l2-input: Pixelformat: BGR3
+04:50:44 PM.935: v4l2-input: Linesize: 3840 Bytes
+04:50:44 PM.935: v4l2-input: Framerate: 30.00 fps
+04:50:45 PM.204: v4l2-input: Start capture from /dev/video6
+04:50:45 PM.205: v4l2-input: Input: 0
+04:50:45 PM.225: v4l2-input: Resolution: 1920x1080
+04:50:45 PM.225: v4l2-input: Pixelformat: BGR3
+04:50:45 PM.225: v4l2-input: Linesize: 5760 Bytes
+04:50:45 PM.246: v4l2-input: Framerate: 30.00 fps
+04:50:45 PM.249: xshm-input: Geometry 1920x1080 @ 0,0
+04:50:45 PM.255: Switched to scene '5-test'
+04:50:45 PM.255: ------------------------------------------------
+04:50:45 PM.256: Loaded scenes:
+04:50:45 PM.256: - scene '1-main':
+04:50:45 PM.256:     - source: 'white background' (color_source_v2)
+04:50:45 PM.256:     - source: 'background' (image_source)
+04:50:45 PM.256:     - source: 'nametag' (text_ft2_source_v2)
+04:50:45 PM.256:         - filter: 'Scroll' (scroll_filter)
+04:50:45 PM.256:     - source: 'background 2' (image_source)
+04:50:45 PM.256:     - source: 'screen capture' (xshm_input)
+04:50:45 PM.256:     - source: 'external cam' (v4l2_input)
+04:50:45 PM.256:         - filter: 'Chroma Key' (chroma_key_filter)
+04:50:45 PM.256:     - source: 'laptop cam' (v4l2_input)
+04:50:45 PM.256:         - filter: 'Chroma Key' (chroma_key_filter)
+04:50:45 PM.256:         - filter: 'Sharpen' (sharpness_filter)
+04:50:45 PM.256:     - source: 'hdmi capture' (v4l2_input)
+04:50:45 PM.256:         - filter: 'Chroma Key' (chroma_key_filter)
+04:50:45 PM.256: - scene '3-ipad':
+04:50:45 PM.256:     - source: 'backgrounds' (group)
+04:50:45 PM.256:         - source: 'white background' (color_source_v2)
+04:50:45 PM.256:         - source: 'background' (image_source)
+04:50:45 PM.256:     - source: 'hdmi capture' (v4l2_input)
+04:50:45 PM.256:         - filter: 'Chroma Key' (chroma_key_filter)
+04:50:45 PM.256:     - source: 'background 2' (image_source)
+04:50:45 PM.256:     - source: 'laptop cam' (v4l2_input)
+04:50:45 PM.256:         - filter: 'Chroma Key' (chroma_key_filter)
+04:50:45 PM.256:         - filter: 'Sharpen' (sharpness_filter)
+04:50:45 PM.256:     - source: 'external cam' (v4l2_input)
+04:50:45 PM.256:         - filter: 'Chroma Key' (chroma_key_filter)
+04:50:45 PM.256: - scene '4-screen':
+04:50:45 PM.256:     - source: 'Audio Output Capture (PulseAudio)' (pulse_output_capture)
+04:50:45 PM.256:     - source: 'backgrounds' (group)
+04:50:45 PM.256:         - source: 'white background' (color_source_v2)
+04:50:45 PM.256:         - source: 'background' (image_source)
+04:50:45 PM.256:     - source: 'Screen Capture (XSHM)' (xshm_input)
+04:50:45 PM.256:     - source: 'background3' (image_source)
+04:50:45 PM.256:     - source: 'laptop cam' (v4l2_input)
+04:50:45 PM.256:         - filter: 'Chroma Key' (chroma_key_filter)
+04:50:45 PM.256:         - filter: 'Sharpen' (sharpness_filter)
+04:50:45 PM.256: - scene '5-test':
+04:50:45 PM.256:     - source: 'background' (image_source)
+04:50:45 PM.256:     - source: 'background 2' (image_source)
+04:50:45 PM.256:     - source: 'background3' (image_source)
+04:50:45 PM.256:     - source: 'laptop cam' (v4l2_input)
+04:50:45 PM.256:         - filter: 'Chroma Key' (chroma_key_filter)
+04:50:45 PM.256:         - filter: 'Sharpen' (sharpness_filter)
+04:50:45 PM.256:     - source: 'Audio Output Capture (PulseAudio)' (pulse_output_capture)
+04:50:45 PM.256:     - source: 'external cam' (v4l2_input)
+04:50:45 PM.256:         - filter: 'Chroma Key' (chroma_key_filter)
+04:50:45 PM.256:     - source: 'hdmi capture' (v4l2_input)
+04:50:45 PM.256:         - filter: 'Chroma Key' (chroma_key_filter)
+04:50:45 PM.256: ------------------------------------------------
+04:50:45 PM.276: Switched to scene collection 'sceneTest' (sceneTest.json)
+04:50:45 PM.276: ------------------------------------------------
+04:50:51 PM.963: adding 21 milliseconds of audio buffering, total audio buffering is now 64 milliseconds (source: Audio Output Capture (PulseAudio))
+04:50:51 PM.963: 
+04:56:04 PM.314: User removed filter 'Gain' (gain_filter) from source 'built-in'
+04:56:42 PM.839: User added filter 'Invert Polarity' (invert_polarity_filter) to source 'built-in'
+04:56:58 PM.646: User removed filter 'Invert Polarity' (invert_polarity_filter) from source 'built-in'
+04:57:07 PM.574: User added filter 'Noise Suppression 2' (noise_suppress_filter_v2) to source 'built-in'
+04:58:30 PM.143: User added filter 'Noise Gate' (noise_gate_filter) to source 'built-in'
+04:59:01 PM.996: User removed filter 'Noise Gate' (noise_gate_filter) from source 'built-in'
+04:59:16 PM.238: ---------------------------------
+04:59:16 PM.238: [x264 encoder: 'simple_h264_recording'] preset: veryfast
+04:59:16 PM.238: [x264 encoder: 'simple_h264_recording'] profile: high
+04:59:16 PM.238: [x264 encoder: 'simple_h264_recording'] settings:
+04:59:16 PM.238: 	rate_control: CRF
+04:59:16 PM.238: 	bitrate:      0
+04:59:16 PM.238: 	buffer size:  0
+04:59:16 PM.238: 	crf:          23
+04:59:16 PM.238: 	fps_num:      30
+04:59:16 PM.238: 	fps_den:      1
+04:59:16 PM.238: 	width:        1920
+04:59:16 PM.238: 	height:       1080
+04:59:16 PM.238: 	keyint:       250
+04:59:16 PM.238: 
+04:59:16 PM.240: libfdk_aac encoder created
+04:59:16 PM.240: libfdk_aac bitrate: 192, channels: 2
+04:59:16 PM.241: ==== Recording Start ===============================================
+04:59:16 PM.242: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/tae/Videos/2020-12-03_16-59-16.mp4'...
+04:59:29 PM.242: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/tae/Videos/2020-12-03_16-59-16.mp4' stopped
+04:59:29 PM.242: Output 'simple_file_output': stopping
+04:59:29 PM.242: Output 'simple_file_output': Total frames output: 357
+04:59:29 PM.242: Output 'simple_file_output': Total drawn frames: 390
+04:59:29 PM.242: ==== Recording Stop ================================================
+04:59:29 PM.259: libfdk_aac encoder destroyed
+04:59:57 PM.441: User Removed source 'Audio Output Capture (PulseAudio)' (pulse_output_capture) from scene '5-test'
+05:00:17 PM.600: adding 149 milliseconds of audio buffering, total audio buffering is now 213 milliseconds (source: built-in)
+05:00:17 PM.600: 
+05:02:30 PM.954: ==== Shutting down ==================================================
+05:02:30 PM.961: pulse-input: Stopped recording from 'alsa_output.usb-0c76_USB_PnP_Audio_Device-00.analog-stereo.monitor'
+05:02:30 PM.961: pulse-input: Got 257800 packets with 33892146 frames
+05:02:30 PM.989: v4l2-input: Stopped capture after 7249 frames
+05:02:31 PM.143: v4l2-input: Stopped capture after 10571 frames
+05:02:31 PM.168: pulse-input: Stopped recording from 'alsa_input.pci-0000_00_1f.3.analog-stereo'
+05:02:31 PM.168: pulse-input: Got 72378 packets with 33908232 frames
+05:02:31 PM.168: pulse-am: Stopped Monitoring in 'alsa_output.usb-0c76_USB_PnP_Audio_Device-00.analog-stereo.monitor'
+05:02:31 PM.168: pulse-am: Got 72313 packets with 33877744 frames
+05:02:31 PM.169: pulse-am: Stopped Monitoring in 'alsa_output.usb-0c76_USB_PnP_Audio_Device-00.analog-stereo.monitor'
+05:02:31 PM.169: pulse-am: Got 0 packets with 0 frames
+05:02:31 PM.169: All scene data cleared
+05:02:31 PM.169: ------------------------------------------------
+05:02:31 PM.257: [Scripting] Total detached callbacks: 0
+05:02:31 PM.277: Freeing OBS context data
+05:02:31 PM.308: == Profiler Results =============================
+05:02:31 PM.308: run_program_init: 1163.52 ms
+05:02:31 PM.308:  ┣OBSApp::AppInit: 2.136 ms
+05:02:31 PM.308:  ┃ ┗OBSApp::InitLocale: 0.9 ms
+05:02:31 PM.308:  ┗OBSApp::OBSInit: 1078.29 ms
+05:02:31 PM.308:    ┣obs_startup: 15.701 ms
+05:02:31 PM.308:    ┗OBSBasic::OBSInit: 1008.07 ms
+05:02:31 PM.308:      ┣OBSBasic::InitBasicConfig: 0.082 ms
+05:02:31 PM.308:      ┣OBSBasic::ResetAudio: 0.19 ms
+05:02:31 PM.308:      ┣OBSBasic::ResetVideo: 134.408 ms
+05:02:31 PM.308:      ┣OBSBasic::InitOBSCallbacks: 0.004 ms
+05:02:31 PM.308:      ┣OBSBasic::InitHotkeys: 0.044 ms
+05:02:31 PM.308:      ┣obs_load_all_modules: 96.022 ms
+05:02:31 PM.308:      ┃ ┣obs_init_module(decklink-ouput-ui.so): 2.654 ms
+05:02:31 PM.309:      ┃ ┣obs_init_module(frontend-tools.so): 70.106 ms
+05:02:31 PM.309:      ┃ ┣obs_init_module(image-source.so): 0.005 ms
+05:02:31 PM.309:      ┃ ┣obs_init_module(linux-alsa.so): 0.001 ms
+05:02:31 PM.309:      ┃ ┣obs_init_module(linux-capture.so): 0.296 ms
+05:02:31 PM.309:      ┃ ┣obs_init_module(linux-decklink.so): 0.113 ms
+05:02:31 PM.309:      ┃ ┣obs_init_module(linux-jack.so): 0.001 ms
+05:02:31 PM.309:      ┃ ┣obs_init_module(linux-pulseaudio.so): 0.001 ms
+05:02:31 PM.309:      ┃ ┣obs_init_module(linux-v4l2.so): 0.001 ms
+05:02:31 PM.309:      ┃ ┣obs_init_module(obs-ffmpeg.so): 0.185 ms
+05:02:31 PM.309:      ┃ ┃ ┗nvenc_check: 0.166 ms
+05:02:31 PM.309:      ┃ ┣obs_init_module(obs-filters.so): 0.013 ms
+05:02:31 PM.309:      ┃ ┣obs_init_module(obs-libfdk.so): 0 ms
+05:02:31 PM.309:      ┃ ┣obs_init_module(obs-outputs.so): 0.001 ms
+05:02:31 PM.309:      ┃ ┣obs_init_module(obs-transitions.so): 0.004 ms
+05:02:31 PM.309:      ┃ ┣obs_init_module(obs-x264.so): 0.001 ms
+05:02:31 PM.309:      ┃ ┣obs_init_module(rtmp-services.so): 0.432 ms
+05:02:31 PM.309:      ┃ ┣obs_init_module(text-freetype2.so): 0.006 ms
+05:02:31 PM.309:      ┃ ┣obs_init_module(v4l2sink.so): 1.661 ms
+05:02:31 PM.309:      ┃ ┗obs_init_module(vlc-video.so): 0.534 ms
+05:02:31 PM.309:      ┣OBSBasic::ResetOutputs: 0.084 ms
+05:02:31 PM.309:      ┣OBSBasic::CreateHotkeys: 0.035 ms
+05:02:31 PM.309:      ┣OBSBasic::InitService: 0.03 ms
+05:02:31 PM.309:      ┣OBSBasic::InitPrimitives: 0.139 ms
+05:02:31 PM.309:      ┗OBSBasic::Load: 688.486 ms
+05:02:31 PM.309: obs_hotkey_thread(25 ms): min=0.039 ms, median=0.334 ms, max=55.856 ms, 99th percentile=14.924 ms, 99.9818% below 25 ms
+05:02:31 PM.309: audio_thread(Audio): min=0 ms, median=0.061 ms, max=4.995 ms, 99th percentile=0.963 ms
+05:02:31 PM.309:  ┗receive_audio: min=0.001 ms, median=0.241 ms, max=1.833 ms, 99th percentile=0.658 ms, 0.029102 calls per parent call
+05:02:31 PM.309:    ┣buffer_audio: min=0 ms, median=0.001 ms, max=0.035 ms, 99th percentile=0.006 ms
+05:02:31 PM.309:    ┗do_encode: min=0.147 ms, median=0.238 ms, max=1.832 ms, 99th percentile=0.66 ms
+05:02:31 PM.309:      ┗encode(simple_aac_recording): min=0.146 ms, median=0.229 ms, max=0.974 ms, 99th percentile=0.615 ms
+05:02:31 PM.309: obs_graphics_thread(33.3333 ms): min=0.018 ms, median=1.595 ms, max=1322.61 ms, 99th percentile=20.887 ms, 99.9618% below 33.333 ms
+05:02:31 PM.309:  ┣tick_sources: min=0 ms, median=0.021 ms, max=1313.82 ms, 99th percentile=0.13 ms
+05:02:31 PM.309:  ┣output_frame: min=0.007 ms, median=0.895 ms, max=27.369 ms, 99th percentile=20.03 ms
+05:02:31 PM.309:  ┃ ┣gs_context(video->graphics): min=0.006 ms, median=0.894 ms, max=26.904 ms, 99th percentile=19.619 ms
+05:02:31 PM.309:  ┃ ┃ ┣render_video: min=0.004 ms, median=0.813 ms, max=26.886 ms, 99th percentile=19.6 ms
+05:02:31 PM.309:  ┃ ┃ ┃ ┣render_main_texture: min=0.003 ms, median=0.75 ms, max=12.984 ms, 99th percentile=3.099 ms
+05:02:31 PM.309:  ┃ ┃ ┃ ┣render_convert_texture: min=0.017 ms, median=0.021 ms, max=1.705 ms, 99th percentile=0.101 ms, 0.0293163 calls per parent call
+05:02:31 PM.309:  ┃ ┃ ┃ ┗stage_output_texture: min=5.948 ms, median=17.229 ms, max=23.871 ms, 99th percentile=23.485 ms, 0.0293163 calls per parent call
+05:02:31 PM.309:  ┃ ┃ ┣gs_flush: min=0 ms, median=0.062 ms, max=3.25 ms, 99th percentile=0.243 ms
+05:02:31 PM.309:  ┃ ┃ ┗download_frame: min=0 ms, median=0.003 ms, max=0.038 ms, 99th percentile=0.016 ms, 0.0293163 calls per parent call
+05:02:31 PM.309:  ┃ ┗output_video_data: min=0.353 ms, median=0.453 ms, max=1.979 ms, 99th percentile=1.616 ms, 0.02924 calls per parent call
+05:02:31 PM.309:  ┗render_displays: min=0.001 ms, median=0.554 ms, max=39.204 ms, 99th percentile=5.924 ms
+05:02:31 PM.309: video_thread(video): min=1.366 ms, median=2.766 ms, max=6.978 ms, 99th percentile=5.565 ms
+05:02:31 PM.309:  ┗receive_video: min=1.364 ms, median=2.764 ms, max=6.976 ms, 99th percentile=5.563 ms
+05:02:31 PM.309:    ┗do_encode: min=1.364 ms, median=2.763 ms, max=6.974 ms, 99th percentile=5.562 ms
+05:02:31 PM.309:      ┗encode(simple_h264_recording): min=1.355 ms, median=2.745 ms, max=6.461 ms, 99th percentile=5.416 ms
+05:02:31 PM.309: =================================================
+05:02:31 PM.309: == Profiler Time Between Calls ==================
+05:02:31 PM.309: obs_hotkey_thread(25 ms): min=25.078 ms, median=25.431 ms, max=80.944 ms, 62.0388% within ±2% of 25 ms (0% lower, 37.9612% higher)
+05:02:31 PM.309: obs_graphics_thread(33.3333 ms): min=10.739 ms, median=33.333 ms, max=1322.62 ms, 99.8855% within ±2% of 33.333 ms (0.0572607% lower, 0.0572607% higher)
+05:02:31 PM.309: =================================================
+05:02:31 PM.380: Number of memory leaks: 0
