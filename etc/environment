@@ -1,0 +1,16 @@
+#
+# This file is parsed by pam_env module
+#
+# Syntax: simple "KEY=VAL" pairs on separate lines
+#
+
+# For MATLAB and MAPLE interfaces
+_JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
+# Use below instead if GTK look and feel is desired.
+# _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
+JAVA_FONTS=/usr/share/fonts/TTF
+
+# IBUS
+GTK_IM_MODULE=ibus
+QT_IM_MODULE=ibus
+XMODIFIERS=@im=ibus
