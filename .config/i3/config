@@ -203,6 +203,9 @@ for_window [title="Preferences"] floating enable
 for_window [title="SimpleScreenRecorder"] floating enable
 #for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [title="Settings"] floating enable border normal
+for_window [class="Inkscape" title="Preferences*"] floating enable border pixel 1, move absolute position center
+for_window [class="Inkscape" title="Document Properties*"] floating enable border pixel 1, move absolute position center
+for_window [class="Inkscape" title="Trace Bitmap*"] floating enable border pixel 1, move absolute position center
 
 
 
