@@ -1,0 +1,24 @@
+#!/bin/bash
+# This script converts all pages of a pdf file into separate svg files. 
+# 
+# Usage:
+# 
+#   pdf2svg-allpages [document.pdf] 
+#
+# Found out that
+#
+#   pdf2svg [document.pdf] [output-page%d.svg] all
+#
+# does exactly what I wanted to achieve.
+
+file=$1
+fname=$(echo $file | sed 's/.pdf$//')
+npg=$(pdfinfo $file | grep "Pages" | awk '{ print $2 }')
+ndgt=${#npg}
+
+# for (( i=1; i<=$npg; i++ ))  # this is a C-style for-loop
+for i in $(eval echo "{1..$npg}")
+do
+    pdf2svg $file "${fname}_$(printf "%0${ndgt}d" $i).svg" $i
+    # https://unix.stackexchange.com/questions/88452/concatenating-two-variables-with-an-underscore
+done

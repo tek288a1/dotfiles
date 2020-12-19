@@ -4,19 +4,12 @@
 # Usage:
 #    pdf-unifsize [file name] [first page to change] [last page to change] [representative page]
 
-# Inputs
-fname=$1                        # file name
-pgFirst=$2                      # first page to mod
-pgLast=$3                       # last page to mod
-pgNorm=$4                       # representative page
+fname=$1
+pgFirst=$2
+pgLast=$3
+pgNorm=$4
 
-# Extracting dimensions of rep page
-# Note: Arrays in bash is defined by
-#       >  arr=(1 3 0)
-# Elements are accessed by
-#       >  ${arr[0]}
+# cp $fname "$fname.bak"
 dims=($(pdfinfo -box -f $pgNorm -l $pgNorm $fname\
             | grep "^Page" | grep size | awk '{ print $4, $6 }'))
-
-#
-cpdf -scale-to-fit "${dims[0]}pt ${dims[1]}pt" $fname -o $fname
+cpdf -scale-to-fit "${dims[0]}pt ${dims[1]}pt" $fname $pgFirst-$pgLast -o $fname
