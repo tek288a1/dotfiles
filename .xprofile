@@ -25,6 +25,6 @@ volumeicon &
 xfce4-power-manager &
 
 #conky -d &
-#solaar &
+#solaar -w hide &
 #redshift &
 #emacs --daemon &
