@@ -256,7 +256,7 @@ myStartupHook = return ()
 
 ------------------------------------------------------------------------
 -- Command to launch the bar.
-myBar = "xmobar"
+myBar = "pkill xmobar; xmobar ~/.config/xmobar/xmobarrc"
 
 -- Custom PP, configure it as you like. It determines what is being written to the bar.
 myPP = xmobarPP { ppCurrent = xmobarColor "#429942" "" . wrap "<" ">" }
