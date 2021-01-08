@@ -1,4 +1,4 @@
-export ZSH=$HOME/.oh-my-zsh
+export ZSH=$HOME/.config/oh-my-zsh
 
 ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_MODE="nerdfont-complete"
@@ -15,6 +15,7 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
+alias ls="ls -hN --color=auto --group-directories-first"
 
 #neofetch
 #echo "Welcome to Terminal!"
