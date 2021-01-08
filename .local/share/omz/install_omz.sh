@@ -11,7 +11,7 @@ yay -S --noconfirm --needed nerd-fonts-hack
 wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh
 
 # Download powerlevel9k theme
-git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+git clone https://github.com/bhilburn/powerlevel9k.git ~/.config/oh-my-zsh/custom/themes/powerlevel9k
 
 # Download powerlevel10k theme
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
