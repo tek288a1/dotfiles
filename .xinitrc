@@ -1,7 +1,14 @@
 #!/bin/sh
 
+if [ $# -eq 0 ]
+then
+    export DESKTOP_SESSION="i3"
+else
+    export DESKTOP_SESSION="$1"
+fi
+
 [ -f "$HOME/.xprofile" ] && . ~/.xprofile
-xrdb $HOME/.Xresources
+xrdb $HOME/.config/X11/Xresources
 
 # Launch X by
 #  > xinit
@@ -11,10 +18,6 @@ xrdb $HOME/.Xresources
 # To use startx
 #  > startx ~/.xinitrc dwm
 #
-if [ $# -eq 0 ]
-then
-	export DESKTOP_SESSION='i3'
-fi
 
 case $DESKTOP_SESSION in
 	i3)
