@@ -1,0 +1,73 @@
+%% This style file contains the packages I use frequently and the my own macros for various symbols
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{tk_beamer1}[2020/06/20 my beamer customizations for online teaching]
+
+
+%% OSU colors
+\definecolor{osured}{rgb}{0.80784,0.058824,0.23922}
+\definecolor{osugray}{rgb}{0.6902, 0.71765, 0.73725}
+
+%% Themes
+\usetheme{Madrid}
+\usecolortheme{beaver}
+\usefonttheme[]{professionalfonts}
+
+%% Page layout/size
+% \setbeamersize{text margin left=20pt,text margin right=100pt}
+\setbeamersize{text margin left=0.05\paperwidth,text margin right=0.20\paperwidth}
+
+%% Set colors
+\setbeamercolor{structure}{fg=osured, bg=white}
+\setbeamercolor{frametitle}{fg=osured, bg=osugray!10}
+% \setbeamercolor{frametitle}{fg=black!60!osugray, bg=white}
+% \setbeamercolor*{palette primary}{use=structure,fg=osured,bg=white}
+% \setbeamercolor*{block title example}{fg=osured!50,bg=osured!10}
+% \setbeamercolor*{block body example}{fg=osured,bg=osured!5}
+% \setbeamercolor*{block title example}{fg=blue!50,bg= blue!10}
+% \setbeamercolor*{block body example}{fg= blue,bg= blue!5}
+
+%% Blocks
+% \setbeamertemplate{blocks}[rounded][shadow=false]
+% \addtobeamertemplate{block begin}{\pgfsetfillopacity{0.8}}{\pgfsetfillopacity{1}}
+
+%% Footline
+% \setbeamertemplate{footline} % To remove the footer line
+\setbeamertemplate{footline}[page number]
+% \setbeamertemplate{footline}[frame number]
+
+%% Enum-Item
+% \setbeamertemplate{itemize items}{$\bullet$}
+\setbeamercolor{itemize item}{fg=osured!80}
+\setbeamercolor{itemize subitem}{fg=osured}
+\setbeamercolor{enumerate item}{fg=osured}
+\setbeamercolor{enumerate subitem}{fg=osured}
+
+%% Template for miscellaneous features
+\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols
+\setbeamertemplate{caption}[numbered]
+
+%% Overlay
+% \setbeamercovered{transparent}
+\setbeamercovered{invisible}
+
+%% Frametitle
+\setbeamertemplate{frametitle}
+{
+    \nointerlineskip
+    \begin{beamercolorbox}[sep=0.3cm,ht=1.8em,wd=1.1\paperwidth]{frametitle}
+        \vbox{}\vskip-2ex%
+        \strut\insertframetitle\strut
+        \vskip-0.8ex%
+    \end{beamercolorbox}
+}
+
+%% Section
+\AtBeginSection[]{
+  \begin{frame}
+    \vfill \centering
+    \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+      \usebeamerfont{title}\insertsectionhead\par%
+    \end{beamercolorbox}
+    \vfill
+  \end{frame}
+}
