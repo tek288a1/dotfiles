@@ -1,0 +1,15 @@
+#!/bin/sh
+# Usage: file-inotify <file> <command>
+# Command is run when file is written.
+
+path=$(realpath "$1")
+job="$2"
+dirname=$(dirname "$1")
+
+inotifywait -m -e close_write --format '%w%f' "$dirname" \
+    | while read file
+do
+    if [[ $(realpath "$file") == "$path" ]]; then
+        sh -c "$job"
+    fi
+done

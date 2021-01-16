@@ -1,0 +1,15 @@
+#!/bin/bash
+# /home/tae/.local/bin/tkmaps-udev &
+
+# path to lock file
+lock="/tmp/realforce-kbd.lock"
+
+# lock the file
+exec 9> "$lock"
+if ! flock -n 9;
+then
+    exit 1
+fi
+
+# time stamp
+echo "Modified - $(date)" > $lock &

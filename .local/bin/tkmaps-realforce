@@ -1,0 +1,21 @@
+#!/bin/sh
+# This script is called by `kbd_udev` upon udev's detecting the realforce keyboard
+# Increase key speed via a rate change
+
+sleep 2
+LOG="/tmp/realforce-kbd.log"
+xinput > $LOG
+
+realforce_kbd_id=$(xinput | grep -i realforce | awk {'print substr($6,4,2)'})
+
+if [ $realforce_kbd_id != '' ]; then
+    echo "Realforce KBD detected (xinput id - '$realforce_kbd_id') ! " >> $LOG
+    xset r rate 300 50
+    xmodmap $HOME/.xmodmaprc
+    pkill xcape 2> /dev/null
+    xcape -t 10000 -e "Control_R=Return;Control_L=Escape;Hyper_L=Tab;Hyper_R=backslash"
+    notify-send.sh -t 3000 --icon=input-keyboard "Keymap Change" "tkmaps enacted"
+else
+    echo "Xinput did not detect Realforce KBD."  >> $LOG
+    notify-send.sh --icon=input-keyboard "Could not find Realforce KBD."
+fi

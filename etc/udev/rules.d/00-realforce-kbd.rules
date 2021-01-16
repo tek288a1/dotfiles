@@ -1,0 +1,2 @@
+# Run `realforce-kbd-locker' upon detecting a plug-in of realforce keyboard.
+ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="0853", ATTRS{idProduct}=="0111", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/home/tae/.Xauthority", RUN+="/home/tae/.local/bin/realforce-kbd-locker", OWNER="tae", SYMLINK+="tkmaps-realforce"
