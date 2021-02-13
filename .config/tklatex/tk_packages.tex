@@ -11,10 +11,11 @@
 \RequirePackage{amsmath}
 \RequirePackage{subfig}
 \RequirePackage{amsthm}
+\RequirePackage{mathtools}
+\RequirePackage{mathabx}        % required for \odiv; put this after mathtools, otherwise, over/underbrace get messed up
 \RequirePackage{epsfig}
 \RequirePackage{epstopdf}
 \RequirePackage{float}
-\RequirePackage{mathtools}
 \RequirePackage{booktabs}
 \RequirePackage{blkarray}
 \RequirePackage{multirow}
@@ -35,64 +36,95 @@
 \RequirePackage{bm}
 
 
-%%%%%% for matlab listings
-\RequirePackage{courier}
-\RequirePackage{listings}
-% \newcommand{\matlab}{\textsc{MatLab}}
-% \definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
-\definecolor{mygreen}{RGB}{0,100,0} % color values Red, Green, Blue
-\definecolor{mylilas}{RGB}{170,55,241}
+% %%%%%% for matlab listings
+% \RequirePackage{courier}
+% \RequirePackage{listings}
+% % \newcommand{\matlab}{\textsc{MatLab}}
+% % \definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+% \definecolor{mygreen}{RGB}{0,100,0} % color values Red, Green, Blue
+% \definecolor{mylilas}{RGB}{170,55,241}
 
-\lstset{language=Matlab,
-  % basicstyle=\small\ttfamily, % Use small true type font
-  % breaklines=true,%
-  % morekeywords={matlab2tikz},
-  % keywordstyle=\color{blue},%
-  % morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
-  % identifierstyle=\color{black},%
-  % stringstyle=\color{mylilas},
-  % commentstyle=\color{mygreen},%
-  % showstringspaces=false,%without this there will be a symbol in the places where there is a space
-  % numbers=left,%
-  % numberstyle={\tiny \color{black}},% size of the numbers
-  % numbersep=7pt, % this defines how far the numbers are from the text
-  % emph=[1]{for,end,break},emphstyle=[1]\color{red}, %some words to emphasise
-  % % emph=[2]{word1,word2}, emphstyle=[2]{style},
-  % frame=single,
-  basicstyle=\small\ttfamily,%
-  breaklines=true,%
-  morekeywords={matlab2tikz},%
-  keywordstyle=\color{blue},%
-  morekeywords=[2]{1},%
-  keywordstyle=[2]{\color{black}},%
-  identifierstyle=\color{black},%
-  stringstyle=\color{mylilas},
-  commentstyle=\color{mygreen},%
-  % moredelim=[il][\rmfamily]{//},%
-  morecomment=[n][\color{black}]{(*}{*)},%
-  showstringspaces=false,%
-  numbers=none,%
-  % numbers=left,%
-  % numberstyle={\tiny \color{black}},%
-  % numbersep=7pt,%
-  emph=[1]{for,end,break,if,while},emphstyle=[1]\color{blue}, %some words to emphasise
-  % emph=[2]{word1,word2}, emphstyle=[2]{style},
-  frame=single,%
-  framerule=0.7pt,%
-  mathescape=true,%
-  escapebegin=\color{mygreen},%
-  escapeend=,%
-}
-% ref: https://tex.stackexchange.com/questions/257938/how-to-include-matlab-code-into-latex-in-colour
+% \lstset{language=Matlab,
+%   % basicstyle=\small\ttfamily, % Use small true type font
+%   % breaklines=true,%
+%   % morekeywords={matlab2tikz},
+%   % keywordstyle=\color{blue},%
+%   % morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
+%   % identifierstyle=\color{black},%
+%   % stringstyle=\color{mylilas},
+%   % commentstyle=\color{mygreen},%
+%   % showstringspaces=false,%without this there will be a symbol in the places where there is a space
+%   % numbers=left,%
+%   % numberstyle={\tiny \color{black}},% size of the numbers
+%   % numbersep=7pt, % this defines how far the numbers are from the text
+%   % emph=[1]{for,end,break},emphstyle=[1]\color{red}, %some words to emphasise
+%   % % emph=[2]{word1,word2}, emphstyle=[2]{style},
+%   % frame=single,
+%   basicstyle=\small\ttfamily,%
+%   breaklines=true,%
+%   morekeywords={matlab2tikz},%
+%   keywordstyle=\color{blue},%
+%   morekeywords=[2]{1},%
+%   keywordstyle=[2]{\color{black}},%
+%   identifierstyle=\color{black},%
+%   stringstyle=\color{mylilas},
+%   commentstyle=\color{mygreen},%
+%   % moredelim=[il][\rmfamily]{//},%
+%   morecomment=[n][\color{black}]{(*}{*)},%
+%   showstringspaces=false,%
+%   numbers=none,%
+%   % numbers=left,%
+%   % numberstyle={\tiny \color{black}},%
+%   % numbersep=7pt,%
+%   emph=[1]{for,end,break,if,while},emphstyle=[1]\color{blue}, %some words to emphasise
+%   % emph=[2]{word1,word2}, emphstyle=[2]{style},
+%   frame=single,%
+%   framerule=0.7pt,%
+%   mathescape=true,%
+%   escapebegin=\color{mygreen},%
+%   escapeend=,%
+% }
+% % ref: https://tex.stackexchange.com/questions/257938/how-to-include-matlab-code-into-latex-in-colour
 
 
 
-% \usepackage{spalign}
-% \usepackage{enumitem}
-% \graphicspath{ {../codes/} }
-% \epstopdfsetup{outdir=../codes/}
-% \lstset{inputpath="../codes"}
-% \setlength{\fboxsep}{1.5pt}
-% \newcommand{\x}{\times}
-% \newcommand{\bigzero}{\makebox(0,0){\text{\LARGE 0}}}
-% \newcommand*{\bord}{\multicolumn{1}{c|}{}}
+% % \usepackage{spalign}
+% % \usepackage{enumitem}
+% % \graphicspath{ {../codes/} }
+% % \epstopdfsetup{outdir=../codes/}
+% % \lstset{inputpath="../codes"}
+% % \setlength{\fboxsep}{1.5pt}
+% % \newcommand{\x}{\times}
+% % \newcommand{\bigzero}{\makebox(0,0){\text{\LARGE 0}}}
+% % \newcommand*{\bord}{\multicolumn{1}{c|}{}}
+
+% %% Algorithm/Pseudocode Environment using `listings'
+% % https://tex.stackexchange.com/questions/111116/what-is-the-best-looking-pseudo-code-package
+% %
+% % \newcounter{nalg}[chapter] % defines algorithm counter for chapter-level
+% % \renewcommand{\thenalg}{\thechapter .\arabic{nalg}}
+
+% %defines appearance of the algorithm counter
+% \DeclareCaptionLabelFormat{algocaption}{Algorithm \thenalg} % defines a new caption label as Algorithm x.y
+
+% \lstnewenvironment{algorithm}[1][] %defines the algorithm listing environment
+% {
+%     % \refstepcounter{nalg} %increments algorithm number
+%     \captionsetup{labelformat=algocaption,labelsep=colon} %defines the caption setup for: it uses label format as the declared caption label above and makes label and caption text to be separated by a ':'
+%     \lstset{ %this is the stype
+%         mathescape=true,
+%         % %frame=tB,
+%         % frame=none,
+%         % numbers=left,
+%         % numberstyle=\tiny,
+%         % commentstyle=,
+%         % basicstyle=\small,
+%         % stringstyle=\ttfamily,
+%         basicstyle=,
+%         keywordstyle=\color{black}\bfseries,
+%         keywords={for, input, output, return, datatype, function, in, if, else, foreach, while, begin, end}, %add the keywords you want, or load a language as Rubens explains in his comment above.
+%         % xleftmargin=.04\textwidth,
+%         #1 % this is to add specific settings to an usage of this environment (for instnce, the caption and referable label)
+%         }
+% }
+% {}

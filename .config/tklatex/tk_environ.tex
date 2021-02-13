@@ -14,3 +14,87 @@
 \newtheorem{defn}{Definition}
 \newtheorem{notn}[defn]{Notation}
 \newtheorem{rmk}[defn]{Remark}
+
+
+%% Listings Environments
+\usepackage{courier}
+\usepackage{listings}
+
+% \definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mygreen}{RGB}{0,100,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+
+\lstdefinestyle{matlab}{language=Matlab,
+% basicstyle=\small\ttfamily, % Use small true type font
+% breaklines=true,%
+% morekeywords={matlab2tikz},
+% keywordstyle=\color{blue},%
+% morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
+% identifierstyle=\color{black},%
+% stringstyle=\color{mylilas},
+% commentstyle=\color{mygreen},%
+% showstringspaces=false,%without this there will be a symbol in the places where there is a space
+% numbers=left,%
+% numberstyle={\tiny \color{black}},% size of the numbers
+% numbersep=7pt, % this defines how far the numbers are from the text
+% emph=[1]{for,end,break},emphstyle=[1]\color{red}, %some words to emphasise
+% % emph=[2]{word1,word2}, emphstyle=[2]{style},
+% frame=single,
+basicstyle=\small\ttfamily,%
+breaklines=true,%
+morekeywords={matlab2tikz},%
+keywordstyle=\color{blue},%
+morekeywords=[2]{1},%
+keywordstyle=[2]{\color{black}},%
+identifierstyle=\color{black},%
+stringstyle=\color{mylilas},
+commentstyle=\color{mygreen},%
+% moredelim=[il][\rmfamily]{//},%
+morecomment=[n][\color{black}]{(*}{*)},%
+showstringspaces=false,%
+numbers=none,%
+% numbers=left,%
+% numberstyle={\tiny \color{black}},%
+% numbersep=7pt,%
+emph=[1]{for,end,break,if,while,mod,ones,randi,sind,cosd,tand},
+emphstyle=[1]\color{blue}, %some words to emphasise
+% emph=[2]{word1,word2}, emphstyle=[2]{style},
+frame=single,%
+framerule=0.7pt,%
+mathescape=true,%
+escapebegin=\color{mygreen},%
+escapeend=,%
+escapechar=`,
+}
+% ref: https://tex.stackexchange.com/questions/257938/how-to-include-matlab-code-into-latex-in-colour
+
+
+%% Algorithm/Pseudocode Environment using `listings'
+% https://tex.stackexchange.com/questions/111116/what-is-the-best-looking-pseudo-code-package
+%
+% \newcounter{nalg}[chapter] % defines algorithm counter for chapter-level
+% \renewcommand{\thenalg}{\thechapter .\arabic{nalg}}
+
+%defines appearance of the algorithm counter
+\DeclareCaptionLabelFormat{algocaption}{Algorithm \thenalg} % defines a new caption label as Algorithm x.y
+
+\lstnewenvironment{algorithm}[1][] %defines the algorithm listing environment
+{
+% \refstepcounter{nalg} %increments algorithm number
+\captionsetup{labelformat=algocaption,labelsep=colon} %defines the caption setup for: it uses label format as the declared caption label above and makes label and caption text to be separated by a ':'
+\lstset{language=,
+basicstyle=\small,%
+stringstyle=\small\ttfamily,%
+breaklines=true,%
+keywords={for, input, output, return, datatype, function, in, if, else, foreach, while, begin, end},
+keywordstyle=\color{blue}\bfseries\ttfamily,%
+numbers=none,%
+frame=single,%
+framerule=0.7pt,%
+mathescape=true,%
+escapechar=',
+xleftmargin=.04\linewidth,
+#1 % this is to add specific settings to an usage of this environment (for instance, the caption and referable label)
+}
+}
+{}

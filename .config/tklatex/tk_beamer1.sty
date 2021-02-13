@@ -38,12 +38,13 @@
 %% Enum-Item
 %
 % bullet shapes: \setbeamertemplate{itemize items}[SHAPE]
-%                SHAPE: default, triangle, circle, square, ball
+% SHAPE: default, triangle, circle, square, ball
 % also possible to set custom shapes by `\setbeamertemplate{itemize items}{$\bullet$}'
 \setbeamertemplate{itemize items}[circle]
+\setbeamertemplate{enumerate items}[circle]
 \setbeamercolor{itemize item}{fg=osured!80}
 \setbeamercolor{itemize subitem}{fg=osured}
-\setbeamercolor{enumerate item}{fg=osured}
+\setbeamercolor{enumerate item}{fg=osured!80}
 \setbeamercolor{enumerate subitem}{fg=osured}
 
 %% Template for miscellaneous features
@@ -57,21 +58,50 @@
 %% Frametitle
 \setbeamertemplate{frametitle}
 {
-    \nointerlineskip
-    \begin{beamercolorbox}[sep=0.3cm,ht=1.8em,wd=1.1\paperwidth]{frametitle}
-        \vbox{}\vskip-2ex%
-        \strut\insertframetitle\strut
-        \vskip-0.8ex%
-    \end{beamercolorbox}
+  \nointerlineskip
+  \begin{beamercolorbox}[sep=0.3cm,ht=1.8em,wd=1.1\paperwidth]{frametitle}
+    \vbox{}\vskip-2ex%
+    \strut\insertframetitle\strut
+    \vskip-0.8ex%
+  \end{beamercolorbox}
 }
 
-%% Section
-\AtBeginSection[]{
+%% Table of Contents
+% bullet shapes: \setbeamertemplate{sections/subsections in toc}[SHAPE]
+% SHAPE: default, triangle, circle, square, ball
+% also possible to set custom shapes by `\setbeamertemplate{itemize items}{$\bullet$}'
+\setbeamertemplate{sections/subsections in toc}[circle]
+%\setbeamertemplate{subsection in toc}[circle]
+
+%% At the beginning of section and subsection
+\AtBeginSection{
+  % If you want nothing to happen at the beginning of a starred
+  % section, use `\AtBeginSection[]{' instead.
   \begin{frame}
     \vfill \centering
     \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
       \usebeamerfont{title}\insertsectionhead\par%
     \end{beamercolorbox}
     \vfill
+  \end{frame}
+}
+
+
+%% Subsection
+\AtBeginSubsection{
+  % If you want nothing to happen at the beginning of a starred
+  % subsection, use `\AtBeginSubsection[]{' instead.
+  \begin{frame}
+    \vfill \centering
+    \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+      \usebeamerfont{title}\insertsubsectionhead\par%
+    \end{beamercolorbox}
+    \vfill
+    % \tableofcontents[
+    % currentsubsection,
+    % hideothersubsections,
+    % sectionstyle=show/hide,
+    % subsectionstyle=show/shaded,
+    % ]
   \end{frame}
 }
